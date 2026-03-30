@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Hope Nutrition Kids — A YouTube channel where children learn about nutrition through stories, art, craft, puppets, and gentle moral lessons.">
-  <title>Hope Nutrition Kids — Hope Nutrition</title>
+  <meta name="description" content="Hope Nutrition Kids — a YouTube channel where children learn about nutrition through stories, art, puppets, and gentle moral lessons.">
+  <title>Hope Nutrition Kids — Fun Nutrition Learning for Children</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,14 +17,23 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="index.html" class="header__logo" aria-label="Hope Nutrition Home">
-        <span class="logo-leaf">&#x1F33F;</span>
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2C16 2 6 10 6 18c0 5.523 4.477 10 10 10s10-4.477 10-10C26 10 16 2 16 2z" fill="#4A7C59" opacity="0.15"/>
+          <path d="M16 6c0 0-7 6-7 12a7 7 0 1014 0c0-6-7-12-7-12z" fill="#4A7C59" opacity="0.3"/>
+          <path d="M16 10c0 0-4 4-4 8a4 4 0 108 0c0-4-4-8-4-8z" fill="#4A7C59"/>
+          <path d="M16 14v12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M16 18c-2-1.5-3-3-3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M16 20c2-1.5 3-3 3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
         HOPE <span>NUTRITION</span>
       </a>
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li><a href="index.html#pillars" class="nav__link">Approach</a></li>
           <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="index.html#testimonials" class="nav__link">Reviews</a></li>
           <li><a href="booklets.html" class="nav__link">Booklets</a></li>
           <li><a href="kids.html" class="nav__link nav__link--active">Kids</a></li>
         </ul>
@@ -41,123 +48,327 @@
   </header>
 
   <!-- ========== PAGE HERO ========== -->
-  <section class="page-hero">
-    <div class="container fade-up">
-      <span class="section-label">YouTube Channel</span>
+  <section class="page-hero page-hero--kids">
+    <div class="hero__blob hero__blob--1"></div>
+    <div class="hero__blob hero__blob--2"></div>
+    <div class="hero__blob hero__blob--3"></div>
+    <div class="container page-hero__content fade-up">
+      <span class="hero__label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        YouTube Channel
+      </span>
       <h1>Hope Nutrition Kids</h1>
-      <p>Where children learn through wonder, stories, and creativity — not pressure.</p>
+      <p>
+        Where children learn about nutrition through stories, art, craft, puppets,
+        and gentle moral lessons — making healthy eating fun and memorable.
+      </p>
+      <a href="https://www.youtube.com/@HopeNutritionbyRamsinaRoil" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Watch on YouTube
+      </a>
     </div>
   </section>
 
-  <!-- ========== KIDS INTRO ========== -->
+  <!-- ========== ABOUT THE CHANNEL ========== -->
   <section class="section">
-    <div class="container">
-      <div class="kids-content fade-up">
-        <p style="font-size: 1.15rem; font-family: var(--font-accent); color: var(--color-primary-dark); text-align: center; margin-bottom: 2rem;">
-          Hope Nutrition Kids is one of the dearest projects I've ever created.
+    <div class="container about__inner">
+      <div class="about__image fade-up">
+        <div class="about__image-main">
+          <div class="about__illustration">
+            <svg viewBox="0 0 400 530" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="530" fill="#FEF5E7"/>
+              <rect width="400" height="530" fill="url(#kidsGrad)"/>
+
+              <!-- Playful scene -->
+              <!-- Sun -->
+              <circle cx="320" cy="100" r="40" fill="#F9D56E" opacity="0.3"/>
+              <circle cx="320" cy="100" r="25" fill="#F9D56E" opacity="0.5"/>
+
+              <!-- Rainbow arc -->
+              <path d="M80 350c0-90 72-160 160-160s160 70 160 160" stroke="#E8917F" stroke-width="6" opacity="0.15" fill="none"/>
+              <path d="M100 350c0-78 63-140 140-140s140 62 140 140" stroke="#F9D56E" stroke-width="6" opacity="0.15" fill="none"/>
+              <path d="M120 350c0-66 54-120 120-120s120 54 120 120" stroke="#7BAE8A" stroke-width="6" opacity="0.15" fill="none"/>
+
+              <!-- Vegetables/fruits as characters -->
+              <!-- Carrot -->
+              <g transform="translate(100, 250)">
+                <path d="M20 0c-5 0-15 30-15 55s5 25 15 25 15-5 15-25S25 0 20 0z" fill="#E8917F" opacity="0.6"/>
+                <path d="M15-5c-5-8 0-15 5-15s10 7 5 15" fill="#4A7C59" opacity="0.4"/>
+                <path d="M20-3c-3-10 2-16 5-16s8 6 3 16" fill="#7BAE8A" opacity="0.35"/>
+                <circle cx="14" cy="20" r="2" fill="white" opacity="0.6"/>
+                <circle cx="24" cy="20" r="2" fill="white" opacity="0.6"/>
+                <path d="M16 28c2 2 6 2 8 0" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+              </g>
+
+              <!-- Apple -->
+              <g transform="translate(250, 230)">
+                <circle cx="25" cy="30" r="25" fill="#C84B4B" opacity="0.4"/>
+                <circle cx="25" cy="30" r="18" fill="#E87070" opacity="0.3"/>
+                <path d="M25 5v-8c3-3 8-2 10 0" stroke="#4A7C59" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                <path d="M23 2c-6-3-10-1-10 3" fill="#4A7C59" opacity="0.35"/>
+                <circle cx="18" cy="25" r="2.5" fill="white" opacity="0.5"/>
+                <circle cx="32" cy="25" r="2.5" fill="white" opacity="0.5"/>
+                <path d="M21 35c2 2 6 2 8 0" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              </g>
+
+              <!-- Broccoli -->
+              <g transform="translate(170, 320)">
+                <rect x="18" y="30" width="10" height="30" rx="3" fill="#4A7C59" opacity="0.4"/>
+                <circle cx="15" cy="22" r="12" fill="#7BAE8A" opacity="0.5"/>
+                <circle cx="28" cy="20" r="11" fill="#4A7C59" opacity="0.4"/>
+                <circle cx="22" cy="14" r="10" fill="#7BAE8A" opacity="0.45"/>
+                <circle cx="16" cy="18" r="2" fill="white" opacity="0.4"/>
+                <circle cx="26" cy="18" r="2" fill="white" opacity="0.4"/>
+                <path d="M18 25c2 1.5 5 1.5 7 0" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+              </g>
+
+              <!-- Stars/sparkles -->
+              <path d="M80 120l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="#F9D56E" opacity="0.4"/>
+              <path d="M350 260l2 4 5 1-4 3 1 5-4-2-5 2 1-5-4-3 5-1z" fill="#F9D56E" opacity="0.35"/>
+              <path d="M60 400l2 4 4 0-3 3 1 5-4-2-4 2 1-5-3-3 4 0z" fill="#E8917F" opacity="0.3"/>
+              <path d="M340 400l2 3 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1z" fill="#7BAE8A" opacity="0.35"/>
+
+              <!-- Floating circles -->
+              <circle cx="60" cy="200" r="15" fill="#F9D56E" opacity="0.15"/>
+              <circle cx="350" cy="350" r="12" fill="#E8917F" opacity="0.12"/>
+              <circle cx="300" cy="450" r="10" fill="#7BAE8A" opacity="0.15"/>
+
+              <defs>
+                <linearGradient id="kidsGrad" x1="0" y1="0" x2="400" y2="530">
+                  <stop offset="0%" stop-color="#FEF5E7"/>
+                  <stop offset="100%" stop-color="#FDE8C8" stop-opacity="0.5"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__content fade-up">
+        <span class="section-label">About the Channel</span>
+        <h2>Learning Through Play & Story</h2>
+        <p>
+          Hope Nutrition Kids is a creative YouTube channel by Ramsina designed to make nutrition
+          education fun, accessible, and meaningful for young learners. Through engaging stories,
+          colourful art, hand puppets, and clay animation, children discover the joy of healthy
+          eating while building empathy and life skills.
         </p>
         <p>
-          As a clinical nutritionist, and someone who genuinely loves working with children,
-          I wanted a space where kids could learn through wonder, not pressure. A place filled
-          with stories, colours, imagination, and gentle science.
+          Each episode is crafted with care — blending gentle moral lessons with nutrition
+          knowledge in an age-appropriate, screen-time-worthy format that parents can feel good about.
         </p>
-        <p>
-          This channel teaches children about love, caring, sacrifice, sharing, and strong family
-          values — woven beautifully with simple nutrition education and whole plant-based messages.
-          Through the stories I write, children explore food, farming, the environment, and the
-          journey of how food reaches their plates.
-        </p>
-        <p>
-          But it's not just storytelling. It's creativity. It's connection. It's hands-on learning.
-        </p>
+
+        <div class="section-divider">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"/></svg>
+        </div>
+
+        <a href="https://www.youtube.com/@HopeNutritionbyRamsinaRoil" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Visit YouTube Channel
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ========== FEATURES ========== -->
+  <!-- ========== CONTENT TYPES ========== -->
   <section class="section section--alt">
     <div class="container">
       <div class="section-header fade-up">
         <span class="section-label">What You'll Find</span>
-        <h2>Learning Through Joy</h2>
+        <h2>Content Features</h2>
+        <p>Creative, age-appropriate episodes that make learning about nutrition an adventure.</p>
       </div>
-      <div class="kids-features">
-        <div class="kids-feature fade-up">
-          <div class="kids-feature__icon">&#x1F4D6;</div>
-          <div class="kids-feature__text">
-            <h4>Stories & Empathy</h4>
-            <p>Stories that nurture empathy and teach gentle moral lessons about caring and sharing.</p>
+      <div class="pillars-grid">
+        <div class="pillar-card fade-up">
+          <div class="pillar-card__icon" style="color: #E8917F;">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 6h24v20H4z" rx="3" stroke-linecap="round"/>
+              <path d="M4 6l12 10L28 6" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+              <rect x="8" y="12" width="7" height="9" rx="1" opacity="0.3"/>
+              <line x1="18" y1="14" x2="24" y2="14" stroke-linecap="round" opacity="0.4"/>
+              <line x1="18" y1="18" x2="22" y2="18" stroke-linecap="round" opacity="0.3"/>
+              <line x1="18" y1="22" x2="23" y2="22" stroke-linecap="round" opacity="0.25"/>
+            </svg>
           </div>
+          <h4 class="pillar-card__title">Stories & Empathy</h4>
+          <p class="pillar-card__text">Engaging narratives that teach children about food, health, and caring for others through relatable characters.</p>
         </div>
-        <div class="kids-feature fade-up">
-          <div class="kids-feature__icon">&#x1F3A8;</div>
-          <div class="kids-feature__text">
-            <h4>Art & Craft</h4>
-            <p>Activities that let children explore foods, seasons, and nature with their hands.</p>
+        <div class="pillar-card fade-up">
+          <div class="pillar-card__icon" style="color: #F9D56E;">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="16" cy="16" r="10"/>
+              <path d="M12 13v6c0 1 .5 2 1.5 2h5c1 0 1.5-1 1.5-2v-6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 13h12" stroke-linecap="round"/>
+              <circle cx="12" cy="8" r="2" opacity="0.4"/>
+              <circle cx="16" cy="6" r="2" opacity="0.5"/>
+              <circle cx="20" cy="8" r="2" opacity="0.4"/>
+            </svg>
           </div>
+          <h4 class="pillar-card__title">Art & Craft</h4>
+          <p class="pillar-card__text">Hands-on creative projects that bring nutrition concepts to life — from food art to healthy recipe adventures.</p>
         </div>
-        <div class="kids-feature fade-up">
-          <div class="kids-feature__icon">&#x1F91A;</div>
-          <div class="kids-feature__text">
-            <h4>Puppets & Characters</h4>
-            <p>Hand puppet and character voices that make nutrition fun, playful, and memorable.</p>
+        <div class="pillar-card fade-up">
+          <div class="pillar-card__icon" style="color: #7BAE8A;">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M11 26V16c0-3 2.5-5 5-5s5 2 5 5v10" stroke-linecap="round"/>
+              <circle cx="16" cy="8" r="4"/>
+              <path d="M11 18H8c-1 0-2 1-2 2v6h6" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+              <path d="M21 18h3c1 0 2 1 2 2v6h-6" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+              <circle cx="14" cy="7" r="1" fill="currentColor" opacity="0.5"/>
+              <circle cx="18" cy="7" r="1" fill="currentColor" opacity="0.5"/>
+              <path d="M14 9c1 1 3 1 4 0" stroke-linecap="round" opacity="0.5"/>
+            </svg>
           </div>
+          <h4 class="pillar-card__title">Hand Puppets</h4>
+          <p class="pillar-card__text">Loveable puppet characters that make nutrition lessons memorable and interactive for young viewers.</p>
         </div>
-        <div class="kids-feature fade-up">
-          <div class="kids-feature__icon">&#x1F9F1;</div>
-          <div class="kids-feature__text">
-            <h4>Clay & Animation</h4>
-            <p>Clay characters and simple animations that spark curiosity about real food.</p>
+        <div class="pillar-card fade-up">
+          <div class="pillar-card__icon" style="color: #7B5EA7;">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="4" y="6" width="24" height="16" rx="2"/>
+              <path d="M13 11v6l5-3z" fill="currentColor" opacity="0.3" stroke="none"/>
+              <path d="M13 11v6l5-3z" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="10" y1="26" x2="22" y2="26" stroke-linecap="round"/>
+              <line x1="16" y1="22" x2="16" y2="26" stroke-linecap="round"/>
+            </svg>
           </div>
+          <h4 class="pillar-card__title">Clay Animation</h4>
+          <p class="pillar-card__text">Charming stop-motion clay animations that bring food and nutrition stories to magical life.</p>
         </div>
-        <div class="kids-feature fade-up">
-          <div class="kids-feature__icon">&#x1F331;</div>
-          <div class="kids-feature__text">
-            <h4>Real Food Connection</h4>
-            <p>Educational moments that reconnect children with farms, soil, and natural food processes.</p>
+        <div class="pillar-card fade-up">
+          <div class="pillar-card__icon" style="color: #C8A25C;">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M16 4c-3 3-8 8-8 14a8 8 0 0016 0c0-6-5-11-8-14z" stroke-linecap="round"/>
+              <path d="M16 12v10M16 16l-2.5-2M16 19l2.5-2" stroke-linecap="round"/>
+              <circle cx="12" cy="16" r="1" fill="currentColor" opacity="0.3"/>
+              <circle cx="20" cy="18" r="1" fill="currentColor" opacity="0.3"/>
+            </svg>
           </div>
+          <h4 class="pillar-card__title">Nutrition Education</h4>
+          <p class="pillar-card__text">Age-appropriate lessons about fruits, vegetables, whole grains, and why good food makes us feel great.</p>
         </div>
-        <div class="kids-feature fade-up">
-          <div class="kids-feature__icon">&#x1F46A;</div>
-          <div class="kids-feature__text">
-            <h4>For Everyone</h4>
-            <p>Created for parents, caregivers, and educators — with love, care, and the belief that learning should feel like joy.</p>
+        <div class="pillar-card fade-up">
+          <div class="pillar-card__icon" style="color: #E8917F;">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M20.84 6.61a5.5 5.5 0 00-7.78 0L12 7.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 23.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" transform="translate(4, 3)" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+          <h4 class="pillar-card__title">Moral Lessons</h4>
+          <p class="pillar-card__text">Gentle life lessons woven into every episode — kindness, sharing, gratitude, and caring for our bodies.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== MISSION STATEMENT ========== -->
+  <!-- ========== PARENTS NOTE ========== -->
   <section class="section">
     <div class="container">
-      <div class="kids-content fade-up" style="text-align: center;">
-        <p style="font-size: 1.15rem; font-family: var(--font-accent); max-width: 650px; margin: 0 auto var(--space-lg);">
-          Today's kids are growing up far from the soil, the farms, and the natural processes
-          that once shaped our understanding of food. Through every video and every character,
-          my hope is to bring them back to that connection — in a warm, safe, and child-friendly way.
-        </p>
-        <a href="https://www.youtube.com/@HopeNutritionbyRamsinaRoil" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
-          Visit YouTube Channel
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-        </a>
+      <div class="booklet-feature fade-up">
+        <div class="booklet-feature__visual">
+          <div class="booklet-feature__image-wrapper">
+            <svg viewBox="0 0 480 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="480" height="400" fill="#EFF5F0"/>
+              <rect width="480" height="400" fill="url(#parentGrad)"/>
+
+              <!-- Family silhouette -->
+              <!-- Adult figure -->
+              <ellipse cx="190" cy="140" rx="25" ry="28" fill="#4A7C59" opacity="0.25"/>
+              <path d="M160 200c0-20 14-35 30-35s30 15 30 35v80H160V200z" fill="#4A7C59" opacity="0.2"/>
+
+              <!-- Child figure -->
+              <ellipse cx="270" cy="165" rx="18" ry="20" fill="#7BAE8A" opacity="0.3"/>
+              <path d="M250 210c0-14 9-24 20-24s20 10 20 24v55H250V210z" fill="#7BAE8A" opacity="0.25"/>
+
+              <!-- Small child figure -->
+              <ellipse cx="330" cy="185" rx="14" ry="16" fill="#C8A25C" opacity="0.25"/>
+              <path d="M315 225c0-10 7-18 15-18s15 8 15 18v40H315V225z" fill="#C8A25C" opacity="0.2"/>
+
+              <!-- Heart between them -->
+              <path d="M240 180c-3-8-12-10-15-4s1 13 15 20c14-7 18-14 15-20s-12-4-15 4z" fill="#E8917F" opacity="0.3"/>
+
+              <!-- Ground -->
+              <path d="M60 310Q240 280 420 310Q420 350 240 340Q60 350 60 310z" fill="#D1E8D5" opacity="0.3"/>
+
+              <!-- Floating elements -->
+              <circle cx="100" cy="120" r="10" fill="#F9D56E" opacity="0.2"/>
+              <circle cx="400" cy="130" r="8" fill="#F0DEB0" opacity="0.25"/>
+              <circle cx="80" cy="270" r="6" fill="#D1E8D5" opacity="0.4"/>
+              <circle cx="420" cy="250" r="7" fill="#D1E8D5" opacity="0.35"/>
+
+              <!-- Stars -->
+              <path d="M130 80l2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1z" fill="#F9D56E" opacity="0.3"/>
+              <path d="M380 90l2 3 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1z" fill="#F9D56E" opacity="0.25"/>
+
+              <defs>
+                <linearGradient id="parentGrad" x1="0" y1="0" x2="480" y2="400">
+                  <stop offset="0%" stop-color="#EFF5F0"/>
+                  <stop offset="100%" stop-color="#D1E8D5" stop-opacity="0.4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="booklet-feature__content">
+          <span class="section-label">For Parents</span>
+          <h2 class="booklet-feature__title">Screen Time You Can Feel Good About</h2>
+          <p>
+            Hope Nutrition Kids is designed to be the kind of screen time parents can feel
+            genuinely good about. Every episode is created by a clinical nutritionist and mum
+            who understands the challenge of teaching healthy habits to little ones.
+          </p>
+          <p>
+            The channel is ad-free, age-appropriate, and intentionally paced — perfect for
+            toddlers and young children who are just beginning to understand the world of food.
+          </p>
+
+          <div class="booklet-feature__highlights">
+            <div class="booklet-highlight">
+              <div class="booklet-highlight__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Parent-Approved</strong>
+                <small>Age-appropriate, ad-free content</small>
+              </div>
+            </div>
+            <div class="booklet-highlight">
+              <div class="booklet-highlight__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Expert-Created</strong>
+                <small>By a clinical nutritionist & mum</small>
+              </div>
+            </div>
+            <div class="booklet-highlight">
+              <div class="booklet-highlight__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Values-Driven</strong>
+                <small>Empathy, kindness & healthy habits</small>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.youtube.com/@HopeNutritionbyRamsinaRoil" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Subscribe on YouTube
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ========== CTA ========== -->
   <section class="section section--dark cta">
-    <div class="container fade-up">
-      <h2>Need Nutrition Support for Your Family?</h2>
-      <p>
-        Book a personalised consultation — specialising in family nutrition and children's health.
-      </p>
+    <div class="cta__content container fade-up">
+      <h2>Want Personalised Nutrition for Your Family?</h2>
+      <p>Book a family nutrition consultation — in person or via telehealth from anywhere in Australia.</p>
       <div class="cta__actions">
         <a href="https://app.squareup.com/appointments/book/omzgfrghou5f38/LFP9SFMS7XYZB/start" class="btn btn--white btn--lg" target="_blank" rel="noopener noreferrer">
           Book a Consultation
-        </a>
-        <a href="index.html#services" class="btn btn--accent btn--lg">
-          View All Services
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </a>
       </div>
     </div>
@@ -169,15 +380,14 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <div class="footer__logo">
-            <span>&#x1F33F;</span> HOPE NUTRITION
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2C16 2 6 10 6 18c0 5.523 4.477 10 10 10s10-4.477 10-10C26 10 16 2 16 2z" fill="currentColor" opacity="0.3"/>
+              <path d="M16 8c0 0-5 5-5 10a5 5 0 0010 0c0-5-5-10-5-10z" fill="currentColor"/>
+              <path d="M16 13v9" stroke="#1B2E1E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            HOPE NUTRITION
           </div>
-          <p>
-            Clinical nutritionist in Melbourne helping individuals and families build
-            realistic, lasting habits through evidence-based nutrition and lifestyle medicine.
-          </p>
-          <p style="margin-top: 1rem; font-size: 0.85rem;">
-            Registered Nutritionist — Australian Natural Therapists Association (ANTA)
-          </p>
+          <p>Clinical nutritionist in Melbourne helping individuals and families build realistic, lasting habits through evidence-based nutrition and lifestyle medicine.</p>
         </div>
         <div>
           <h4 class="footer__heading">Quick Links</h4>
@@ -203,7 +413,7 @@
         <p>&copy; 2026 Hope Nutrition. All rights reserved.</p>
         <div class="footer__social">
           <a href="https://www.youtube.com/@HopeNutritionbyRamsinaRoil" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            &#x25B6;
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
         </div>
       </div>
