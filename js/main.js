@@ -63,6 +63,16 @@
         document.body.style.overflow = '';
       })
     );
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && list.classList.contains('active')) {
+        toggle.classList.remove('active');
+        list.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        toggle.focus();
+      }
+    });
   }
 
   /* ========== HEADER SCROLL ========== */
@@ -275,10 +285,15 @@
     let cx = 0, cy = 0, tx = 0, ty = 0;
     document.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
 
+    let cursorActive = true;
+    document.addEventListener('visibilitychange', () => { cursorActive = !document.hidden; });
+
     const move = () => {
-      cx = lerp(cx, tx, 0.12);
-      cy = lerp(cy, ty, 0.12);
-      glow.style.transform = `translate(${cx - 200}px, ${cy - 200}px)`;
+      if (cursorActive) {
+        cx = lerp(cx, tx, 0.12);
+        cy = lerp(cy, ty, 0.12);
+        glow.style.transform = `translate(${cx - 200}px, ${cy - 200}px)`;
+      }
       requestAnimationFrame(move);
     };
     requestAnimationFrame(move);
@@ -409,8 +424,16 @@
     });
 
     const float3dEls = qsa('.float3d');
+    let sceneVisible = true;
+
+    const sceneIO = new IntersectionObserver(([entry]) => {
+      sceneVisible = entry.isIntersecting;
+    }, { threshold: 0 });
+    sceneIO.observe(hero);
 
     function animate() {
+      if (!sceneVisible) { requestAnimationFrame(animate); return; }
+
       currentX = lerp(currentX, targetX, 0.06);
       currentY = lerp(currentY, targetY, 0.06);
 
