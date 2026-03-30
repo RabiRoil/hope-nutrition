@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free nutrition booklets from Hope Nutrition — evidence-based guides for whole-food, plant-based living for you and your family.">
+  <meta name="description" content="GrapeVine — a whole-food, plant-based guide by Hope Nutrition. Download your free evidence-based booklet today.">
   <title>Booklets — Hope Nutrition</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,14 +17,23 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="index.html" class="header__logo" aria-label="Hope Nutrition Home">
-        <span class="logo-leaf">&#x1F33F;</span>
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2C16 2 6 10 6 18c0 5.523 4.477 10 10 10s10-4.477 10-10C26 10 16 2 16 2z" fill="#4A7C59" opacity="0.15"/>
+          <path d="M16 6c0 0-7 6-7 12a7 7 0 1014 0c0-6-7-12-7-12z" fill="#4A7C59" opacity="0.3"/>
+          <path d="M16 10c0 0-4 4-4 8a4 4 0 108 0c0-4-4-8-4-8z" fill="#4A7C59"/>
+          <path d="M16 14v12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M16 18c-2-1.5-3-3-3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M16 20c2-1.5 3-3 3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
         HOPE <span>NUTRITION</span>
       </a>
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li><a href="index.html#pillars" class="nav__link">Approach</a></li>
           <li><a href="index.html#services" class="nav__link">Services</a></li>
+          <li><a href="index.html#testimonials" class="nav__link">Reviews</a></li>
           <li><a href="booklets.html" class="nav__link nav__link--active">Booklets</a></li>
           <li><a href="kids.html" class="nav__link">Kids</a></li>
         </ul>
@@ -42,41 +49,172 @@
 
   <!-- ========== PAGE HERO ========== -->
   <section class="page-hero">
-    <div class="container fade-up">
-      <span class="section-label">Resources</span>
-      <h1>Booklets</h1>
-      <p>Free, evidence-based guides to support your whole-food, plant-based journey.</p>
+    <div class="hero__blob hero__blob--1"></div>
+    <div class="hero__blob hero__blob--2"></div>
+    <div class="container page-hero__content fade-up">
+      <span class="hero__label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Free Resources
+      </span>
+      <h1>Nutrition Booklets</h1>
+      <p>
+        Evidence-based guides to support your health journey — written with care,
+        grounded in science, and free to download.
+      </p>
     </div>
   </section>
 
-  <!-- ========== BOOKLET CONTENT ========== -->
+  <!-- ========== BOOKLET FEATURE ========== -->
   <section class="section">
     <div class="container">
-      <div class="booklet-card fade-up">
-        <div class="booklet-card__image">
-          <div class="booklet-placeholder">
-            <div class="booklet-placeholder__inner">
-              <div class="icon">&#x1F347;</div>
-              <p>Grape Vine</p>
-            </div>
+      <div class="booklet-feature fade-up">
+        <div class="booklet-feature__visual">
+          <div class="booklet-feature__image-wrapper">
+            <!-- Book/booklet illustration -->
+            <svg viewBox="0 0 480 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="480" height="600" fill="#EFF5F0"/>
+              <rect width="480" height="600" fill="url(#bookGrad)"/>
+
+              <!-- Book shape -->
+              <rect x="110" y="80" width="260" height="380" rx="8" fill="white" opacity="0.85"/>
+              <rect x="110" y="80" width="260" height="380" rx="8" stroke="#4A7C59" stroke-width="2" opacity="0.2"/>
+              <!-- Spine -->
+              <line x1="240" y1="80" x2="240" y2="460" stroke="#4A7C59" stroke-width="1.5" opacity="0.15"/>
+
+              <!-- Title area on cover -->
+              <rect x="145" y="120" width="190" height="18" rx="4" fill="#4A7C59" opacity="0.6"/>
+              <rect x="160" y="148" width="160" height="10" rx="3" fill="#7BAE8A" opacity="0.4"/>
+              <rect x="170" y="168" width="140" height="8" rx="3" fill="#7BAE8A" opacity="0.25"/>
+
+              <!-- Decorative grape/vine illustration on cover -->
+              <circle cx="240" cy="260" r="50" fill="#7BAE8A" opacity="0.15"/>
+              <!-- Grape cluster -->
+              <circle cx="225" cy="240" r="10" fill="#7B5EA7" opacity="0.35"/>
+              <circle cx="245" cy="235" r="10" fill="#7B5EA7" opacity="0.30"/>
+              <circle cx="255" cy="250" r="10" fill="#7B5EA7" opacity="0.35"/>
+              <circle cx="235" cy="255" r="10" fill="#7B5EA7" opacity="0.32"/>
+              <circle cx="250" cy="268" r="10" fill="#7B5EA7" opacity="0.28"/>
+              <circle cx="230" cy="270" r="9" fill="#7B5EA7" opacity="0.25"/>
+              <circle cx="245" cy="282" r="8" fill="#7B5EA7" opacity="0.2"/>
+              <!-- Vine leaves -->
+              <path d="M220 220c-15-10-30-5-25 10s20 15 28 5 10-8-3-15z" fill="#4A7C59" opacity="0.4"/>
+              <path d="M260 215c12-8 25-3 20 10s-18 13-24 4-8-8 4-14z" fill="#4A7C59" opacity="0.35"/>
+              <!-- Stem -->
+              <path d="M240 210v-15c0 0-2-8-10-12" stroke="#4A7C59" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+              <path d="M240 210c4-8 12-12 18-10" stroke="#4A7C59" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+
+              <!-- Bottom label area -->
+              <rect x="155" y="360" width="170" height="8" rx="3" fill="#4A7C59" opacity="0.2"/>
+              <rect x="175" y="380" width="130" height="6" rx="3" fill="#C8A25C" opacity="0.3"/>
+              <rect x="165" y="400" width="150" height="6" rx="3" fill="#4A7C59" opacity="0.15"/>
+
+              <!-- Shadow under book -->
+              <ellipse cx="240" cy="490" rx="120" ry="20" fill="#4A7C59" opacity="0.08"/>
+
+              <!-- Floating leaf/decorative elements -->
+              <path d="M60 200c12-16 28-12 28 4s-16 20-28 16-12-6 0-20z" fill="#D1E8D5" opacity="0.6"/>
+              <path d="M420 300c-10-14-24-10-24 4s14 17 24 13 10-5 0-17z" fill="#D1E8D5" opacity="0.5"/>
+              <circle cx="80" cy="400" r="8" fill="#C8A25C" opacity="0.25"/>
+              <circle cx="410" cy="150" r="6" fill="#F0DEB0" opacity="0.3"/>
+              <circle cx="65" cy="300" r="4" fill="white" opacity="0.4"/>
+              <circle cx="430" cy="420" r="5" fill="white" opacity="0.3"/>
+
+              <defs>
+                <linearGradient id="bookGrad" x1="0" y1="0" x2="480" y2="600">
+                  <stop offset="0%" stop-color="#EFF5F0"/>
+                  <stop offset="100%" stop-color="#D1E8D5" stop-opacity="0.6"/>
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
         </div>
-        <div class="booklet-card__content">
-          <h3>Grape Vine — The Whole Food Plant-Based Guide</h3>
+        <div class="booklet-feature__content">
+          <span class="section-label">Featured Booklet</span>
+          <h2 class="booklet-feature__title">GrapeVine</h2>
+          <h3 class="booklet-feature__subtitle">Whole-Food, Plant-Based Guide</h3>
           <p>
-            A comprehensive, beautifully designed guide to understanding and embracing a whole-food,
-            plant-based lifestyle. Packed with practical tips, meal ideas, and the science behind
-            nourishing your body with nature's best foods.
+            GrapeVine is a practical, evidence-based guide to whole-food, plant-based nutrition.
+            It's written for anyone curious about how a plant-rich approach can support long-term
+            health, prevent chronic disease, and bring more balance to everyday eating.
           </p>
           <p>
-            Whether you're just starting your wellness journey or looking to deepen your understanding
-            of plant-based nutrition, this booklet provides the guidance you need — written with warmth
-            and grounded in evidence.
+            Whether you're just starting or looking for a reliable resource to deepen your
+            understanding, GrapeVine offers clear guidance without the overwhelm — with practical
+            tips, meal ideas, and the nutritional science made simple.
           </p>
+
+          <div class="booklet-feature__highlights">
+            <div class="booklet-highlight">
+              <div class="booklet-highlight__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" stroke-linecap="round"/><rect x="8" y="2" width="8" height="4" rx="1" stroke-linecap="round"/><path d="M9 14l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Evidence-Based</strong>
+                <small>Grounded in clinical nutrition science</small>
+              </div>
+            </div>
+            <div class="booklet-highlight">
+              <div class="booklet-highlight__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-4 4-8 8-8 14a8 8 0 0016 0c0-6-4-10-8-14z" stroke-linecap="round"/><path d="M12 10v8M12 14l-2-2M12 16l2-2" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <strong>Whole-Food Focus</strong>
+                <small>Practical, real-food guidance</small>
+              </div>
+            </div>
+            <div class="booklet-highlight">
+              <div class="booklet-highlight__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <strong>Family-Friendly</strong>
+                <small>For individuals and families alike</small>
+              </div>
+            </div>
+          </div>
+
           <a href="https://www.hopenutrition.com.au/s/GrapeVine-Whole-Food-Plant-Based-Guide.pdf" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Download Free Guide
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MORE RESOURCES ========== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">More Coming Soon</span>
+        <h2>Additional Resources</h2>
+        <p>New evidence-based booklets and guides are in development. Stay connected for updates.</p>
+      </div>
+      <div class="pillars-grid" style="max-width: 700px; margin: 0 auto;">
+        <div class="pillar-card fade-up">
+          <div class="pillar-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="6" y="4" width="20" height="24" rx="3" stroke-linecap="round"/>
+              <line x1="11" y1="10" x2="21" y2="10" stroke-linecap="round" opacity="0.5"/>
+              <line x1="11" y1="14" x2="19" y2="14" stroke-linecap="round" opacity="0.4"/>
+              <line x1="11" y1="18" x2="20" y2="18" stroke-linecap="round" opacity="0.3"/>
+              <path d="M19 28l4-4-4-4" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <h4 class="pillar-card__title">Kids Nutrition Guide</h4>
+          <p class="pillar-card__text">A playful, practical guide to help parents navigate fussy eating and build healthy habits early.</p>
+          <span class="service-tag" style="margin-top: 0.5rem;">Coming Soon</span>
+        </div>
+        <div class="pillar-card fade-up">
+          <div class="pillar-card__icon">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M16 4c-3 3-8 8-8 14a8 8 0 0016 0c0-6-5-11-8-14z" stroke-linecap="round"/>
+              <path d="M16 12v10M16 16l-2.5-2M16 19l2.5-2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4 class="pillar-card__title">Lifestyle Medicine Basics</h4>
+          <p class="pillar-card__text">An introductory guide to the six pillars of lifestyle medicine and how to apply them daily.</p>
+          <span class="service-tag" style="margin-top: 0.5rem;">Coming Soon</span>
         </div>
       </div>
     </div>
@@ -84,14 +222,13 @@
 
   <!-- ========== CTA ========== -->
   <section class="section section--dark cta">
-    <div class="container fade-up">
-      <h2>Want Personalised Guidance?</h2>
-      <p>
-        Book a consultation for nutrition advice tailored to your unique needs and goals.
-      </p>
+    <div class="cta__content container fade-up">
+      <h2>Need Personalised Guidance?</h2>
+      <p>Booklets are a great start — but for tailored support, book a one-on-one consultation.</p>
       <div class="cta__actions">
         <a href="https://app.squareup.com/appointments/book/omzgfrghou5f38/LFP9SFMS7XYZB/start" class="btn btn--white btn--lg" target="_blank" rel="noopener noreferrer">
           Book a Consultation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </a>
       </div>
     </div>
@@ -103,15 +240,14 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <div class="footer__logo">
-            <span>&#x1F33F;</span> HOPE NUTRITION
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2C16 2 6 10 6 18c0 5.523 4.477 10 10 10s10-4.477 10-10C26 10 16 2 16 2z" fill="currentColor" opacity="0.3"/>
+              <path d="M16 8c0 0-5 5-5 10a5 5 0 0010 0c0-5-5-10-5-10z" fill="currentColor"/>
+              <path d="M16 13v9" stroke="#1B2E1E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            HOPE NUTRITION
           </div>
-          <p>
-            Clinical nutritionist in Melbourne helping individuals and families build
-            realistic, lasting habits through evidence-based nutrition and lifestyle medicine.
-          </p>
-          <p style="margin-top: 1rem; font-size: 0.85rem;">
-            Registered Nutritionist — Australian Natural Therapists Association (ANTA)
-          </p>
+          <p>Clinical nutritionist in Melbourne helping individuals and families build realistic, lasting habits through evidence-based nutrition and lifestyle medicine.</p>
         </div>
         <div>
           <h4 class="footer__heading">Quick Links</h4>
@@ -137,7 +273,7 @@
         <p>&copy; 2026 Hope Nutrition. All rights reserved.</p>
         <div class="footer__social">
           <a href="https://www.youtube.com/@HopeNutritionbyRamsinaRoil" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            &#x25B6;
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.546 12 3.546 12 3.546s-7.505 0-9.377.504A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.504 9.376.504 9.376.504s7.505 0 9.377-.504a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
         </div>
       </div>
