@@ -1677,8 +1677,305 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
   50% { background-position: 100% 50%; }
 }
 
+/* ===================== 3D FLOATING BOTANICAL SCENE ===================== */
+.float3d-scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+.float3d {
+  position: absolute;
+  transform-style: preserve-3d;
+  will-change: transform, translate;
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+  translate: var(--mouse-x) var(--mouse-y);
+}
+
+.float3d svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.06));
+}
+
+/* Leaf 1 — top-left, large */
+.float3d--leaf-1 {
+  width: 90px; height: 90px;
+  top: 12%; left: 6%;
+  animation: float3d-drift-1 14s ease-in-out infinite;
+}
+
+/* Berry — top-right */
+.float3d--berry-1 {
+  width: 55px; height: 55px;
+  top: 18%; right: 12%;
+  animation: float3d-drift-2 11s ease-in-out infinite 1s;
+}
+
+/* Leaf 2 — mid-left */
+.float3d--leaf-2 {
+  width: 65px; height: 65px;
+  top: 55%; left: 3%;
+  animation: float3d-drift-3 16s ease-in-out infinite 3s;
+}
+
+/* Glass orb — mid-right */
+.float3d--orb-1 {
+  width: 80px; height: 80px;
+  top: 40%; right: 5%;
+  animation: float3d-drift-4 13s ease-in-out infinite 2s;
+}
+
+/* Citrus — bottom-left */
+.float3d--citrus {
+  width: 60px; height: 60px;
+  bottom: 22%; left: 10%;
+  animation: float3d-drift-5 12s ease-in-out infinite 4s;
+}
+
+/* Leaf 3 — bottom-right */
+.float3d--leaf-3 {
+  width: 50px; height: 50px;
+  bottom: 15%; right: 15%;
+  animation: float3d-drift-1 15s ease-in-out infinite reverse 2s;
+}
+
+/* Glass orb gold — top-center */
+.float3d--orb-2 {
+  width: 50px; height: 50px;
+  top: 8%; left: 50%;
+  animation: float3d-drift-2 14s ease-in-out infinite 5s;
+}
+
+/* Tiny dots */
+.float3d--dot-1 { top: 30%; left: 18%; animation: float3d-drift-6 10s ease-in-out infinite; }
+.float3d--dot-2 { top: 65%; right: 20%; animation: float3d-drift-6 12s ease-in-out infinite 3s; }
+.float3d--dot-3 { bottom: 30%; left: 40%; animation: float3d-drift-6 11s ease-in-out infinite 6s; }
+
+.float3d-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(74, 124, 89, 0.3), rgba(74, 124, 89, 0.08));
+  box-shadow: 0 0 20px rgba(74, 124, 89, 0.1);
+}
+
+.float3d-dot--gold {
+  background: radial-gradient(circle at 30% 30%, rgba(200, 162, 92, 0.35), rgba(200, 162, 92, 0.08));
+  box-shadow: 0 0 20px rgba(200, 162, 92, 0.1);
+}
+
+/* 3D Glass Orbs */
+.glass-orb {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.5) 0%, rgba(209, 232, 213, 0.25) 40%, rgba(74, 124, 89, 0.1) 100%);
+  box-shadow:
+    inset -6px -8px 20px rgba(74, 124, 89, 0.1),
+    inset 4px 4px 15px rgba(255, 255, 255, 0.4),
+    0 8px 32px rgba(74, 124, 89, 0.08);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.glass-orb--gold {
+  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.5) 0%, rgba(240, 222, 176, 0.3) 40%, rgba(200, 162, 92, 0.1) 100%);
+  box-shadow:
+    inset -6px -8px 20px rgba(200, 162, 92, 0.1),
+    inset 4px 4px 15px rgba(255, 255, 255, 0.4),
+    0 8px 32px rgba(200, 162, 92, 0.08);
+}
+
+/* 3D drift keyframes — each with unique rotateX/Y/Z + translateZ for depth */
+@keyframes float3d-drift-1 {
+  0%, 100% { transform: translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  25% { transform: translateY(-20px) translateZ(30px) rotateX(8deg) rotateY(-12deg) rotateZ(5deg); }
+  50% { transform: translateY(-35px) translateZ(15px) rotateX(-5deg) rotateY(8deg) rotateZ(-3deg); }
+  75% { transform: translateY(-15px) translateZ(40px) rotateX(10deg) rotateY(-5deg) rotateZ(8deg); }
+}
+
+@keyframes float3d-drift-2 {
+  0%, 100% { transform: translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) scale(1); }
+  33% { transform: translateY(-25px) translateZ(25px) rotateX(-10deg) rotateY(15deg) scale(1.08); }
+  66% { transform: translateY(-40px) translateZ(45px) rotateX(12deg) rotateY(-8deg) scale(0.95); }
+}
+
+@keyframes float3d-drift-3 {
+  0%, 100% { transform: translateY(0) translateZ(0) rotateY(0deg) rotateZ(0deg); }
+  30% { transform: translateY(-18px) translateZ(35px) rotateY(15deg) rotateZ(-6deg); }
+  60% { transform: translateY(-30px) translateZ(20px) rotateY(-10deg) rotateZ(4deg); }
+  80% { transform: translateY(-12px) translateZ(50px) rotateY(6deg) rotateZ(-8deg); }
+}
+
+@keyframes float3d-drift-4 {
+  0%, 100% { transform: translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) scale(1); }
+  50% { transform: translateY(-30px) translateZ(60px) rotateX(15deg) rotateY(-15deg) scale(1.12); }
+}
+
+@keyframes float3d-drift-5 {
+  0%, 100% { transform: translateY(0) translateZ(0) rotateZ(0deg) rotateX(0deg); }
+  25% { transform: translateY(-22px) translateZ(20px) rotateZ(10deg) rotateX(-8deg); }
+  50% { transform: translateY(-10px) translateZ(40px) rotateZ(-5deg) rotateX(12deg); }
+  75% { transform: translateY(-28px) translateZ(15px) rotateZ(8deg) rotateX(-5deg); }
+}
+
+@keyframes float3d-drift-6 {
+  0%, 100% { transform: translateY(0) translateZ(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) translateZ(30px) scale(1.3); opacity: 1; }
+}
+
+/* ===================== 3D MOUSE PERSPECTIVE (hero scene) ===================== */
+[data-scene-3d] {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+}
+
+/* ===================== 3D TRUST ICON CUBE ===================== */
+.cube-wrap {
+  perspective: 200px;
+}
+
+.cube {
+  width: 100%; height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cube__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+.cube__face--front {
+  transform: translateZ(28px);
+}
+
+.cube__face--top {
+  transform: rotateX(90deg) translateZ(28px);
+}
+
+.cube__face--top svg {
+  color: var(--color-white);
+}
+
+.trust-item:hover .cube {
+  transform: rotateX(-90deg);
+}
+
+/* ===================== 3D PILLAR CARD DEPTH ===================== */
+.pillar-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.pillar-card__icon {
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pillar-card:hover .pillar-card__icon {
+  transform: scale(1.08) translateZ(40px) rotateY(10deg);
+}
+
+.pillar-card__title,
+.pillar-card__text {
+  transition: transform 0.4s var(--ease-out);
+}
+
+.pillar-card:hover .pillar-card__title {
+  transform: translateZ(20px);
+}
+
+.pillar-card:hover .pillar-card__text {
+  transform: translateZ(10px);
+}
+
+/* ===================== 3D SERVICE CARD LAYERS ===================== */
+.service-block {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.service-block__illustration {
+  transition: transform 0.6s var(--ease-out);
+  transform-style: preserve-3d;
+}
+
+.service-block:hover .service-block__illustration {
+  transform: translateZ(30px) rotateY(-3deg);
+}
+
+.service-block__content {
+  transition: transform 0.5s var(--ease-out);
+}
+
+.service-block:hover .service-block__content {
+  transform: translateZ(15px);
+}
+
+/* ===================== 3D HERO FLOAT BADGE DEPTH ===================== */
+.hero__float-badge {
+  transform-style: preserve-3d;
+}
+
+.hero__float-badge .badge-icon {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero__float-badge:hover .badge-icon {
+  transform: translateZ(20px) rotateY(15deg);
+}
+
+/* ===================== 3D ABOUT ACCENT BOX ===================== */
+.about__accent-box {
+  transform-style: preserve-3d;
+  animation: accent-float-3d 6s ease-in-out infinite;
+}
+
+@keyframes accent-float-3d {
+  0%, 100% { transform: translateY(0) translateZ(0) rotateX(0deg); }
+  50% { transform: translateY(-8px) translateZ(20px) rotateX(5deg); }
+}
+
+/* ===================== 3D TESTIMONIAL DEPTH ===================== */
+.testimonial-card {
+  transform-style: preserve-3d;
+}
+
+.testimonial__quote-mark {
+  transition: transform 0.5s var(--ease-out);
+}
+
+.testimonial-card:hover .testimonial__quote-mark {
+  transform: translateZ(30px) rotateZ(-8deg) scale(1.15);
+}
+
+/* ===================== 3D CTA SECTION DEPTH ===================== */
+.cta {
+  perspective: 1000px;
+}
+
+.cta__content {
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.cta:hover .cta__content {
+  transform: translateZ(10px);
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
+  .float3d-scene { display: none; }
   .hero__inner { grid-template-columns: 1fr; text-align: center; }
   .hero__text { margin-left: auto; margin-right: auto; }
   .hero__actions { justify-content: center; }
@@ -1745,7 +2042,8 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
     transition-duration: 0.01ms !important;
   }
   .scroll-progress,
-  .cursor-glow { display: none !important; }
+  .cursor-glow,
+  .float3d-scene { display: none !important; }
   .fade-up { opacity: 1; transform: none; }
   .hero__content > * { opacity: 1; transform: none; }
   .hero__visual { opacity: 1; transform: none; }

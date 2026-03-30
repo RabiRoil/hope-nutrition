@@ -176,9 +176,9 @@
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width;
         const y = (e.clientY - rect.top) / rect.height;
-        const tiltX = (y - 0.5) * -6; // degrees
-        const tiltY = (x - 0.5) * 6;
-        card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
+        const tiltX = (y - 0.5) * -10; // degrees — stronger 3D tilt
+        const tiltY = (x - 0.5) * 10;
+        card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(10px) translateY(-4px)`;
 
         // spotlight glow
         card.style.setProperty('--glow-x', `${x * 100}%`);
@@ -383,6 +383,77 @@
     });
   }
 
+  /* ========== 3D HERO MOUSE PERSPECTIVE ========== */
+  function init3DScene() {
+    if (isMobile()) return;
+
+    const scene = qs('[data-scene-3d]');
+    if (!scene) return;
+
+    const hero = qs('.hero');
+    if (!hero) return;
+
+    let currentX = 0, currentY = 0, targetX = 0, targetY = 0;
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;  // -0.5 to 0.5
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      targetX = y * -3;   // subtle rotateX
+      targetY = x * 3;    // subtle rotateY
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      targetX = 0;
+      targetY = 0;
+    });
+
+    const float3dEls = qsa('.float3d');
+
+    function animate() {
+      currentX = lerp(currentX, targetX, 0.06);
+      currentY = lerp(currentY, targetY, 0.06);
+
+      scene.style.transform = `perspective(1200px) rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+
+      // Extra depth parallax on floating elements — move opposite to scene tilt
+      float3dEls.forEach((el, i) => {
+        const depth = 1 + (i % 4) * 0.6; // vary depth multiplier per element
+        const extraX = currentY * depth * -4;
+        const extraY = currentX * depth * 4;
+        el.style.setProperty('--mouse-x', `${extraX}px`);
+        el.style.setProperty('--mouse-y', `${extraY}px`);
+      });
+
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+  }
+
+  /* ========== 3D DEPTH SCROLL ========== */
+  function init3DScrollDepth() {
+    if (isMobile()) return;
+
+    const sections = qsa('.section');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const ratio = e.intersectionRatio;
+          const el = e.target;
+          const scale = 0.96 + (ratio * 0.04);
+          const translateZ = (1 - ratio) * -30;
+          el.style.transform = `perspective(1200px) translateZ(${translateZ}px) scale(${scale})`;
+          el.style.opacity = 0.7 + (ratio * 0.3);
+        }
+      });
+    }, { threshold: Array.from({ length: 20 }, (_, i) => i / 19) });
+
+    sections.forEach(s => {
+      s.style.transition = 'transform 0.1s linear, opacity 0.1s linear';
+      io.observe(s);
+    });
+  }
+
   /* ========== INIT ========== */
   document.addEventListener('DOMContentLoaded', () => {
     orchestrateLoad();
@@ -401,6 +472,8 @@
     initSmoothScroll(header);
     initActiveNav(header);
     initSectionBorders();
+    init3DScene();
+    init3DScrollDepth();
   });
 
 })();
