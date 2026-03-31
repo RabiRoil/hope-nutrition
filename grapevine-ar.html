@@ -1,43 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GrapeVine — A visual summary of the whole-food, plant-based guide by Hope Nutrition. Evidence-based principles, infographics, and practical guidance.">
+  <meta name="description" content="جريب فاين — ملخص مرئي لدليل الغذاء النباتي الكامل من Hope Nutrition. مبادئ قائمة على الأدلة ورسوم بيانية وإرشادات عملية.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#8DC63F">
-  <link rel="canonical" href="https://hopenutrition.com.au/grapevine.html">
-  <meta property="og:title" content="GrapeVine Visual Summary — Hope Nutrition">
-  <meta property="og:description" content="A visual summary of essential whole-food plant-based principles, infographics, and practical guidance for lasting health.">
+  <link rel="canonical" href="https://hopenutrition.com.au/grapevine-ar.html">
+  <meta property="og:title" content="جريب فاين — ملخص مرئي — Hope Nutrition">
+  <meta property="og:description" content="ملخص مرئي للمبادئ الأساسية للغذاء النباتي الكامل مع رسوم بيانية وإرشادات عملية لصحة دائمة.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://hopenutrition.com.au/grapevine.html">
-  <meta property="og:locale" content="en_AU">
+  <meta property="og:url" content="https://hopenutrition.com.au/grapevine-ar.html">
+  <meta property="og:locale" content="ar">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GrapeVine Visual Summary — Hope Nutrition">
-  <meta name="twitter:description" content="A visual summary of essential whole-food plant-based principles, infographics, and practical guidance for lasting health.">
-  <title>GrapeVine Visual Summary — Hope Nutrition</title>
+  <meta name="twitter:title" content="جريب فاين — ملخص مرئي — Hope Nutrition">
+  <meta name="twitter:description" content="ملخص مرئي للمبادئ الأساسية للغذاء النباتي الكامل مع رسوم بيانية وإرشادات عملية لصحة دائمة.">
+  <title>جريب فاين — ملخص مرئي — Hope Nutrition</title>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hopenutrition.com.au" },
-      { "@type": "ListItem", "position": 2, "name": "Booklets", "item": "https://hopenutrition.com.au/booklets.html" },
-      { "@type": "ListItem", "position": 3, "name": "GrapeVine Visual Summary", "item": "https://hopenutrition.com.au/grapevine.html" }
+      { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://hopenutrition.com.au" },
+      { "@type": "ListItem", "position": 2, "name": "الكتيبات", "item": "https://hopenutrition.com.au/booklets.html" },
+      { "@type": "ListItem", "position": 3, "name": "جريب فاين — ملخص مرئي", "item": "https://hopenutrition.com.au/grapevine-ar.html" }
     ]
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&family=Noto+Sans+Arabic:wght@600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <style>
     /* ═══════════════════════════════════════
-       GrapeVine Page — Themed Components
+       GrapeVine Arabic — RTL Themed Components
        ═══════════════════════════════════════ */
+
+    /* ─── Arabic Font Override ─── */
+    :root {
+      --font-ar: 'Noto Sans Arabic', 'Noto Naskh Arabic', 'Tahoma', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-ar);
+      direction: rtl;
+      text-align: right;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-ar);
+    }
+
+    /* Keep header LTR for navigation */
+    .header { direction: ltr; text-align: left; }
+    .footer { direction: ltr; text-align: left; }
 
     /* ─── Scroll Animations ─── */
     .gv-reveal {
@@ -67,13 +86,14 @@
       overflow: hidden;
       text-align: center;
       padding: 6rem 2rem 4rem;
+      direction: rtl;
     }
 
     .gv-cover::before {
       content: '';
       position: absolute;
       top: -20%;
-      right: -10%;
+      left: -10%;
       width: 70vw;
       height: 70vw;
       border-radius: 50%;
@@ -84,10 +104,11 @@
     .gv-cover-vine-top {
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       width: 100%;
       height: 200px;
       pointer-events: none;
+      transform: scaleX(-1);
     }
 
     .gv-cover-grape {
@@ -111,11 +132,10 @@
 
     .gv-cover h1 span {
       display: block;
-      font-size: 0.28em;
-      font-family: var(--font-body);
-      font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
+      font-size: 0.32em;
+      font-family: var(--font-ar);
+      font-weight: 600;
+      letter-spacing: 0.1em;
       color: var(--color-primary);
       margin-top: 0.5em;
     }
@@ -130,17 +150,17 @@
     .gv-cover-subtitle {
       font-size: 1.1rem;
       color: var(--color-text-muted);
-      font-family: var(--font-accent);
       font-style: italic;
-      max-width: 400px;
+      max-width: 450px;
       margin: 0 auto 2rem;
+      line-height: 1.8;
     }
 
     .gv-cover-author {
-      font-family: var(--font-body);
-      font-size: 0.82rem;
+      font-family: var(--font-ar);
+      font-size: 0.85rem;
       color: var(--color-text-muted);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
     }
 
     .gv-cover-author strong {
@@ -158,10 +178,9 @@
       align-items: center;
       gap: 0.4rem;
       color: var(--color-text-muted);
-      font-family: var(--font-body);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+      font-family: var(--font-ar);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
       animation: gvPulse 2s ease-in-out infinite;
     }
 
@@ -178,10 +197,12 @@
       margin: 0 auto;
       padding: 5rem 2rem;
       position: relative;
+      direction: rtl;
+      text-align: right;
     }
 
     .gv-section-number {
-      font-family: var(--font-heading);
+      font-family: var(--font-ar);
       font-size: 5rem;
       font-weight: 800;
       color: var(--color-primary-lighter);
@@ -202,10 +223,10 @@
     .gv-section-lead {
       font-size: 1.1rem;
       color: var(--color-text-muted);
-      font-family: var(--font-accent);
       font-style: italic;
       max-width: 600px;
       margin-bottom: 2.5rem;
+      line-height: 1.8;
     }
 
     .gv-vine-divider {
@@ -275,17 +296,18 @@
 
     .gv-pillar li {
       padding: 0.4rem 0;
-      padding-left: 1.6rem;
+      padding-right: 1.6rem;
       position: relative;
       font-size: 0.95rem;
       color: var(--color-text);
+      line-height: 1.8;
     }
 
     .gv-pillar li::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0.7rem;
+      right: 0;
+      top: 0.85rem;
       width: 8px;
       height: 8px;
       border-radius: 50%;
@@ -304,10 +326,10 @@
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
       color: white;
       border-radius: var(--radius-full);
-      font-family: var(--font-body);
+      font-family: var(--font-ar);
       font-weight: 600;
       font-size: 0.95rem;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       max-width: fit-content;
       box-shadow: var(--shadow-glow-green);
     }
@@ -340,7 +362,7 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       width: 5px;
       height: 100%;
     }
@@ -368,7 +390,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-body);
+      font-family: var(--font-ar);
       font-weight: 700;
       font-size: 0.85rem;
       color: white;
@@ -382,7 +404,7 @@
 
     .gv-nova-card h4 {
       font-size: 1rem;
-      font-family: var(--font-body);
+      font-family: var(--font-ar);
       font-weight: 600;
     }
 
@@ -392,20 +414,19 @@
     .gv-nova-4 h4 { color: #8a2040; }
 
     .gv-nova-card p {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--color-text);
       margin-bottom: 0.6rem;
+      line-height: 1.8;
     }
 
     .gv-nova-badge {
       display: inline-block;
       padding: 0.25rem 0.8rem;
       border-radius: var(--radius-full);
-      font-family: var(--font-body);
-      font-size: 0.72rem;
+      font-family: var(--font-ar);
+      font-size: 0.76rem;
       font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
       color: white;
       margin-top: 0.4rem;
     }
@@ -484,14 +505,14 @@
 
     .gv-comp-item strong {
       display: block;
-      font-family: var(--font-body);
-      font-size: 0.88rem;
+      font-family: var(--font-ar);
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--color-primary-darker);
     }
 
     .gv-comp-item span {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--color-text-muted);
     }
 
@@ -520,7 +541,7 @@
     .gv-stat-card:hover { transform: translateY(-3px); }
 
     .gv-stat-num {
-      font-family: var(--font-heading);
+      font-family: var(--font-ar);
       font-size: 2.6rem;
       font-weight: 800;
       line-height: 1;
@@ -528,11 +549,9 @@
     }
 
     .gv-stat-label {
-      font-family: var(--font-body);
-      font-size: 0.78rem;
+      font-family: var(--font-ar);
+      font-size: 0.8rem;
       color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
     }
 
     /* ─── Health Circles ─── */
@@ -576,25 +595,25 @@
     }
 
     .gv-health-circle h4 {
-      font-family: var(--font-body);
-      font-size: 0.82rem;
+      font-family: var(--font-ar);
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--color-primary-dark);
       margin-bottom: 0.2rem;
     }
 
     .gv-health-circle p {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--color-text-muted);
-      line-height: 1.4;
+      line-height: 1.6;
     }
 
     /* ─── Environment Bars ─── */
     .gv-env-bar-group { margin: 1.2rem 0; }
 
     .gv-env-bar-label {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
+      font-family: var(--font-ar);
+      font-size: 0.88rem;
       font-weight: 500;
       color: var(--color-text);
       margin-bottom: 0.4rem;
@@ -606,14 +625,15 @@
       border-radius: var(--radius-sm);
       overflow: hidden;
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+      direction: ltr;
     }
 
     .gv-env-bar-segment {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-body);
-      font-size: 0.72rem;
+      font-family: var(--font-ar);
+      font-size: 0.74rem;
       font-weight: 600;
       color: white;
     }
@@ -652,11 +672,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-body);
-      font-size: 0.68rem;
+      font-family: var(--font-ar);
+      font-size: 0.72rem;
       font-weight: 600;
       text-align: center;
-      line-height: 1.2;
+      line-height: 1.3;
       z-index: 1;
     }
 
@@ -673,7 +693,7 @@
     }
 
     .gv-vs-badge {
-      font-family: var(--font-heading);
+      font-family: var(--font-ar);
       font-size: 2rem;
       font-weight: 700;
       color: var(--color-accent);
@@ -701,7 +721,7 @@
     }
 
     .gv-key-card:hover {
-      transform: translateX(6px);
+      transform: translateX(-6px);
       box-shadow: var(--shadow-md);
     }
 
@@ -714,24 +734,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-heading);
+      font-family: var(--font-ar);
       font-size: 1.2rem;
       font-weight: 700;
       flex-shrink: 0;
     }
 
     .gv-key-card h4 {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
+      font-family: var(--font-ar);
+      font-size: 0.98rem;
       font-weight: 600;
       color: var(--color-primary-darker);
     }
 
     .gv-key-card p {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: var(--color-text-muted);
       margin-top: 0.1rem;
       margin-bottom: 0;
+      line-height: 1.7;
     }
 
     /* ─── Nutrient Cards ─── */
@@ -765,8 +786,8 @@
     .gv-nc-header::after {
       content: '+';
       position: absolute;
-      right: 1.5rem;
-      font-family: var(--font-body);
+      left: 1.5rem;
+      font-family: var(--font-ar);
       font-size: 1.4rem;
       font-weight: 300;
       color: var(--color-text-muted);
@@ -790,15 +811,14 @@
     .gv-nc-color svg { width: 24px; height: 24px; }
 
     .gv-nc-header h4 {
-      font-family: var(--font-body);
+      font-family: var(--font-ar);
       font-size: 1rem;
       font-weight: 600;
     }
 
     .gv-nc-myth {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--color-text-muted);
-      font-family: var(--font-accent);
       font-style: italic;
     }
 
@@ -818,13 +838,13 @@
       padding: 0.8rem 1rem;
       border-radius: 10px;
       margin-bottom: 0.8rem;
-      font-size: 0.9rem;
-      line-height: 1.6;
+      font-size: 0.92rem;
+      line-height: 1.8;
     }
 
     .gv-nc-sources {
-      font-family: var(--font-body);
-      font-size: 0.82rem;
+      font-family: var(--font-ar);
+      font-size: 0.84rem;
     }
 
     .gv-nc-sources strong {
@@ -878,29 +898,29 @@
     }
 
     .gv-legend-item h4 {
-      font-family: var(--font-body);
-      font-size: 0.88rem;
+      font-family: var(--font-ar);
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--color-primary-darker);
     }
 
     .gv-legend-item p {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--color-text-muted);
-      line-height: 1.4;
+      line-height: 1.6;
     }
 
     /* ─── Shopping Tips ─── */
     .gv-tip-timeline {
       position: relative;
-      padding-left: 3rem;
+      padding-right: 3rem;
       margin: 2rem 0;
     }
 
     .gv-tip-timeline::before {
       content: '';
       position: absolute;
-      left: 15px;
+      right: 15px;
       top: 0;
       bottom: 0;
       width: 2px;
@@ -914,23 +934,23 @@
       background: var(--color-surface);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
-      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    .gv-tip-item:hover { transform: translateX(4px); }
+    .gv-tip-item:hover { transform: translateX(-4px); }
 
-    .gv-tip-item:nth-child(1) { border-left-color: var(--color-accent); }
-    .gv-tip-item:nth-child(2) { border-left-color: #D9685A; }
-    .gv-tip-item:nth-child(3) { border-left-color: var(--color-primary); }
-    .gv-tip-item:nth-child(4) { border-left-color: #5A9EC9; }
-    .gv-tip-item:nth-child(5) { border-left-color: var(--color-primary-dark); }
-    .gv-tip-item:nth-child(6) { border-left-color: var(--color-accent-dark); }
-    .gv-tip-item:nth-child(7) { border-left-color: var(--color-primary-darker); }
+    .gv-tip-item:nth-child(1) { border-right-color: var(--color-accent); }
+    .gv-tip-item:nth-child(2) { border-right-color: #D9685A; }
+    .gv-tip-item:nth-child(3) { border-right-color: var(--color-primary); }
+    .gv-tip-item:nth-child(4) { border-right-color: #5A9EC9; }
+    .gv-tip-item:nth-child(5) { border-right-color: var(--color-primary-dark); }
+    .gv-tip-item:nth-child(6) { border-right-color: var(--color-accent-dark); }
+    .gv-tip-item:nth-child(7) { border-right-color: var(--color-primary-darker); }
 
     .gv-tip-dot {
       position: absolute;
-      left: -2.65rem;
+      right: -2.65rem;
       top: 1.3rem;
       width: 26px;
       height: 26px;
@@ -938,8 +958,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-body);
-      font-size: 0.72rem;
+      font-family: var(--font-ar);
+      font-size: 0.74rem;
       font-weight: 700;
       color: white;
       z-index: 1;
@@ -954,17 +974,17 @@
     .gv-tip-item:nth-child(7) .gv-tip-dot { background: var(--color-primary-darker); }
 
     .gv-tip-item h4 {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
+      font-family: var(--font-ar);
+      font-size: 0.98rem;
       font-weight: 600;
       color: var(--color-primary-darker);
       margin-bottom: 0.3rem;
     }
 
     .gv-tip-item p {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--color-text-muted);
-      line-height: 1.5;
+      line-height: 1.7;
       margin-bottom: 0;
     }
 
@@ -1000,28 +1020,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-body);
+      font-family: var(--font-ar);
       font-weight: 700;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: white;
       flex-shrink: 0;
     }
 
     .gv-qa-q p {
       color: white;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
+      font-family: var(--font-ar);
+      font-size: 0.92rem;
       font-weight: 500;
-      line-height: 1.4;
+      line-height: 1.6;
       margin-bottom: 0;
     }
 
     .gv-qa-a {
       padding: 1.2rem 1.4rem;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       color: var(--color-text);
-      line-height: 1.65;
-      border-left: 3px solid var(--color-primary-light);
+      line-height: 1.8;
+      border-right: 3px solid var(--color-primary-light);
       margin: 0;
     }
 
@@ -1048,7 +1068,7 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       width: 100%;
       height: 4px;
     }
@@ -1076,7 +1096,8 @@
     .gv-resource-item {
       padding: 0.5rem 0;
       border-bottom: 1px dashed var(--color-border-light);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
     }
 
     .gv-resource-item:last-child { border-bottom: none; }
@@ -1088,7 +1109,7 @@
 
     .gv-resource-item em {
       color: var(--color-text-muted);
-      font-size: 0.82rem;
+      font-size: 0.84rem;
     }
 
     /* ─── Closing ─── */
@@ -1097,6 +1118,7 @@
       padding: 6rem 2rem;
       background: linear-gradient(175deg, var(--color-bg-warm) 0%, var(--color-primary-lighter) 100%);
       position: relative;
+      direction: rtl;
     }
 
     .gv-closing h2 {
@@ -1114,16 +1136,16 @@
 
     .gv-closing-quote {
       font-size: 1.15rem;
-      font-family: var(--font-accent);
       font-style: italic;
       color: var(--color-text-secondary);
       max-width: 440px;
       margin: 0 auto 2rem;
+      line-height: 1.8;
     }
 
     .gv-closing-footer {
-      font-family: var(--font-body);
-      font-size: 0.78rem;
+      font-family: var(--font-ar);
+      font-size: 0.8rem;
       color: var(--color-text-muted);
       margin-top: 2rem;
     }
@@ -1136,14 +1158,14 @@
       background: #fef6f0;
       border: 1px solid #f2b8ae;
       border-radius: var(--radius-md);
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--color-text-muted);
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     .gv-disclaimer strong {
       color: #D9685A;
-      font-family: var(--font-body);
+      font-family: var(--font-ar);
     }
 
     /* ─── Pro Tip Box ─── */
@@ -1157,20 +1179,23 @@
 
     .gv-pro-tip strong {
       color: var(--color-primary-darker);
-      font-family: var(--font-body);
-      font-size: 0.9rem;
+      font-family: var(--font-ar);
+      font-size: 0.92rem;
     }
 
     .gv-pro-tip span {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--color-text);
+      line-height: 1.7;
     }
 
     /* ─── Breadcrumb ─── */
     .gv-breadcrumb {
       padding: 1rem 0;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--color-text-muted);
+      direction: rtl;
+      text-align: right;
     }
     .gv-breadcrumb a {
       color: var(--color-primary);
@@ -1183,26 +1208,16 @@
     .gv-section p { margin-bottom: 0.6rem; }
     .gv-italic-note {
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.87rem;
       color: var(--color-text-muted);
-      font-family: var(--font-accent);
       font-style: italic;
-    }
-
-    /* ─── Print ─── */
-    @media print {
-      .gv-reveal { opacity: 1 !important; transform: none !important; }
-      .gv-cover { min-height: auto; page-break-after: always; }
-      .gv-section { page-break-inside: avoid; }
-      .gv-scroll-hint { display: none; }
-      .gv-lang-toggle { display: none; }
     }
 
     /* ─── Language toggle ─── */
     .gv-lang-toggle {
       position: fixed;
       top: 80px;
-      right: 1.5rem;
+      left: 1.5rem;
       z-index: 100;
       background: var(--color-primary);
       color: white;
@@ -1213,16 +1228,25 @@
       text-decoration: none;
       box-shadow: var(--shadow-md);
       transition: background 0.3s ease;
-      font-family: 'Noto Sans Arabic', 'Tahoma', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
     .gv-lang-toggle:hover { background: var(--color-primary-dark); }
+
+    /* ─── Print ─── */
+    @media print {
+      .gv-reveal { opacity: 1 !important; transform: none !important; }
+      .gv-cover { min-height: auto; page-break-after: always; }
+      .gv-section { page-break-inside: avoid; }
+      .gv-scroll-hint { display: none; }
+      .gv-lang-toggle { display: none; }
+    }
   </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Language Toggle -->
-  <a href="grapevine-ar.html" class="gv-lang-toggle" aria-label="التبديل إلى العربية">العربية</a>
+  <a href="grapevine.html" class="gv-lang-toggle" aria-label="Switch to English">English</a>
 
   <!-- ========== HEADER ========== -->
   <header class="header" role="banner">
@@ -1253,7 +1277,7 @@
   <main id="main-content">
 
   <!-- ═══════════════════════════════════════
-       COVER
+       الغلاف
        ═══════════════════════════════════════ -->
   <section class="gv-cover">
     <svg class="gv-cover-vine-top" viewBox="0 0 900 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1273,7 +1297,6 @@
       </g>
     </svg>
 
-    <!-- Grape Cluster SVG - recolored to theme greens/golds -->
     <svg class="gv-cover-grape" width="180" height="220" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M90 30 Q92 15, 88 5" stroke="#6B9A2F" stroke-width="3" stroke-linecap="round" fill="none"/>
       <path d="M88 8 Q82 2, 78 12 Q75 20, 82 18 Q86 14, 88 8Z" fill="#A8D670" stroke="#6B9A2F" stroke-width="1"/>
@@ -1324,33 +1347,33 @@
       </defs>
     </svg>
 
-    <h1>GrapeVine<span>The Whole Food Plant-Based Guide</span></h1>
+    <h1>جريب فاين<span>دليل الغذاء النباتي الكامل</span></h1>
     <div class="gv-divider"></div>
-    <p class="gv-cover-subtitle">A visual summary of essential principles, infographics, and practical guidance for lasting health.</p>
-    <p class="gv-cover-author">Based on the work of <strong>Ramsina Roil</strong> · Clinical Nutritionist · Hope Nutrition</p>
+    <p class="gv-cover-subtitle">ملخص مرئي للمبادئ الأساسية والرسوم البيانية والإرشادات العملية لصحة دائمة.</p>
+    <p class="gv-cover-author">بناءً على أعمال <strong>رامسينا رويل</strong> · أخصائية تغذية سريرية · Hope Nutrition</p>
 
     <div class="gv-scroll-hint">
-      <span>Scroll to explore</span>
+      <span>مرر للاستكشاف</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
+  <!-- مسار التنقل -->
   <div class="container">
-    <nav class="gv-breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a><span>›</span>
-      <a href="booklets.html">Booklets</a><span>›</span>
-      GrapeVine Visual Summary
+    <nav class="gv-breadcrumb" aria-label="مسار التنقل">
+      <a href="index.html">الرئيسية</a><span>‹</span>
+      <a href="booklets.html">الكتيبات</a><span>‹</span>
+      جريب فاين — ملخص مرئي
     </nav>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 01: WHAT IS WFPB
+       القسم ٠١: ما هو الغذاء النباتي الكامل
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">01</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">What is Whole Food Plant-Based?</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">Two simple principles that work together to transform your health.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠١</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">ما هو الغذاء النباتي الكامل؟</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">مبدآن بسيطان يعملان معاً لتحويل صحتك.</p>
 
     <div class="gv-pillars">
       <div class="gv-pillar gv-pillar--whole gv-reveal gv-delay-2">
@@ -1361,13 +1384,13 @@
           <path d="M28 22 L20 28" stroke="#6B9A2F" stroke-width="0.7" opacity="0.4"/>
           <path d="M28 28 L36 24" stroke="#6B9A2F" stroke-width="0.7" opacity="0.4"/>
         </svg>
-        <h3>Whole</h3>
+        <h3>كامل</h3>
         <ul>
-          <li>Foods close to their natural state</li>
-          <li>Rich in fibre, vitamins, minerals &amp; antioxidants</li>
-          <li>Minimal processing to preserve nutrition</li>
-          <li>Cooking &amp; seasoning are encouraged</li>
-          <li>No artificial additives or heavy modification</li>
+          <li>أطعمة قريبة من حالتها الطبيعية</li>
+          <li>غنية بالألياف والفيتامينات والمعادن ومضادات الأكسدة</li>
+          <li>معالجة بسيطة للحفاظ على القيمة الغذائية</li>
+          <li>الطبخ والتتبيل مُشجَّع ومرحب به</li>
+          <li>بدون إضافات صناعية أو تعديل مفرط</li>
         </ul>
       </div>
       <div class="gv-pillar gv-pillar--plant gv-reveal gv-delay-3">
@@ -1385,285 +1408,285 @@
             <radialGradient id="gvP2" cx="35%" cy="30%"><stop offset="0%" stop-color="#A8D670"/><stop offset="100%" stop-color="#6B9A2F"/></radialGradient>
           </defs>
         </svg>
-        <h3>Plant-Based</h3>
+        <h3>نباتي</h3>
         <ul>
-          <li>Vegetables, fruits, whole grains, legumes</li>
-          <li>Nuts, seeds, herbs &amp; spices</li>
-          <li>Minimise or exclude animal products</li>
-          <li>Emphasis on variety and abundance</li>
-          <li>Hundreds of ingredients to explore</li>
+          <li>خضروات، فواكه، حبوب كاملة، بقوليات</li>
+          <li>مكسرات، بذور، أعشاب وتوابل</li>
+          <li>تقليل أو استبعاد المنتجات الحيوانية</li>
+          <li>التركيز على التنوع والوفرة</li>
+          <li>مئات المكونات لاستكشافها</li>
         </ul>
       </div>
     </div>
 
     <div class="gv-connector gv-reveal gv-delay-4">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      Whole + Plant-Based = A Sustainable Lifestyle
+      كامل + نباتي = أسلوب حياة مستدام
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 02: NOVA CLASSIFICATION
+       القسم ٠٢: تصنيف نوفا
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">02</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">The NOVA Classification</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">How processed is your food? A system to help guide your choices.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠٢</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">تصنيف NOVA</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">ما مدى معالجة طعامك؟ نظام يساعدك على اختياراتك الغذائية.</p>
 
     <div class="gv-nova-grid">
       <div class="gv-nova-card gv-nova-1 gv-reveal gv-delay-1">
         <div class="gv-nova-header">
-          <div class="gv-nova-num">G1</div>
-          <h4>Unprocessed / Minimally Processed</h4>
+          <div class="gv-nova-num">م١</div>
+          <h4>غير معالج / معالج بالحد الأدنى</h4>
         </div>
-        <p>Fruits, vegetables, legumes, grains, nuts, herbs, spices. Frozen peas, rolled oats — still essentially whole.</p>
-        <div class="gv-nova-badge">Eat freely</div>
+        <p>فواكه، خضروات، بقوليات، حبوب، مكسرات، أعشاب، توابل. البازلاء المجمدة، الشوفان — لا تزال كاملة بشكل أساسي.</p>
+        <div class="gv-nova-badge">تناول بحرية</div>
       </div>
       <div class="gv-nova-card gv-nova-2 gv-reveal gv-delay-2">
         <div class="gv-nova-header">
-          <div class="gv-nova-num">G2</div>
-          <h4>Processed Culinary Ingredients</h4>
+          <div class="gv-nova-num">م٢</div>
+          <h4>مكونات الطبخ المعالجة</h4>
         </div>
-        <p>Oils, salt, sugar — used in small amounts to cook and flavour Group 1 foods. Not eaten on their own.</p>
-        <div class="gv-nova-badge">Use sparingly</div>
+        <p>زيوت، ملح، سكر — تُستخدم بكميات صغيرة لطهي وتنكيه أطعمة المجموعة الأولى. لا تؤكل وحدها.</p>
+        <div class="gv-nova-badge">استخدم باعتدال</div>
       </div>
       <div class="gv-nova-card gv-nova-3 gv-reveal gv-delay-3">
         <div class="gv-nova-header">
-          <div class="gv-nova-num">G3</div>
-          <h4>Processed Foods</h4>
+          <div class="gv-nova-num">م٣</div>
+          <h4>أطعمة معالجة</h4>
         </div>
-        <p>Canned beans, whole-grain bread — made by combining Group 1 + Group 2 foods with simple methods.</p>
-        <div class="gv-nova-badge">Choose wisely</div>
+        <p>فاصوليا معلبة، خبز الحبوب الكاملة — تُصنع بدمج أطعمة المجموعة الأولى والثانية بطرق بسيطة.</p>
+        <div class="gv-nova-badge">اختر بحكمة</div>
       </div>
       <div class="gv-nova-card gv-nova-4 gv-reveal gv-delay-4">
         <div class="gv-nova-header">
-          <div class="gv-nova-num">G4</div>
-          <h4>Ultra-Processed Foods</h4>
+          <div class="gv-nova-num">م٤</div>
+          <h4>أطعمة فائقة المعالجة</h4>
         </div>
-        <p>Packaged snacks, sugary cereals, soft drinks — heavily modified with artificial additives and preservatives.</p>
-        <div class="gv-nova-badge">Avoid / minimise</div>
+        <p>وجبات خفيفة مغلفة، حبوب سكرية، مشروبات غازية — معدلة بشكل كبير مع إضافات ومواد حافظة صناعية.</p>
+        <div class="gv-nova-badge">تجنب / قلل</div>
       </div>
     </div>
 
-    <p class="gv-italic-note gv-reveal" style="margin-top:1.5rem;">Based on the NOVA food classification system — Monteiro et al., 2018</p>
+    <p class="gv-italic-note gv-reveal" style="margin-top:1.5rem;">بناءً على نظام تصنيف الأغذية NOVA — مونتيرو وآخرون، ٢٠١٨</p>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 03: WHY WHOLE
+       القسم ٠٣: لماذا الأطعمة الكاملة
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">03</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">Why Whole Foods Matter</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">The treasure of whole foods vs the toll of ultra-processed ones.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠٣</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">لماذا الأطعمة الكاملة مهمة؟</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">كنز الأطعمة الكاملة مقابل أضرار الأطعمة فائقة المعالجة.</p>
 
     <div class="gv-comparison gv-reveal gv-delay-2">
       <div class="gv-comp-side gv-comp-good">
         <h3>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#8DC63F"/><path d="M8 12l3 3 5-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Whole Foods
+          أطعمة كاملة
         </h3>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>Vitamins &amp; Minerals</strong><span>Essential for every body function</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>Fibre</strong><span>Feeds gut microbiome, aids digestion</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>Antioxidants</strong><span>Protect cells from damage</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>Anti-inflammatory</strong><span>Reduce chronic inflammation</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>Immune Support</strong><span>Strengthen natural defences</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>Healing Potential</strong><span>Support recovery from conditions</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>فيتامينات ومعادن</strong><span>ضرورية لكل وظائف الجسم</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>ألياف</strong><span>تغذي ميكروبيوم الأمعاء وتساعد الهضم</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>مضادات أكسدة</strong><span>تحمي الخلايا من التلف</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>مضادة للالتهابات</strong><span>تقلل الالتهاب المزمن</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>دعم المناعة</strong><span>تعزز الدفاعات الطبيعية</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✦</div><div><strong>إمكانية الشفاء</strong><span>تدعم التعافي من الأمراض</span></div></div>
       </div>
       <div class="gv-comp-side gv-comp-bad">
         <h3>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#a83256"/><path d="M8 8l8 8M16 8l-8 8" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-          Ultra-Processed
+          فائقة المعالجة
         </h3>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>Obesity</strong><span>High sugar, fat, low fibre</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>Type 2 Diabetes</strong><span>Blood sugar dysregulation</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>Heart Disease</strong><span>Inflammation &amp; cholesterol</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>Cancer Risk</strong><span>Additives &amp; processed meats</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>Depression</strong><span>Gut-brain axis disruption</span></div></div>
-        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>Early Death</strong><span>Linked in large studies</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>السمنة</strong><span>سكر عالي، دهون عالية، ألياف قليلة</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>السكري النوع ٢</strong><span>اضطراب تنظيم سكر الدم</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>أمراض القلب</strong><span>التهاب وكوليسترول</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>خطر السرطان</strong><span>إضافات ولحوم معالجة</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>الاكتئاب</strong><span>اضطراب محور الأمعاء والدماغ</span></div></div>
+        <div class="gv-comp-item"><div class="gv-comp-icon">✕</div><div><strong>الوفاة المبكرة</strong><span>مرتبط في دراسات واسعة</span></div></div>
       </div>
     </div>
 
     <div class="gv-stats-row">
-      <div class="gv-stat-card gv-reveal gv-delay-1"><div class="gv-stat-num" style="color:#D9685A">330K+</div><div class="gv-stat-label">People studied</div></div>
-      <div class="gv-stat-card gv-reveal gv-delay-2"><div class="gv-stat-num" style="color:var(--color-primary)">20</div><div class="gv-stat-label">Studies reviewed</div></div>
-      <div class="gv-stat-card gv-reveal gv-delay-3"><div class="gv-stat-num" style="color:var(--color-accent)">7+</div><div class="gv-stat-label">Chronic conditions linked</div></div>
+      <div class="gv-stat-card gv-reveal gv-delay-1"><div class="gv-stat-num" style="color:#D9685A">+٣٣٠ ألف</div><div class="gv-stat-label">شخص شملتهم الدراسة</div></div>
+      <div class="gv-stat-card gv-reveal gv-delay-2"><div class="gv-stat-num" style="color:var(--color-primary)">٢٠</div><div class="gv-stat-label">دراسة تمت مراجعتها</div></div>
+      <div class="gv-stat-card gv-reveal gv-delay-3"><div class="gv-stat-num" style="color:var(--color-accent)">+٧</div><div class="gv-stat-label">أمراض مزمنة مرتبطة</div></div>
     </div>
 
-    <p class="gv-italic-note gv-reveal">Chen et al., 2020 — Nutrition Journal systematic review</p>
+    <p class="gv-italic-note gv-reveal">Chen et al., 2020 — مراجعة منهجية في Nutrition Journal</p>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 04: WHY PLANT-BASED
+       القسم ٠٤: لماذا نباتي
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">04</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">Why Plant-Based?</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">Two powerful reasons: your body and the planet.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠٤</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">لماذا الغذاء النباتي؟</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">سببان قويان: جسمك وكوكبك.</p>
 
-    <h3 class="gv-reveal" style="color:var(--color-primary-dark); font-size:1.3rem; margin-bottom:1rem;">Human Health Benefits</h3>
+    <h3 class="gv-reveal" style="color:var(--color-primary-dark); font-size:1.3rem; margin-bottom:1rem;">فوائد صحة الإنسان</h3>
 
     <div class="gv-health-circles gv-reveal">
       <div class="gv-health-circle">
         <div class="gv-hc-orb"><svg viewBox="0 0 32 32" fill="none"><path d="M16 4 C10 4, 4 10, 4 16 C4 24, 16 30, 16 30 C16 30, 28 24, 28 16 C28 10, 22 4, 16 4Z" fill="white" opacity="0.9"/></svg></div>
-        <h4>Lower BMI</h4>
-        <p>Natural weight management without strict portion control</p>
+        <h4>وزن صحي</h4>
+        <p>إدارة طبيعية للوزن بدون تقييد صارم للحصص</p>
       </div>
       <div class="gv-health-circle">
         <div class="gv-hc-orb"><svg viewBox="0 0 32 32" fill="none"><path d="M16 6 L18 14 L26 14 L20 19 L22 27 L16 22 L10 27 L12 19 L6 14 L14 14Z" fill="white" opacity="0.9"/></svg></div>
-        <h4>Heart Health</h4>
-        <p>Reduced cardiovascular disease risk</p>
+        <h4>صحة القلب</h4>
+        <p>تقليل خطر أمراض القلب والأوعية الدموية</p>
       </div>
       <div class="gv-health-circle">
         <div class="gv-hc-orb"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="8" fill="none" stroke="white" stroke-width="2" opacity="0.9"/><path d="M12 16 h8 M16 12 v8" stroke="white" stroke-width="2" opacity="0.9"/></svg></div>
-        <h4>Diabetes</h4>
-        <p>Better blood glucose regulation</p>
+        <h4>السكري</h4>
+        <p>تنظيم أفضل لمستوى الجلوكوز في الدم</p>
       </div>
       <div class="gv-health-circle">
         <div class="gv-hc-orb"><svg viewBox="0 0 32 32" fill="none"><path d="M10 22 L10 12 L14 12 L14 18 L18 18 L18 10 L22 10 L22 22Z" fill="white" opacity="0.9"/></svg></div>
-        <h4>Energy</h4>
-        <p>Improved vitality and digestion</p>
+        <h4>الطاقة</h4>
+        <p>تحسين الحيوية والهضم</p>
       </div>
       <div class="gv-health-circle">
         <div class="gv-hc-orb"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="14" r="6" fill="none" stroke="white" stroke-width="2" opacity="0.9"/><path d="M8 28 C8 22 12 18 16 18 C20 18 24 22 24 28" stroke="white" stroke-width="2" fill="none" opacity="0.9"/></svg></div>
-        <h4>Lower Cancer Risk</h4>
-        <p>Certain types significantly reduced</p>
+        <h4>تقليل خطر السرطان</h4>
+        <p>انخفاض ملحوظ في أنواع معينة</p>
       </div>
     </div>
 
-    <p class="gv-italic-note gv-reveal" style="margin: 1.5rem 0 3rem;">Clem &amp; Barthel, 2021 — High fibre + antioxidants + phytochemicals = reduced inflammation</p>
+    <p class="gv-italic-note gv-reveal" style="margin: 1.5rem 0 3rem;">Clem &amp; Barthel, 2021 — ألياف عالية + مضادات أكسدة + مواد كيميائية نباتية = تقليل الالتهاب</p>
 
-    <h3 class="gv-reveal" style="color:#5A9EC9; font-size:1.3rem; margin-bottom:1.5rem;">Planetary Health Impact</h3>
+    <h3 class="gv-reveal" style="color:#5A9EC9; font-size:1.3rem; margin-bottom:1.5rem;">التأثير على صحة الكوكب</h3>
 
     <div class="gv-reveal">
       <div class="gv-env-bar-group">
-        <div class="gv-env-bar-label">Greenhouse Gas Emissions</div>
-        <div class="gv-env-bar-track"><div class="gv-env-bar-segment gv-env-bar-animal" style="width:77%">Animal Products 77%</div><div class="gv-env-bar-segment gv-env-bar-plant" style="width:23%">Plants 23%</div></div>
+        <div class="gv-env-bar-label">انبعاثات الغازات الدفيئة</div>
+        <div class="gv-env-bar-track"><div class="gv-env-bar-segment gv-env-bar-animal" style="width:77%">منتجات حيوانية ٧٧%</div><div class="gv-env-bar-segment gv-env-bar-plant" style="width:23%">نباتات ٢٣%</div></div>
       </div>
       <div class="gv-env-bar-group">
-        <div class="gv-env-bar-label">Land Use</div>
-        <div class="gv-env-bar-track"><div class="gv-env-bar-segment gv-env-bar-animal" style="width:83%">Animal Products 83%</div><div class="gv-env-bar-segment gv-env-bar-plant" style="width:17%">Plants 17%</div></div>
+        <div class="gv-env-bar-label">استخدام الأراضي</div>
+        <div class="gv-env-bar-track"><div class="gv-env-bar-segment gv-env-bar-animal" style="width:83%">منتجات حيوانية ٨٣%</div><div class="gv-env-bar-segment gv-env-bar-plant" style="width:17%">نباتات ١٧%</div></div>
       </div>
       <div class="gv-env-bar-group">
-        <div class="gv-env-bar-label">Water Consumption</div>
-        <div class="gv-env-bar-track"><div class="gv-env-bar-segment gv-env-bar-animal" style="width:70%">Animal Products 70%</div><div class="gv-env-bar-segment gv-env-bar-plant" style="width:30%">Plants 30%</div></div>
+        <div class="gv-env-bar-label">استهلاك المياه</div>
+        <div class="gv-env-bar-track"><div class="gv-env-bar-segment gv-env-bar-animal" style="width:70%">منتجات حيوانية ٧٠%</div><div class="gv-env-bar-segment gv-env-bar-plant" style="width:30%">نباتات ٣٠%</div></div>
       </div>
     </div>
 
-    <p class="gv-italic-note gv-reveal" style="color:#5A9EC9; margin-top:1.5rem;">Even partial reductions lead to meaningful environmental benefits.</p>
+    <p class="gv-italic-note gv-reveal" style="color:#5A9EC9; margin-top:1.5rem;">حتى التخفيضات الجزئية تؤدي إلى فوائد بيئية ملموسة.</p>
     <p class="gv-italic-note gv-reveal">Gibbs &amp; Cappuccio, 2022</p>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 05: LIFESTYLE
+       القسم ٠٥: أسلوب حياة
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">05</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">Lifestyle, Not Just a Diet</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">Why diets fail — and what works instead.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠٥</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">أسلوب حياة، وليس مجرد حمية</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">لماذا تفشل الحميات — وما الذي ينجح بدلاً منها.</p>
 
     <div class="gv-lifecycle-split gv-reveal">
       <div>
-        <h3 style="text-align:center; color:#D9685A; font-size:1.1rem; margin-bottom:1.2rem;">The Diet Trap</h3>
+        <h3 style="text-align:center; color:#D9685A; font-size:1.1rem; margin-bottom:1.2rem;">فخ الحمية</h3>
         <div class="gv-cycle-diagram gv-cycle-trap">
           <svg viewBox="0 0 240 240" width="240" height="240" fill="none" style="position:absolute;inset:0;">
             <circle cx="120" cy="120" r="85" stroke="#f2b8ae" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
             <path d="M120 35 L125 28 L115 28Z" fill="#d9685a"/>
           </svg>
-          <div class="gv-cycle-node" style="left:88px; top:4px;">Restrict</div>
-          <div class="gv-cycle-node" style="left:156px; top:62px;">Lose<br>Weight</div>
-          <div class="gv-cycle-node" style="left:140px; top:158px;">Fatigue</div>
-          <div class="gv-cycle-node" style="left:36px; top:158px;">Quit</div>
-          <div class="gv-cycle-node" style="left:20px; top:62px;">Regain</div>
+          <div class="gv-cycle-node" style="left:88px; top:4px;">تقييد</div>
+          <div class="gv-cycle-node" style="left:156px; top:62px;">فقدان<br>الوزن</div>
+          <div class="gv-cycle-node" style="left:140px; top:158px;">إرهاق</div>
+          <div class="gv-cycle-node" style="left:36px; top:158px;">توقف</div>
+          <div class="gv-cycle-node" style="left:20px; top:62px;">استعادة<br>الوزن</div>
         </div>
       </div>
-      <div class="gv-vs-badge">vs</div>
+      <div class="gv-vs-badge">ضد</div>
       <div>
-        <h3 style="text-align:center; color:var(--color-primary); font-size:1.1rem; margin-bottom:1.2rem;">The Lifestyle Path</h3>
+        <h3 style="text-align:center; color:var(--color-primary); font-size:1.1rem; margin-bottom:1.2rem;">مسار أسلوب الحياة</h3>
         <div class="gv-cycle-diagram gv-cycle-path">
           <svg viewBox="0 0 240 240" width="240" height="240" fill="none" style="position:absolute;inset:0;">
             <path d="M120 20 C160 60, 80 90, 120 120 C160 150, 80 180, 120 220" stroke="var(--color-primary-lighter)" stroke-width="3" fill="none"/>
           </svg>
-          <div class="gv-cycle-node" style="left:88px; top:4px;">Learn</div>
-          <div class="gv-cycle-node" style="left:140px; top:55px;">Cook</div>
-          <div class="gv-cycle-node" style="left:52px; top:98px;">Enjoy</div>
-          <div class="gv-cycle-node" style="left:140px; top:140px;">Repeat</div>
-          <div class="gv-cycle-node" style="left:80px; top:172px; background:var(--color-primary-dark); color:white; border-color:var(--color-primary-dark); width:80px; font-size:0.78rem;">Thrive ✦</div>
+          <div class="gv-cycle-node" style="left:88px; top:4px;">تعلّم</div>
+          <div class="gv-cycle-node" style="left:140px; top:55px;">اطبخ</div>
+          <div class="gv-cycle-node" style="left:52px; top:98px;">استمتع</div>
+          <div class="gv-cycle-node" style="left:140px; top:140px;">كرر</div>
+          <div class="gv-cycle-node" style="left:80px; top:172px; background:var(--color-primary-dark); color:white; border-color:var(--color-primary-dark); width:80px; font-size:0.78rem;">ازدهر ✦</div>
         </div>
       </div>
     </div>
 
-    <h3 class="gv-reveal" style="color:var(--color-primary-darker); font-size:1.2rem; margin:2.5rem 0 1rem; text-align:center;">5 Keys to Lasting Change</h3>
+    <h3 class="gv-reveal" style="color:var(--color-primary-darker); font-size:1.2rem; margin:2.5rem 0 1rem; text-align:center;">٥ مفاتيح للتغيير الدائم</h3>
 
     <div class="gv-key-cards">
-      <div class="gv-key-card gv-reveal gv-delay-1"><div class="gv-key-num">1</div><div><h4>Knowledge</h4><p>Understand the <em>why</em> — clarity creates consistency in challenging moments</p></div></div>
-      <div class="gv-key-card gv-reveal gv-delay-2"><div class="gv-key-num">2</div><div><h4>Skill</h4><p>Learn to cook meals you actually love — taste drives repetition</p></div></div>
-      <div class="gv-key-card gv-reveal gv-delay-3"><div class="gv-key-num">3</div><div><h4>Culture</h4><p>Adapt recipes to your traditions — food must feel familiar and satisfying</p></div></div>
-      <div class="gv-key-card gv-reveal gv-delay-4"><div class="gv-key-num">4</div><div><h4>Taste</h4><p>Make healthy food delicious — herbs, spices, and good technique matter</p></div></div>
-      <div class="gv-key-card gv-reveal gv-delay-5"><div class="gv-key-num">5</div><div><h4>Habit</h4><p>Consistent daily choices, not perfection — small wins compound over time</p></div></div>
+      <div class="gv-key-card gv-reveal gv-delay-1"><div class="gv-key-num">١</div><div><h4>المعرفة</h4><p>افهم <em>لماذا</em> — الوضوح يخلق الثبات في اللحظات الصعبة</p></div></div>
+      <div class="gv-key-card gv-reveal gv-delay-2"><div class="gv-key-num">٢</div><div><h4>المهارة</h4><p>تعلّم طبخ وجبات تحبها فعلاً — المذاق يدفع التكرار</p></div></div>
+      <div class="gv-key-card gv-reveal gv-delay-3"><div class="gv-key-num">٣</div><div><h4>الثقافة</h4><p>كيّف الوصفات مع تقاليدك — يجب أن يكون الطعام مألوفاً ومُرضياً</p></div></div>
+      <div class="gv-key-card gv-reveal gv-delay-4"><div class="gv-key-num">٤</div><div><h4>المذاق</h4><p>اجعل الطعام الصحي لذيذاً — الأعشاب والتوابل والتقنية الجيدة مهمة</p></div></div>
+      <div class="gv-key-card gv-reveal gv-delay-5"><div class="gv-key-num">٥</div><div><h4>العادة</h4><p>خيارات يومية ثابتة، وليس الكمال — الانتصارات الصغيرة تتراكم مع الوقت</p></div></div>
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 06: NUTRIENTS
+       القسم ٠٦: خرافات المغذيات
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">06</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">Nutrient Myths, Busted</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">A well-planned WFPB diet provides complete nutrition. Tap each to learn more.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠٦</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">خرافات المغذيات، تم دحضها</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">النظام الغذائي النباتي الكامل المخطط جيداً يوفر تغذية كاملة. انقر على كل عنصر لمعرفة المزيد.</p>
 
     <div class="gv-nutrient-cards">
       <div class="gv-nutrient-card open gv-reveal gv-delay-1">
         <div class="gv-nc-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="gv-nc-color" style="background:var(--color-primary-lighter)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 4 6 4 10C4 16 12 22 12 22C12 22 20 16 20 10C20 6 16 2 12 2Z" stroke="var(--color-primary)" stroke-width="2"/></svg></div>
-          <div><h4 style="color:var(--color-primary-dark)">Protein</h4><span class="gv-nc-myth">Myth: You can only get enough from meat</span></div>
+          <div><h4 style="color:var(--color-primary-dark)">البروتين</h4><span class="gv-nc-myth">خرافة: لا يمكنك الحصول على ما يكفي إلا من اللحوم</span></div>
         </div>
         <div class="gv-nc-body">
-          <div class="gv-nc-reality" style="background:var(--color-bg-cool)">Legumes, tofu, tempeh, whole grains, nuts and seeds provide ample protein. The body efficiently combines amino acids from varied plant sources — no deliberate food combining needed. Plant proteins also contain bioactive peptides with antioxidant and anti-tumour properties.</div>
-          <div class="gv-nc-sources"><strong>Best sources:</strong> Lentils, chickpeas, black beans, tofu, quinoa, hemp seeds, tempeh</div>
+          <div class="gv-nc-reality" style="background:var(--color-bg-cool)">البقوليات والتوفو والتمبيه والحبوب الكاملة والمكسرات والبذور توفر بروتيناً وافراً. الجسم يجمع الأحماض الأمينية بكفاءة من مصادر نباتية متنوعة — لا حاجة لدمج الأطعمة بشكل متعمد. البروتينات النباتية تحتوي أيضاً على ببتيدات نشطة بيولوجياً ذات خصائص مضادة للأكسدة ومضادة للأورام.</div>
+          <div class="gv-nc-sources"><strong>أفضل المصادر:</strong> العدس، الحمص، الفاصوليا السوداء، التوفو، الكينوا، بذور القنب، التمبيه</div>
         </div>
       </div>
 
       <div class="gv-nutrient-card gv-reveal gv-delay-2">
         <div class="gv-nc-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="gv-nc-color" style="background:#f2b8ae"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#D9685A" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="#D9685A" stroke-width="2"/></svg></div>
-          <div><h4 style="color:#a0503a">Iron</h4><span class="gv-nc-myth">Myth: Plant iron isn't absorbed well enough</span></div>
+          <div><h4 style="color:#a0503a">الحديد</h4><span class="gv-nc-myth">خرافة: الحديد النباتي لا يُمتص بشكل كافٍ</span></div>
         </div>
         <div class="gv-nc-body">
-          <div class="gv-nc-reality" style="background:#fdf0eb">Your body upregulates non-heme iron absorption when stores are low — it's an adaptive mechanism. Pairing iron-rich foods with vitamin C dramatically boosts uptake. Many people on plant-based diets maintain excellent iron status.</div>
-          <div class="gv-nc-sources"><strong>Best sources:</strong> Lentils, spinach, kale + citrus fruits, tomatoes, capsicum for vitamin C pairing</div>
+          <div class="gv-nc-reality" style="background:#fdf0eb">جسمك يزيد من امتصاص الحديد غير الهيمي عندما تكون المخازن منخفضة — إنها آلية تكيفية. إقران الأطعمة الغنية بالحديد مع فيتامين C يعزز الامتصاص بشكل كبير. كثير من الأشخاص على الأنظمة الغذائية النباتية يحافظون على مستويات ممتازة من الحديد.</div>
+          <div class="gv-nc-sources"><strong>أفضل المصادر:</strong> العدس، السبانخ، الكرنب + فواكه حمضية، طماطم، فلفل لإقرانها مع فيتامين C</div>
         </div>
       </div>
 
       <div class="gv-nutrient-card gv-reveal gv-delay-3">
         <div class="gv-nc-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="gv-nc-color" style="background:#B8D8EC"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="3" stroke="#5A9EC9" stroke-width="2"/><path d="M10 9h4M10 13h4" stroke="#5A9EC9" stroke-width="1.5"/></svg></div>
-          <div><h4 style="color:#3a7aaa">Vitamin B<sub>12</sub></h4><span class="gv-nc-myth">Myth: Only found in animal products</span></div>
+          <div><h4 style="color:#3a7aaa">فيتامين B<sub>12</sub></h4><span class="gv-nc-myth">خرافة: لا يوجد إلا في المنتجات الحيوانية</span></div>
         </div>
         <div class="gv-nc-body">
-          <div class="gv-nc-reality" style="background:#e8f0f8">B12 is produced by bacteria, not by animals or plants. Farm animals receive B12 through supplemented feed or injections. Everyone — regardless of diet — benefits from ensuring adequate B12 intake through supplementation.</div>
-          <div class="gv-nc-sources"><strong>Best sources:</strong> B12 supplement (daily or weekly), fortified plant milks, nutritional yeast, fortified cereals</div>
+          <div class="gv-nc-reality" style="background:#e8f0f8">B12 تنتجه البكتيريا، وليس الحيوانات أو النباتات. حيوانات المزارع تحصل على B12 من الأعلاف المدعمة أو الحقن. الجميع — بغض النظر عن النظام الغذائي — يستفيد من ضمان كمية كافية من B12 من خلال المكملات.</div>
+          <div class="gv-nc-sources"><strong>أفضل المصادر:</strong> مكمل B12 (يومي أو أسبوعي)، حليب نباتي مدعم، خميرة غذائية، حبوب مدعمة</div>
         </div>
       </div>
 
       <div class="gv-nutrient-card gv-reveal gv-delay-4">
         <div class="gv-nc-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="gv-nc-color" style="background:var(--color-accent-light)"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" fill="var(--color-accent)"/><g stroke="var(--color-accent)" stroke-width="1.5"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="7" y2="7"/><line x1="17" y1="17" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="7" y2="17"/><line x1="17" y1="7" x2="19.1" y2="4.9"/></g></svg></div>
-          <div><h4 style="color:var(--color-accent-dark)">Vitamin D</h4><span class="gv-nc-myth">Myth: You need dairy or meat for vitamin D</span></div>
+          <div><h4 style="color:var(--color-accent-dark)">فيتامين D</h4><span class="gv-nc-myth">خرافة: تحتاج الألبان أو اللحوم لفيتامين D</span></div>
         </div>
         <div class="gv-nc-body">
-          <div class="gv-nc-reality" style="background:var(--color-accent-ghost)">Animals get vitamin D from sunlight or fortified feed — it's not uniquely produced for humans. Direct D3 supplementation combined with regular sun exposure and fortified foods is a more reliable approach for everyone.</div>
-          <div class="gv-nc-sources"><strong>Best sources:</strong> Sunlight, vitamin D3 supplement, fortified plant milks and foods</div>
+          <div class="gv-nc-reality" style="background:var(--color-accent-ghost)">الحيوانات تحصل على فيتامين D من أشعة الشمس أو الأعلاف المدعمة — لا تنتجه خصيصاً للبشر. مكملات D3 المباشرة مع التعرض المنتظم للشمس والأطعمة المدعمة هي نهج أكثر موثوقية للجميع.</div>
+          <div class="gv-nc-sources"><strong>أفضل المصادر:</strong> أشعة الشمس، مكمل فيتامين D3، حليب ومنتجات نباتية مدعمة</div>
         </div>
       </div>
 
       <div class="gv-nutrient-card gv-reveal gv-delay-5">
         <div class="gv-nc-header" onclick="this.parentElement.classList.toggle('open')">
           <div class="gv-nc-color" style="background:#ecdaf2"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4 C8 4 4 8 4 12 L12 20 L20 12 C20 8 16 4 12 4Z" stroke="#6E3A7A" stroke-width="2"/></svg></div>
-          <div><h4 style="color:#6E3A7A">Omega-3 &amp; Iodine</h4><span class="gv-nc-myth">Myth: Only fish provides these nutrients</span></div>
+          <div><h4 style="color:#6E3A7A">أوميغا-3 واليود</h4><span class="gv-nc-myth">خرافة: فقط الأسماك توفر هذه المغذيات</span></div>
         </div>
         <div class="gv-nc-body">
-          <div class="gv-nc-reality" style="background:#f5edf7">ALA omega-3s come from flaxseeds, chia seeds, hemp seeds and walnuts. Algae-based DHA/EPA supplements provide the longer-chain omega-3s. Iodised salt covers iodine needs simply and effectively.</div>
-          <div class="gv-nc-sources"><strong>Best sources:</strong> Flaxseeds, chia seeds, walnuts, algae oil supplement, iodised salt</div>
+          <div class="gv-nc-reality" style="background:#f5edf7">أوميغا-3 من نوع ALA تأتي من بذور الكتان وبذور الشيا وبذور القنب والجوز. مكملات DHA/EPA المستخلصة من الطحالب توفر أوميغا-3 طويلة السلسلة. الملح المعالج باليود يغطي احتياجات اليود ببساطة وفعالية.</div>
+          <div class="gv-nc-sources"><strong>أفضل المصادر:</strong> بذور الكتان، بذور الشيا، الجوز، مكمل زيت الطحالب، الملح المعالج باليود</div>
         </div>
       </div>
     </div>
@@ -1672,12 +1695,12 @@
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 07: BUILDING YOUR PLATE
+       القسم ٠٧: بناء طبقك
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">07</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">Building Your Plate</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">A typical WFPB meal is hearty, colourful, and deeply satisfying.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠٧</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">بناء طبقك</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">وجبة نباتية كاملة نموذجية تكون دسمة وملونة ومُشبعة للغاية.</p>
 
     <div class="gv-plate-container gv-reveal gv-delay-2">
       <svg class="gv-plate-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
@@ -1714,96 +1737,96 @@
           <circle cx="265" cy="60" r="4" fill="#d04040" opacity="0.5"/>
         </g>
         <circle cx="200" cy="200" r="32" fill="#FAFAF6" stroke="#c8b8a4" stroke-width="1.5"/>
-        <text x="200" y="195" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#3C3C3C">WFPB</text>
-        <text x="200" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#8DC63F">PLATE</text>
-        <text x="128" y="175" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#6a5020">Whole</text>
-        <text x="128" y="190" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#6a5020">Grains</text>
-        <text x="128" y="204" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#8a7040">30–35%</text>
-        <text x="200" y="300" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#6a4a20">Legumes &amp; Beans</text>
-        <text x="200" y="314" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#8a6a30">30%</text>
-        <text x="295" y="188" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#3a6a20">Vegetables</text>
-        <text x="295" y="202" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#5a8a30">25%</text>
-        <text x="260" y="72" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="600" fill="#4a7a30">Fresh</text>
-        <text x="260" y="84" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="600" fill="#4a7a30">Salad</text>
-        <text x="260" y="96" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#6a9a40">10–15%</text>
+        <text x="200" y="195" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="9" font-weight="700" fill="#3C3C3C">غذاء نباتي</text>
+        <text x="200" y="210" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="9" fill="#8DC63F">كامل</text>
+        <text x="128" y="180" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="10" font-weight="600" fill="#6a5020">حبوب</text>
+        <text x="128" y="195" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="10" font-weight="600" fill="#6a5020">كاملة</text>
+        <text x="128" y="208" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="8.5" fill="#8a7040">٣٠–٣٥%</text>
+        <text x="200" y="300" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="10" font-weight="600" fill="#6a4a20">بقوليات وفاصوليا</text>
+        <text x="200" y="314" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="8.5" fill="#8a6a30">٣٠%</text>
+        <text x="295" y="188" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="10" font-weight="600" fill="#3a6a20">خضروات</text>
+        <text x="295" y="202" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="8.5" fill="#5a8a30">٢٥%</text>
+        <text x="260" y="78" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="9" font-weight="600" fill="#4a7a30">سلطة</text>
+        <text x="260" y="90" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="9" font-weight="600" fill="#4a7a30">طازجة</text>
+        <text x="260" y="102" text-anchor="middle" font-family="'Noto Sans Arabic', sans-serif" font-size="8" fill="#6a9a40">١٠–١٥%</text>
       </svg>
 
       <div class="gv-plate-legend">
-        <div class="gv-legend-item"><div class="gv-legend-dot" style="background:var(--color-accent)"></div><div><h4>Whole Grains</h4><p>Brown rice, bulgur, quinoa, oats, buckwheat — slow-release energy</p></div></div>
-        <div class="gv-legend-item"><div class="gv-legend-dot" style="background:#8a6a40"></div><div><h4>Legumes &amp; Beans</h4><p>Lentils, chickpeas, beans, tofu — protein powerhouses</p></div></div>
-        <div class="gv-legend-item"><div class="gv-legend-dot" style="background:var(--color-primary)"></div><div><h4>Vegetables</h4><p>Steamed, roasted, or sautéed — fibre &amp; micronutrients</p></div></div>
-        <div class="gv-legend-item"><div class="gv-legend-dot" style="background:var(--color-primary-light)"></div><div><h4>Fresh Salad</h4><p>Tomato, cucumber, greens with lemon or tahini</p></div></div>
+        <div class="gv-legend-item"><div class="gv-legend-dot" style="background:var(--color-accent)"></div><div><h4>حبوب كاملة</h4><p>أرز بني، برغل، كينوا، شوفان، حنطة سوداء — طاقة بطيئة الإطلاق</p></div></div>
+        <div class="gv-legend-item"><div class="gv-legend-dot" style="background:#8a6a40"></div><div><h4>بقوليات وفاصوليا</h4><p>عدس، حمص، فاصوليا، توفو — مصادر قوية للبروتين</p></div></div>
+        <div class="gv-legend-item"><div class="gv-legend-dot" style="background:var(--color-primary)"></div><div><h4>خضروات</h4><p>مطبوخة بالبخار أو مشوية أو مقلية — ألياف ومغذيات دقيقة</p></div></div>
+        <div class="gv-legend-item"><div class="gv-legend-dot" style="background:var(--color-primary-light)"></div><div><h4>سلطة طازجة</h4><p>طماطم، خيار، خضار ورقية مع ليمون أو طحينة</p></div></div>
       </div>
     </div>
 
     <div class="gv-pro-tip gv-reveal">
-      <strong>Pro Tip:</strong>
-      <span> Start legumes gradually — red lentils and mung beans are easiest to digest. Soak dried beans 8–12 hours before cooking.</span>
+      <strong>نصيحة:</strong>
+      <span> ابدأ بالبقوليات تدريجياً — العدس الأحمر وفاصوليا المونج هي الأسهل هضماً. انقع الفاصوليا المجففة ٨-١٢ ساعة قبل الطبخ.</span>
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 08: SHOPPING
+       القسم ٠٨: دليل التسوق
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">08</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">Smart Shopping Guide</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">Setting yourself up for success starts at the grocery store.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠٨</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">دليل التسوق الذكي</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">تأسيس النجاح يبدأ من متجر البقالة.</p>
 
     <div class="gv-tip-timeline">
-      <div class="gv-tip-item gv-reveal"><div class="gv-tip-dot">1</div><h4>Choose Whole-Grain Bread</h4><p>Minimal ingredients, no added oils or milk solids. The closer to whole grain, the more fibre and nutrients you get. Read the label every time.</p></div>
-      <div class="gv-tip-item gv-reveal gv-delay-1"><div class="gv-tip-dot">2</div><h4>Use Canned Foods Wisely</h4><p>Beans: look for bean + water + salt only. Tomato passata: just tomatoes. Avoid preservatives and unrecognisable additives.</p></div>
-      <div class="gv-tip-item gv-reveal gv-delay-1"><div class="gv-tip-dot">3</div><h4>Build Pantry to Your Taste</h4><p>Start with what you know and enjoy. Love lentil soup? Stock red lentils. Make hummus? Get chickpeas. Expand gradually as confidence grows.</p></div>
-      <div class="gv-tip-item gv-reveal gv-delay-2"><div class="gv-tip-dot">4</div><h4>Start With Familiar Produce</h4><p>No need for exotic kale or dragon fruit. Tomatoes, cucumbers, carrots are perfect. Add 1–2 new items each week to expand your palate.</p></div>
-      <div class="gv-tip-item gv-reveal gv-delay-2"><div class="gv-tip-dot">5</div><h4>Master a Few Cooking Skills</h4><p>Perfect brown rice or bulgur = foundation for countless meals. Pair with curries, stir-fries, or roasted vegetables.</p></div>
-      <div class="gv-tip-item gv-reveal gv-delay-3"><div class="gv-tip-dot">6</div><h4>Make Your Freezer an Ally</h4><p>Frozen peas, corn, organic berries — reduces waste, saves time, and ensures nutritious options are always on hand.</p></div>
-      <div class="gv-tip-item gv-reveal gv-delay-3"><div class="gv-tip-dot">7</div><h4>Invest in Quality Spices</h4><p>Cumin, paprika, curry powder, cinnamon. Fresh and organic = more potent. A small amount transforms any dish.</p></div>
+      <div class="gv-tip-item gv-reveal"><div class="gv-tip-dot">١</div><h4>اختر خبز الحبوب الكاملة</h4><p>مكونات بسيطة، بدون زيوت مضافة أو مواد صلبة من الحليب. كلما كان أقرب للحبوب الكاملة، زادت الألياف والمغذيات. اقرأ الملصق في كل مرة.</p></div>
+      <div class="gv-tip-item gv-reveal gv-delay-1"><div class="gv-tip-dot">٢</div><h4>استخدم الأطعمة المعلبة بحكمة</h4><p>الفاصوليا: ابحث عن فاصوليا + ماء + ملح فقط. صلصة الطماطم: طماطم فقط. تجنب المواد الحافظة والإضافات غير المعروفة.</p></div>
+      <div class="gv-tip-item gv-reveal gv-delay-1"><div class="gv-tip-dot">٣</div><h4>ابنِ مخزنك حسب ذوقك</h4><p>ابدأ بما تعرفه وتستمتع به. تحب شوربة العدس؟ اشترِ العدس الأحمر. تحضر حمص؟ اشترِ حمص. وسّع تدريجياً مع نمو الثقة.</p></div>
+      <div class="gv-tip-item gv-reveal gv-delay-2"><div class="gv-tip-dot">٤</div><h4>ابدأ بالخضروات المألوفة</h4><p>لا حاجة للكرنب الأجنبي أو فاكهة التنين. الطماطم والخيار والجزر مثالية. أضف ١-٢ عنصر جديد كل أسبوع لتوسيع ذوقك.</p></div>
+      <div class="gv-tip-item gv-reveal gv-delay-2"><div class="gv-tip-dot">٥</div><h4>أتقن بعض مهارات الطبخ</h4><p>إتقان الأرز البني أو البرغل = أساس لوجبات لا تُحصى. اقرنها مع الكاري أو القلي السريع أو الخضروات المشوية.</p></div>
+      <div class="gv-tip-item gv-reveal gv-delay-3"><div class="gv-tip-dot">٦</div><h4>اجعل الفريزر حليفك</h4><p>البازلاء المجمدة، الذرة، التوت العضوي — يقلل الهدر، يوفر الوقت، ويضمن وجود خيارات مغذية دائماً.</p></div>
+      <div class="gv-tip-item gv-reveal gv-delay-3"><div class="gv-tip-dot">٧</div><h4>استثمر في توابل جيدة</h4><p>كمون، بابريكا، بهارات كاري، قرفة. الطازجة والعضوية = أكثر فعالية. كمية صغيرة تحوّل أي طبق.</p></div>
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 09: Q&A
+       القسم ٠٩: أسئلة وأجوبة
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">09</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">Quick-Start Q&amp;A</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">Practical answers to the most common questions.</p>
+    <div class="gv-reveal"><span class="gv-section-number">٠٩</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">أسئلة وأجوبة سريعة</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">إجابات عملية على الأسئلة الأكثر شيوعاً.</p>
 
     <div class="gv-qa-list">
       <div class="gv-qa-item gv-reveal">
-        <div class="gv-qa-q"><div class="gv-qa-badge">Q</div><p>Do I need to completely eliminate animal products?</p></div>
-        <div class="gv-qa-a">Complete removal yields the most health benefits, but gradual reduction is a practical and sustainable starting point. Even partial shifts help. Try designating specific days as fully plant-based to build momentum without pressure.</div>
+        <div class="gv-qa-q"><div class="gv-qa-badge">س</div><p>هل أحتاج إلى التخلص تماماً من المنتجات الحيوانية؟</p></div>
+        <div class="gv-qa-a">الإزالة الكاملة تحقق أكبر الفوائد الصحية، لكن التقليل التدريجي هو نقطة بداية عملية ومستدامة. حتى التحولات الجزئية تساعد. جرّب تخصيص أيام محددة تكون نباتية بالكامل لبناء الزخم بدون ضغط.</div>
       </div>
       <div class="gv-qa-item gv-reveal gv-delay-1">
-        <div class="gv-qa-q"><div class="gv-qa-badge">Q</div><p>Should I remove all animal products from my kitchen?</p></div>
-        <div class="gv-qa-a">If you live alone and have committed, clearing your environment reduces temptation and supports change. If sharing with others, create a designated space for your foods and set personal boundaries. Most people find a workable routine with time.</div>
+        <div class="gv-qa-q"><div class="gv-qa-badge">س</div><p>هل يجب أن أزيل كل المنتجات الحيوانية من مطبخي؟</p></div>
+        <div class="gv-qa-a">إذا كنت تعيش وحدك والتزمت، فتنظيف بيئتك يقلل الإغراء ويدعم التغيير. إذا كنت تشارك مع آخرين، أنشئ مساحة مخصصة لأطعمتك وحدد حدوداً شخصية. معظم الناس يجدون روتيناً عملياً مع الوقت.</div>
       </div>
       <div class="gv-qa-item gv-reveal gv-delay-1">
-        <div class="gv-qa-q"><div class="gv-qa-badge">Q</div><p>Should I try to convince family and friends?</p></div>
-        <div class="gv-qa-a">Lead by example. Share information when asked, but lasting change is self-motivated. Your improved energy, health, and appealing meals will naturally generate curiosity. Respect others' choices while remaining consistent in your own.</div>
+        <div class="gv-qa-q"><div class="gv-qa-badge">س</div><p>هل يجب أن أحاول إقناع العائلة والأصدقاء؟</p></div>
+        <div class="gv-qa-a">كن قدوة بأفعالك. شارك المعلومات عند السؤال، لكن التغيير الدائم يأتي من الداخل. طاقتك المحسنة وصحتك ووجباتك الجذابة ستولد الفضول بشكل طبيعي. احترم خيارات الآخرين مع البقاء ثابتاً في خياراتك.</div>
       </div>
       <div class="gv-qa-item gv-reveal gv-delay-2">
-        <div class="gv-qa-q"><div class="gv-qa-badge">Q</div><p>Are cooking oils, salt, and sugar allowed?</p></div>
-        <div class="gv-qa-a">A balanced, practical approach is most sustainable. Small amounts of quality olive oil, minimal sugar, and moderate salt can be included. Focus on overall dietary quality — when most meals are whole-food-based, occasional modest use is fine.</div>
+        <div class="gv-qa-q"><div class="gv-qa-badge">س</div><p>هل زيوت الطبخ والملح والسكر مسموح بها؟</p></div>
+        <div class="gv-qa-a">النهج المتوازن والعملي هو الأكثر استدامة. كميات صغيرة من زيت الزيتون الجيد وسكر قليل وملح معتدل يمكن تضمينها. ركّز على الجودة الغذائية الشاملة — عندما تكون معظم الوجبات قائمة على الأطعمة الكاملة، فالاستخدام المعتدل العرضي مقبول.</div>
       </div>
       <div class="gv-qa-item gv-reveal gv-delay-2">
-        <div class="gv-qa-q"><div class="gv-qa-badge">Q</div><p>I struggle to give up cheese. What should I do?</p></div>
-        <div class="gv-qa-a">Cheese contains casein, which triggers reward pathways in the brain — this is physiological, not a personal failing. Set structured limits around frequency. Try homemade alternatives with cashews, nutritional yeast, lemon and garlic. Over time, taste preferences adapt.</div>
+        <div class="gv-qa-q"><div class="gv-qa-badge">س</div><p>أجد صعوبة في التخلي عن الجبن. ماذا أفعل؟</p></div>
+        <div class="gv-qa-a">الجبن يحتوي على الكازيين الذي ينشط مسارات المكافأة في الدماغ — هذا فسيولوجي وليس فشلاً شخصياً. ضع حدوداً منظمة حول التكرار. جرّب البدائل المنزلية مع الكاجو والخميرة الغذائية والليمون والثوم. مع الوقت، تتكيف تفضيلات الذوق.</div>
       </div>
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════
-       SECTION 10: RESOURCES
+       القسم ١٠: المصادر والقراءات
        ═══════════════════════════════════════ -->
   <div class="gv-section">
-    <div class="gv-reveal"><span class="gv-section-number">10</span></div>
-    <h2 class="gv-section-title gv-reveal gv-delay-1">Resources &amp; Further Reading</h2>
-    <p class="gv-section-lead gv-reveal gv-delay-2">The books, films, and channels that shaped this guide.</p>
+    <div class="gv-reveal"><span class="gv-section-number">١٠</span></div>
+    <h2 class="gv-section-title gv-reveal gv-delay-1">المصادر والقراءات الإضافية</h2>
+    <p class="gv-section-lead gv-reveal gv-delay-2">الكتب والأفلام والقنوات التي شكّلت هذا الدليل.</p>
 
     <div class="gv-resources-grid">
       <div class="gv-resource-box gv-resource-books gv-reveal gv-delay-1">
-        <h3>Recommended Books</h3>
+        <h3>كتب موصى بها</h3>
         <div class="gv-resource-item"><strong>Whole</strong> — <em>T. Colin Campbell</em></div>
         <div class="gv-resource-item"><strong>How Not to Diet</strong> — <em>Dr. Michael Greger</em></div>
         <div class="gv-resource-item"><strong>Eat to Live</strong> — <em>Dr. Joel Fuhrman</em></div>
@@ -1812,16 +1835,16 @@
         <div class="gv-resource-item"><strong>Hooked</strong> — <em>Michael Moss</em></div>
       </div>
       <div class="gv-resource-box gv-resource-watch gv-reveal gv-delay-2">
-        <h3>Watch &amp; Cook</h3>
-        <div class="gv-resource-item"><strong>The Game Changers</strong> — <em>Athletes thriving on plant-based diets</em></div>
-        <div class="gv-resource-item"><strong>What the Health</strong> — <em>Diet, chronic disease &amp; the food industry</em></div>
-        <div class="gv-resource-item" style="margin-top:1.2rem; border-top:2px solid var(--color-primary-lighter); padding-top:1rem;"><strong>Food Impromptu</strong> (YouTube) — <em>Filling, satisfying WFPB recipes that are easy to master</em></div>
+        <h3>شاهد واطبخ</h3>
+        <div class="gv-resource-item"><strong>The Game Changers</strong> — <em>رياضيون يزدهرون على النظام النباتي</em></div>
+        <div class="gv-resource-item"><strong>What the Health</strong> — <em>النظام الغذائي والأمراض المزمنة وصناعة الغذاء</em></div>
+        <div class="gv-resource-item" style="margin-top:1.2rem; border-top:2px solid var(--color-primary-lighter); padding-top:1rem;"><strong>Food Impromptu</strong> (YouTube) — <em>وصفات نباتية كاملة مُشبعة وسهلة التحضير</em></div>
       </div>
     </div>
 
     <div class="gv-reveal" style="margin-top:2.5rem;">
-      <h3 style="color:var(--color-primary-darker); font-size:1.1rem; margin-bottom:0.8rem;">Key Scientific References</h3>
-      <div style="font-size:0.82rem; color:var(--color-text-muted); line-height:1.8;">
+      <h3 style="color:var(--color-primary-darker); font-size:1.1rem; margin-bottom:0.8rem;">المراجع العلمية الرئيسية</h3>
+      <div style="font-size:0.84rem; color:var(--color-text-muted); line-height:2; direction:ltr; text-align:left;">
         Chen et al. (2020) — Ultra-processed food &amp; health outcomes, <em>Nutrition Journal</em><br>
         Clem &amp; Barthel (2021) — Plant-based diets, <em>Missouri Medicine</em><br>
         Craig et al. (2021) — Safe plant-based diet guidelines, <em>Nutrients</em><br>
@@ -1836,36 +1859,36 @@
   </div>
 
   <!-- ═══════════════════════════════════════
-       DISCLAIMER
+       إخلاء المسؤولية
        ═══════════════════════════════════════ -->
   <div class="gv-section" style="padding-top:0;">
     <div class="gv-disclaimer gv-reveal">
-      <strong>Disclaimer:</strong> This visual summary is for educational purposes only. It is not a replacement for professional medical advice, diagnosis, or treatment. Always consult your healthcare provider before making dietary changes. Based on the original work by Ramsina Roil / Hope Nutrition. All original content is protected by copyright.
+      <strong>إخلاء مسؤولية:</strong> هذا الملخص المرئي لأغراض تعليمية فقط. ليس بديلاً عن المشورة الطبية المهنية أو التشخيص أو العلاج. استشر مقدم الرعاية الصحية دائماً قبل إجراء تغييرات غذائية. بناءً على العمل الأصلي لرامسينا رويل / Hope Nutrition. جميع المحتويات الأصلية محمية بحقوق النشر.
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════
-       CTA
+       دعوة للعمل
        ═══════════════════════════════════════ -->
-  <section class="section section--dark cta">
+  <section class="section section--dark cta" style="direction: ltr; text-align: center;">
     <div class="cta__content container fade-up">
-      <h2 data-split>Need Personalised Guidance?</h2>
-      <p>This visual summary is a great start — but for tailored support, book a one-on-one consultation.</p>
+      <h2 data-split style="font-family: var(--font-ar); direction: rtl;">هل تحتاج إلى إرشاد مخصص؟</h2>
+      <p style="font-family: var(--font-ar); direction: rtl;">هذا الملخص المرئي بداية رائعة — لكن للحصول على دعم مخصص، احجز استشارة فردية.</p>
       <div class="cta__actions">
-        <a href="https://app.squareup.com/appointments/book/omzgfrghou5f38/LFP9SFMS7XYZB/start" class="btn btn--white btn--lg" target="_blank" rel="noopener noreferrer">
-          Book a Consultation
+        <a href="https://app.squareup.com/appointments/book/omzgfrghou5f38/LFP9SFMS7XYZB/start" class="btn btn--white btn--lg" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-ar);">
+          احجز استشارة
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </a>
-        <a href="https://www.hopenutrition.com.au/s/GrapeVine-Whole-Food-Plant-Based-Guide.pdf" class="btn btn--ghost btn--lg" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.hopenutrition.com.au/s/GrapeVine-Whole-Food-Plant-Based-Guide.pdf" class="btn btn--ghost btn--lg" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-ar);">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Download Full PDF
+          تحميل الدليل الكامل PDF
         </a>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════
-       CLOSING
+       الخاتمة
        ═══════════════════════════════════════ -->
   <div class="gv-closing">
     <svg width="120" height="150" viewBox="0 0 120 150" fill="none" style="margin-bottom:2rem; opacity:0.6;" xmlns="http://www.w3.org/2000/svg">
@@ -1887,13 +1910,13 @@
       </defs>
     </svg>
 
-    <h2>Start Simple. Build Gradually.</h2>
-    <p class="gv-subtitle-text">Enjoy the Journey.</p>
+    <h2>ابدأ ببساطة. ابنِ تدريجياً.</h2>
+    <p class="gv-subtitle-text">استمتع بالرحلة.</p>
     <div class="gv-divider"></div>
-    <p class="gv-closing-quote">Your health is your greatest treasure.</p>
+    <p class="gv-closing-quote">صحتك هي أعظم كنوزك.</p>
     <p class="gv-closing-footer">
-      GrapeVine Visual Summary · Based on the work of <strong>Ramsina Roil</strong> · Hope Nutrition<br>
-      <span style="font-size:0.72rem; opacity:0.7;">Summary created for educational reference</span>
+      جريب فاين — ملخص مرئي · بناءً على أعمال <strong>رامسينا رويل</strong> · Hope Nutrition<br>
+      <span style="font-size:0.72rem; opacity:0.7;">ملخص تم إعداده كمرجع تعليمي</span>
     </p>
   </div>
 
