@@ -621,18 +621,25 @@ p { margin-bottom: var(--space-md); color: var(--color-text-secondary); }
 /* ===================== ABOUT ===================== */
 .about__inner {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-3xl);
   align-items: center;
 }
 
 .about__image { position: relative; }
 
+.about__image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
 .about__image-main {
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+  aspect-ratio: 4/5;
 }
 
 .about__image-main::after {
