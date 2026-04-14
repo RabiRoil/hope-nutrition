@@ -39,6 +39,9 @@
        GrapeVine Read — Full-width Article
        ═══════════════════════════════════════ */
 
+    /* Override body overflow-x:hidden which breaks sticky positioning */
+    body { overflow-x: clip; }
+
     /* ─── Sticky Chapter Nav (horizontal bar) ─── */
     .gvr-nav {
       position: sticky;
@@ -50,9 +53,10 @@
     }
 
     .gvr-nav__inner {
-      max-width: var(--max-width-narrow);
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 var(--container-padding);
+      position: relative;
       display: flex;
       align-items: center;
       gap: 0.25rem;
@@ -327,7 +331,7 @@
     /* ─── Cover / Hero ─── */
     .gvr-hero {
       text-align: center;
-      padding: 5rem 2rem 3rem;
+      padding: 8rem 2rem 3rem;
       background: linear-gradient(175deg, var(--color-bg) 0%, var(--color-bg-warm) 40%, var(--color-primary-lighter) 100%);
     }
 
@@ -380,7 +384,7 @@
     @media (max-width: 600px) {
       .gvr-nav__title { display: none; }
       .gvr-nav__link { font-size: 0.72rem; padding: 0.7rem 0.5rem; }
-      .gvr-hero { padding: 4rem 1.25rem 2rem; }
+      .gvr-hero { padding: 7rem 1.25rem 2rem; }
       .gvr-article h2 { margin-top: 2.5rem; scroll-margin-top: 120px; }
       .gvr-nova-grid { grid-template-columns: 1fr; }
     }
@@ -1012,8 +1016,10 @@
         if (el) chapters.push({ id, el, link });
       });
 
+      const navInner = document.querySelector('.gvr-nav__inner');
+
       function updateActiveChapter() {
-        const offset = 140;
+        const offset = 160;
         let current = chapters[0];
 
         for (let i = chapters.length - 1; i >= 0; i--) {
@@ -1024,7 +1030,17 @@
         }
 
         navLinks.forEach(l => l.classList.remove('active'));
-        if (current) current.link.classList.add('active');
+        if (current) {
+          current.link.classList.add('active');
+          /* Auto-scroll the active link into view in the nav bar */
+          if (navInner) {
+            const linkRect = current.link.getBoundingClientRect();
+            const navRect = navInner.getBoundingClientRect();
+            if (linkRect.left < navRect.left || linkRect.right > navRect.right) {
+              current.link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+          }
+        }
       }
 
       /* ── Throttled scroll ── */
