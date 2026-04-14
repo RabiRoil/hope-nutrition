@@ -115,7 +115,7 @@
     }
 
     .guide-card__body {
-      padding: 1.5rem 1.5rem 1.75rem;
+      padding: 2rem 2.25rem 2.25rem;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -309,11 +309,26 @@
         <div class="guide-card guide-card--soon fade-up">
           <div class="guide-card__cover guide-card__cover--placeholder">
             <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="260" rx="8" fill="#F5F5F2"/>
-              <circle cx="200" cy="110" r="36" stroke="#D0D0C8" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
-              <path d="M188 110h24M200 98v24" stroke="#D0D0C8" stroke-width="2" stroke-linecap="round"/>
-              <rect x="146" y="170" width="108" height="12" rx="4" fill="#E0E0DA" opacity="0.5"/>
-              <rect x="164" y="192" width="72" height="8" rx="3" fill="#E0E0DA" opacity="0.3"/>
+              <rect width="400" height="260" rx="8" fill="#F5F5F0"/>
+              <!-- Soft radial glow -->
+              <circle cx="200" cy="120" r="80" fill="#E8F5E9" opacity="0.5"/>
+              <!-- Pot -->
+              <rect x="178" y="155" width="44" height="32" rx="6" fill="#D7D3C8" opacity="0.5"/>
+              <rect x="172" y="148" width="56" height="10" rx="4" fill="#C8C4B8" opacity="0.5"/>
+              <!-- Soil -->
+              <ellipse cx="200" cy="152" rx="18" ry="4" fill="#A09880" opacity="0.3"/>
+              <!-- Stem -->
+              <path d="M200 148 Q200 120 200 105" stroke="#A5D6A7" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+              <!-- Small leaves -->
+              <path d="M200 125 Q210 115 215 120 Q210 128 200 125z" fill="#81C784" opacity="0.5"/>
+              <path d="M200 115 Q190 105 185 110 Q190 118 200 115z" fill="#A5D6A7" opacity="0.45"/>
+              <!-- Tiny sprout tip -->
+              <path d="M197 105 Q200 95 203 105" stroke="#66BB6A" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+              <!-- Floating dots -->
+              <circle cx="155" cy="90" r="4" fill="#C8E6C9" opacity="0.4"/>
+              <circle cx="245" cy="95" r="3" fill="#DCEDC8" opacity="0.35"/>
+              <circle cx="170" cy="200" r="3" fill="#E0E0DA" opacity="0.3"/>
+              <circle cx="235" cy="195" r="2.5" fill="#E0E0DA" opacity="0.25"/>
             </svg>
           </div>
           <div class="guide-card__body">
