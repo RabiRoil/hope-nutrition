@@ -1973,6 +1973,24 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
 }
 
 @media (max-width: 768px) {
+  body {
+    text-align: left;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  p,
+  li,
+  .service-block__detail,
+  .qualification__text,
+  .testimonial-card p {
+    text-align: left;
+  }
+
+  .service-block__content h3,
+  .section-header h2 {
+    text-wrap: balance;
+  }
+
   .nav__drawer {
     position: fixed;
     top: 0;
