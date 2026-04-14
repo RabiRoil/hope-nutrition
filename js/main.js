@@ -43,10 +43,11 @@
 
   /* ========== MOBILE NAV ========== */
   function initNav() {
+    const header = qs('.header');
     const nav = qs('.nav');
     const toggle = qs('.nav-toggle');
     const drawer = qs('.nav__drawer');
-    if (!nav || !toggle || !drawer) return;
+    if (!header || !nav || !toggle || !drawer) return;
 
     /* Create backdrop element */
     const backdrop = document.createElement('div');
@@ -56,6 +57,7 @@
     function closeMenu() {
       toggle.classList.remove('active');
       nav.classList.remove('nav--open');
+      header.classList.remove('header--menu-open');
       backdrop.classList.remove('active');
       toggle.setAttribute('aria-expanded', 'false');
       drawer.setAttribute('aria-hidden', 'true');
@@ -65,6 +67,7 @@
     function openMenu() {
       toggle.classList.add('active');
       nav.classList.add('nav--open');
+      header.classList.add('header--menu-open');
       backdrop.classList.add('active');
       toggle.setAttribute('aria-expanded', 'true');
       drawer.setAttribute('aria-hidden', 'false');
