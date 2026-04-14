@@ -322,6 +322,240 @@
       margin-left: 0.4rem;
     }
 
+    /* ─── نظرة سريعة على الدليل ─── */
+    .gvr-atlas {
+      margin: 0 0 3rem;
+      padding: 1.75rem;
+      background: linear-gradient(135deg, rgba(221, 240, 200, 0.55) 0%, rgba(245, 240, 232, 0.9) 100%);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.04);
+    }
+
+    .gvr-atlas__eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.65rem;
+    }
+
+    .gvr-atlas__title {
+      font-family: var(--font-ar);
+      font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+      color: var(--color-primary-darker);
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+    }
+
+    .gvr-atlas__intro {
+      font-size: 0.98rem !important;
+      line-height: 1.75 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.25rem !important;
+      text-align: right !important;
+    }
+
+    .gvr-atlas__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .gvr-atlas__card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(141, 198, 63, 0.14);
+      border-radius: var(--radius-md);
+      padding: 1rem 1rem 1.1rem;
+    }
+
+    .gvr-atlas__step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .gvr-atlas__card strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.35rem;
+    }
+
+    .gvr-atlas__card p {
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: right !important;
+    }
+
+    /* ─── خارطة العادات ─── */
+    .gvr-roadmap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 2.25rem;
+    }
+
+    .gvr-roadmap__step {
+      padding: 1.15rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+    }
+
+    .gvr-roadmap__step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-accent-light);
+      color: var(--color-accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .gvr-roadmap__step strong {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.4rem;
+    }
+
+    .gvr-roadmap__step p {
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: right !important;
+    }
+
+    /* ─── بطاقات العناصر الغذائية ─── */
+    .gvr-spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.75rem 0 2rem;
+    }
+
+    .gvr-spotlight {
+      padding: 1.1rem 1.15rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+    }
+
+    .gvr-spotlight__label {
+      display: inline-block;
+      padding: 0.28rem 0.58rem;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-ghost);
+      color: var(--color-primary-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .gvr-spotlight__title {
+      display: block;
+      font-size: 1rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .gvr-spotlight p {
+      font-size: 0.9rem !important;
+      line-height: 1.65 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: right !important;
+    }
+
+    /* ─── إعادة صياغة المفاهيم ─── */
+    .gvr-myth-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .gvr-myth {
+      padding: 1.15rem 1.2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border-light);
+      background: linear-gradient(180deg, var(--color-surface) 0%, #fbfcf8 100%);
+    }
+
+    .gvr-myth__tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--color-accent-dark);
+      margin-bottom: 0.55rem;
+    }
+
+    .gvr-myth strong {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.35rem;
+      line-height: 1.45;
+    }
+
+    .gvr-myth p {
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: right !important;
+    }
+
+    /* ─── أدوات التسوق ─── */
+    .gvr-shopping-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.75rem 0 2rem;
+    }
+
+    .gvr-shopping-card {
+      padding: 1.15rem;
+      background: var(--color-bg-cool);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+    }
+
+    .gvr-shopping-card strong {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.35rem;
+    }
+
+    .gvr-shopping-card p {
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: right !important;
+    }
+
     /* ─── Resources ─── */
     .gvr-resource-list {
       list-style: none !important;
@@ -553,6 +787,12 @@
       .gvr-hero { padding: calc(var(--header-h, 92px) + var(--nav-h, 46px) + 1.5rem) 1.25rem 2rem; }
       .gvr-article h2 { margin-top: 2.5rem; scroll-margin-top: calc(var(--header-h, 92px) + var(--nav-h, 46px) + 16px); }
       .gvr-nova-grid { grid-template-columns: 1fr; }
+      .gvr-atlas { padding: 1.25rem; }
+      .gvr-atlas__grid,
+      .gvr-roadmap,
+      .gvr-spotlight-grid,
+      .gvr-myth-grid,
+      .gvr-shopping-grid { grid-template-columns: 1fr; }
       .gvr-pullquote { font-size: 1.1rem; padding: 1.5rem; }
       .gvr-keypoint { padding: 1.25rem; }
       .gvr-tip { padding: 1.25rem; }
@@ -627,6 +867,34 @@
 
     <!-- ─── Article Body ─── -->
     <article class="gvr-article">
+
+      <section class="gvr-atlas" aria-label="نظرة سريعة على الدليل">
+        <div class="gvr-atlas__eyebrow">نظرة سريعة على الدليل</div>
+        <div class="gvr-atlas__title">نظام بصري يمكنك العودة إليه طوال الدليل</div>
+        <p class="gvr-atlas__intro">استخدم هذه الركائز الأربع كلما شعرت أن الدليل كثيف: ابدأ بالأطعمة الكاملة، ثم نوع الأطعمة النباتية، وابنِ طبقًا متوازنًا، وكرر العادات البسيطة حتى تصبح طبيعية.</p>
+        <div class="gvr-atlas__grid">
+          <div class="gvr-atlas__card">
+            <span class="gvr-atlas__step">1</span>
+            <strong>ابدأ بالكامل</strong>
+            <p>اختر أطعمة قريبة من حالتها الطبيعية واجعلها قاعدة معظم وجباتك.</p>
+          </div>
+          <div class="gvr-atlas__card">
+            <span class="gvr-atlas__step">2</span>
+            <strong>نوع نباتي واسع</strong>
+            <p>البقوليات والحبوب والخضروات والفواكه والمكسرات والبذور تعمل أفضل كنمط متنوع لا كطعام خارق واحد.</p>
+          </div>
+          <div class="gvr-atlas__card">
+            <span class="gvr-atlas__step">3</span>
+            <strong>ابنِ الطبق</strong>
+            <p>فكر بطبقات: حبوب، وبقوليات، وخضروات، ثم عنصر طازج أو غني بالنكهة يكمل الوجبة.</p>
+          </div>
+          <div class="gvr-atlas__card">
+            <span class="gvr-atlas__step">4</span>
+            <strong>كرر المكاسب السهلة</strong>
+            <p>الاستمرارية أهم من الكمال. العادات الصغيرة القابلة للتكرار هي التي تصنع نمط الحياة.</p>
+          </div>
+        </div>
+      </section>
 
       <!-- لماذا كتبت هذا الدليل -->
       <h2 id="ch-why-i-wrote">لماذا كتبت هذا الدليل</h2>
@@ -778,6 +1046,29 @@
         <p>التغيير الدائم لا يأتي من القيود أو قوة الإرادة. يأتي من المعرفة وتطوير المهارات وتحويل الخيارات الصحية إلى عادات تبدو طبيعية وممتعة.</p>
       </div>
 
+      <div class="gvr-roadmap" aria-label="خارطة العادات">
+        <div class="gvr-roadmap__step">
+          <span>1</span>
+          <strong>اختر وجبة موثوقة واحدة</strong>
+          <p>ابدأ بإفطار أو غداء أو عشاء تحبه بالفعل ويمكنك تكراره دون ضغط.</p>
+        </div>
+        <div class="gvr-roadmap__step">
+          <span>2</span>
+          <strong>حسّن المكونات أولًا</strong>
+          <p>استبدل بحبوب كاملة وبقوليات وخضروات قبل أن تحاول تغيير روتينك بالكامل دفعة واحدة.</p>
+        </div>
+        <div class="gvr-roadmap__step">
+          <span>3</span>
+          <strong>اجعل النكهة شرطًا أساسيًا</strong>
+          <p>استخدم الأعشاب والتوابل والحمضيات والقوام حتى تبدو الوجبة الجديدة مُرضية لا مقيدة.</p>
+        </div>
+        <div class="gvr-roadmap__step">
+          <span>4</span>
+          <strong>كرر حتى تصبح تلقائية</strong>
+          <p>ابنِ الثقة من خلال تكرار الوجبات البسيطة مرات كافية حتى تصبح جزءًا من الحياة اليومية.</p>
+        </div>
+      </div>
+
       <div class="gvr-chapter-divider"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C12 2 4 7 4 14a8 8 0 0016 0c0-7-8-12-8-12z" stroke-linecap="round"/></svg></div>
 
       <!-- المفاهيم الخاطئة الشائعة -->
@@ -796,6 +1087,52 @@
       <p>هذا لا يعني أنه يجب تجاهل تناول العناصر الغذائية. بعض العناصر الغذائية، مثل فيتامين B12 واليود والحديد والكالسيوم وأحماض أوميغا 3 الدهنية، تتطلب اهتمامًا خاصًا في الأنظمة الغذائية النباتية. ومع ذلك، يمكن تلبية هذه الاحتياجات من خلال الخيارات الغذائية المناسبة والتدعيم والمكملات عند الضرورة.</p>
 
       <p>بشكل عام، النهج الأكثر موثوقية هو التركيز على التنوع الغذائي وجودة الطعام وأنماط الأكل طويلة المدى بدلًا من المراقبة المستمرة للعناصر الغذائية الفردية. عندما تكون الأنظمة الغذائية النباتية مخططة جيدًا ومتوازنة، يمكنها توفير تغذية كاملة ودعم الصحة طويلة المدى دون تعقيد غير ضروري (Craig et al., 2021).</p>
+
+      <div class="gvr-myth-grid" aria-label="إعادة صياغة المفاهيم الشائعة">
+        <div class="gvr-myth">
+          <span class="gvr-myth__tag">إعادة صياغة</span>
+          <strong>البروتين لا يجب أن يأتي من اللحوم.</strong>
+          <p>يمكن للبقوليات والتوفو والحبوب الكاملة والمكسرات والبذور أن تغطي الاحتياج عند تناولها بانتظام خلال اليوم.</p>
+        </div>
+        <div class="gvr-myth">
+          <span class="gvr-myth__tag">إعادة صياغة</span>
+          <strong>الحديد يحتاج سياقًا لا خوفًا.</strong>
+          <p>يعمل الحديد النباتي بشكل أفضل عندما تكون الوجبات متنوعة ومقترنة بأطعمة غنية بفيتامين C مثل الطماطم أو الحمضيات أو الفلفل.</p>
+        </div>
+        <div class="gvr-myth">
+          <span class="gvr-myth__tag">إعادة صياغة</span>
+          <strong>فيتامين B12 مسألة تخطيط وليس عيبًا.</strong>
+          <p>مكمل بسيط أو أطعمة مدعمة بشكل منتظم يحل الأمر مباشرة وبشكل موثوق.</p>
+        </div>
+        <div class="gvr-myth">
+          <span class="gvr-myth__tag">إعادة صياغة</span>
+          <strong>الأكل الصحي يتعلق بالنمط لا بالكمال.</strong>
+          <p>جودة النظام الغذائي على المدى الطويل أهم من الهوس بعنصر غذائي واحد في وجبة واحدة.</p>
+        </div>
+      </div>
+
+      <div class="gvr-spotlight-grid" aria-label="بطاقات العناصر الغذائية">
+        <div class="gvr-spotlight">
+          <span class="gvr-spotlight__label">البروتين</span>
+          <strong class="gvr-spotlight__title">ابنه من البقوليات والتوفو والحبوب والمكسرات والبذور</strong>
+          <p>ركز على التنوع عبر اليوم بدلًا من محاولة جعل كل وجبة تقوم بكل شيء دفعة واحدة.</p>
+        </div>
+        <div class="gvr-spotlight">
+          <span class="gvr-spotlight__label">الحديد</span>
+          <strong class="gvr-spotlight__title">اربط الأطعمة الغنية بالحديد بفيتامين C</strong>
+          <p>العدس والفاصوليا والسبانخ والكرنب تعمل أفضل عندما تدعمها الحمضيات أو الطماطم أو الفلفل.</p>
+        </div>
+        <div class="gvr-spotlight">
+          <span class="gvr-spotlight__label">B12</span>
+          <strong class="gvr-spotlight__title">احتفظ بمصدر بسيط وثابت في روتينك</strong>
+          <p>غالبًا ما يكون المكمل اليومي أو الأسبوعي أسهل قاعدة بصرية وأكثرها موثوقية للالتزام بها.</p>
+        </div>
+        <div class="gvr-spotlight">
+          <span class="gvr-spotlight__label">اليود + أوميغا 3</span>
+          <strong class="gvr-spotlight__title">ثبّت الأساسيات الصغيرة</strong>
+          <p>استخدم الملح المعالج باليود بانتظام واحتفظ ببذور الكتان أو الشيا أو الجوز أو أوميغا 3 من الطحالب ضمن روتينك.</p>
+        </div>
+      </div>
 
       <h3>البروتين</h3>
 
@@ -928,6 +1265,25 @@
       <h2 id="ch-shopping">نصائح التسوق لنمط حياة الغذاء النباتي الكامل</h2>
 
       <p>إعداد نفسك للنجاح يبدأ من متجر البقالة. التسوق الذكي لا يتطلب قضاء ساعات في متاجر الأطعمة الصحية المتخصصة أو ملء مطبخك بمكونات غريبة. يتعلق الأمر بفهم ما تبحث عنه، البدء بالأساسيات، وبناء مخزن تدريجيًا يدعم الوجبات اليومية المغذية.</p>
+
+      <div class="gvr-shopping-grid" aria-label="أدوات التسوق">
+        <div class="gvr-shopping-card">
+          <strong>أساسيات موثوقة</strong>
+          <p>احتفظ بحبة أو حبتين وبقولية أو بقوليتين تستمتع بهما فعلًا، حتى يدعم مخزنك التكرار لا التعقيد.</p>
+        </div>
+        <div class="gvr-shopping-card">
+          <strong>السهولة التي ما زالت مناسبة</strong>
+          <p>الفاصوليا المعلبة والباساتا والمنتجات المجمدة تجعل الطهي الكامل أكثر عملية وليس أقل أصالة.</p>
+        </div>
+        <div class="gvr-shopping-card">
+          <strong>المجمدات كخطة دعم</strong>
+          <p>البازلاء والذرة والتوت والخضروات المشكلة تحفظ لك خيارات مغذية جاهزة عندما يضيق الوقت.</p>
+        </div>
+        <div class="gvr-shopping-card">
+          <strong>النكهة جزء من النظام</strong>
+          <p>اختر مجموعة صغيرة من التوابل والأعشاب والعناصر الحمضية تجعل الوجبات النباتية البسيطة كاملة وقابلة للتكرار.</p>
+        </div>
+      </div>
 
       <h3>1. اختر خبز الحبوب الكاملة الذي يمكنك الاعتماد عليه</h3>
 
