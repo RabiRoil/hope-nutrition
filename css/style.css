@@ -79,6 +79,20 @@ body {
   overflow-x: hidden;
 }
 
+.home-page {
+  text-align: left;
+}
+
+.home-page .about__content > p,
+.home-page .service-block__content > p,
+.home-page .service-block__detail,
+.home-page .faq-answer p,
+.home-page .contact-item__value,
+.home-page .footer__brand p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--color-primary); text-decoration: none; transition: color var(--transition); }
 a:hover { color: var(--color-primary-dark); }
@@ -1974,6 +1988,15 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
 
 @media (max-width: 768px) {
   body {
+    text-align: left;
+  }
+
+  .home-page .about__content > p,
+  .home-page .service-block__content > p,
+  .home-page .service-block__detail,
+  .home-page .faq-answer p,
+  .home-page .contact-item__value,
+  .home-page .footer__brand p {
     text-align: left;
   }
 
