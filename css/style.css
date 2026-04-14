@@ -74,6 +74,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   line-height: 1.75;
+  text-align: justify;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
