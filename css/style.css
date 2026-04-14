@@ -2065,39 +2065,10 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
 
 /* ========== SECTION BREAK ========== */
 .section-break {
-  position: relative;
-  padding: clamp(1rem, 2vw, 1.5rem) 0;
-  overflow: hidden;
-}
-
-.section-break__wave {
-  display: block;
   width: 100%;
-  height: clamp(40px, 6vw, 72px);
-}
-
-.section-break__dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: -8px;
-  position: relative;
-  z-index: 1;
-}
-
-.section-break__dots span {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  opacity: 0.35;
-}
-
-.section-break__dots span:nth-child(2) {
-  width: 7px;
-  height: 7px;
-  opacity: 0.55;
-  background: var(--color-primary-dark);
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, var(--color-primary-lighter) 30%, var(--color-primary-light) 50%, var(--color-primary-lighter) 70%, transparent 95%);
+  margin: clamp(1rem, 3vw, 2.5rem) 0;
 }
 
 /* ========== NEWSLETTER BAR ========== */
