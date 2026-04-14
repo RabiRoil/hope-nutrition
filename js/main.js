@@ -43,9 +43,10 @@
 
   /* ========== MOBILE NAV ========== */
   function initNav() {
+    const nav = qs('.nav');
     const toggle = qs('.nav-toggle');
-    const list   = qs('.nav__list');
-    if (!toggle || !list) return;
+    const drawer = qs('.nav__drawer');
+    if (!nav || !toggle || !drawer) return;
 
     /* Create backdrop element */
     const backdrop = document.createElement('div');
@@ -54,41 +55,45 @@
 
     function closeMenu() {
       toggle.classList.remove('active');
-      list.classList.remove('active');
+      nav.classList.remove('nav--open');
       backdrop.classList.remove('active');
       toggle.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
 
     function openMenu() {
       toggle.classList.add('active');
-      list.classList.add('active');
+      nav.classList.add('nav--open');
       backdrop.classList.add('active');
       toggle.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     }
 
     toggle.addEventListener('click', () => {
-      list.classList.contains('active') ? closeMenu() : openMenu();
+      nav.classList.contains('nav--open') ? closeMenu() : openMenu();
     });
 
-    qsa('.nav__link', list).forEach(link =>
+    qsa('.nav__link', drawer).forEach(link =>
       link.addEventListener('click', closeMenu)
     );
 
     /* Close on mobile CTA click */
-    const mobileCta = qs('.nav__mobile-cta', list);
+    const mobileCta = qs('.nav__mobile-cta', drawer);
     if (mobileCta) mobileCta.addEventListener('click', closeMenu);
 
     /* Close on backdrop click */
     backdrop.addEventListener('click', closeMenu);
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && list.classList.contains('active')) {
+      if (e.key === 'Escape' && nav.classList.contains('nav--open')) {
         closeMenu();
         toggle.focus();
       }
     });
+
+    drawer.setAttribute('aria-hidden', 'true');
   }
 
   /* ========== HEADER SCROLL ========== */
