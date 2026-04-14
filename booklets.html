@@ -157,51 +157,6 @@
       cursor: default;
     }
 
-    /* ─── Extras (secondary links) ─── */
-    .guides-extras {
-      margin-top: 3rem;
-      text-align: center;
-      padding: 2rem 0;
-      border-top: 1px solid var(--color-border-light);
-    }
-
-    .guides-extras__heading {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-text-muted);
-      margin-bottom: 1.25rem;
-    }
-
-    .guides-extras__links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .guides-extras__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1.25rem;
-      font-size: 0.9rem;
-      color: var(--color-text-secondary);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border-light);
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .guides-extras__link:hover {
-      border-color: var(--color-primary);
-      color: var(--color-primary-dark);
-      box-shadow: 0 2px 12px rgba(141,198,63,0.12);
-    }
-
     @media (max-width: 420px) {
       .guides-grid { grid-template-columns: 1fr; }
     }
@@ -332,24 +287,6 @@
       </div><!-- /guides-grid -->
 
       <!-- ─── Secondary Links (Visual Summary, Arabic, PDF) ─── -->
-      <div class="guides-extras fade-up">
-        <h3 class="guides-extras__heading">GrapeVine is also available as:</h3>
-        <div class="guides-extras__links">
-          <a href="grapevine.html" class="guides-extras__link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Visual Summary
-          </a>
-          <a href="grapevine-ar.html" class="guides-extras__link" style="direction:rtl;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            النسخة العربية
-          </a>
-          <a href="https://www.hopenutrition.com.au/s/GrapeVine-Whole-Food-Plant-Based-Guide.pdf" class="guides-extras__link" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Download PDF
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
