@@ -70,13 +70,14 @@
       display: flex;
       flex-direction: column;
       background: var(--color-surface);
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-lg);
       border: 1px solid var(--color-border-light);
       overflow: hidden;
       text-decoration: none;
       color: inherit;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
     }
 
     a.guide-card:hover {
@@ -170,7 +171,7 @@
     }
 
     @media (max-width: 768px) {
-      .guides-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .guides-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
     }
 
     @media (max-width: 420px) {
