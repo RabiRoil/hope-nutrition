@@ -321,6 +321,243 @@
       margin-right: 0.4rem;
     }
 
+    /* ─── Guide At-a-Glance ─── */
+    .gvr-atlas {
+      margin: 0 0 3rem;
+      padding: 1.75rem;
+      background: linear-gradient(135deg, rgba(221, 240, 200, 0.55) 0%, rgba(245, 240, 232, 0.9) 100%);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.04);
+    }
+
+    .gvr-atlas__eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.65rem;
+    }
+
+    .gvr-atlas__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+      color: var(--color-primary-darker);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .gvr-atlas__intro {
+      font-size: 0.98rem !important;
+      line-height: 1.75 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.25rem !important;
+      text-align: left !important;
+    }
+
+    .gvr-atlas__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .gvr-atlas__card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(141, 198, 63, 0.14);
+      border-radius: var(--radius-md);
+      padding: 1rem 1rem 1.1rem;
+    }
+
+    .gvr-atlas__step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .gvr-atlas__card strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.35rem;
+    }
+
+    .gvr-atlas__card p {
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: left !important;
+    }
+
+    /* ─── Habit Roadmap ─── */
+    .gvr-roadmap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2rem 0 2.25rem;
+    }
+
+    .gvr-roadmap__step {
+      padding: 1.15rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+    }
+
+    .gvr-roadmap__step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-accent-light);
+      color: var(--color-accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .gvr-roadmap__step strong {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.4rem;
+    }
+
+    .gvr-roadmap__step p {
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: left !important;
+    }
+
+    /* ─── Nutrient Spotlights ─── */
+    .gvr-spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.75rem 0 2rem;
+    }
+
+    .gvr-spotlight {
+      padding: 1.1rem 1.15rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+    }
+
+    .gvr-spotlight__label {
+      display: inline-block;
+      padding: 0.28rem 0.58rem;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-ghost);
+      color: var(--color-primary-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .gvr-spotlight__title {
+      display: block;
+      font-size: 1rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .gvr-spotlight p {
+      font-size: 0.9rem !important;
+      line-height: 1.65 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: left !important;
+    }
+
+    /* ─── Myth Reframes ─── */
+    .gvr-myth-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .gvr-myth {
+      padding: 1.15rem 1.2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border-light);
+      background: linear-gradient(180deg, var(--color-surface) 0%, #fbfcf8 100%);
+    }
+
+    .gvr-myth__tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent-dark);
+      margin-bottom: 0.55rem;
+    }
+
+    .gvr-myth strong {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.35rem;
+      line-height: 1.45;
+    }
+
+    .gvr-myth p {
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: left !important;
+    }
+
+    /* ─── Shopping Toolkit ─── */
+    .gvr-shopping-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.75rem 0 2rem;
+    }
+
+    .gvr-shopping-card {
+      padding: 1.15rem;
+      background: var(--color-bg-cool);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+    }
+
+    .gvr-shopping-card strong {
+      display: block;
+      font-size: 0.98rem;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.35rem;
+    }
+
+    .gvr-shopping-card p {
+      font-size: 0.9rem !important;
+      line-height: 1.6 !important;
+      color: var(--color-text-secondary);
+      margin-bottom: 0 !important;
+      text-align: left !important;
+    }
+
     /* ─── Resources ─── */
     .gvr-resource-list {
       list-style: none !important;
@@ -433,6 +670,12 @@
       .gvr-hero { padding: calc(var(--header-h, 92px) + var(--nav-h, 46px) + 1.5rem) 1.25rem 2rem; }
       .gvr-article h2 { margin-top: 2.5rem; scroll-margin-top: calc(var(--header-h, 92px) + var(--nav-h, 46px) + 16px); }
       .gvr-nova-grid { grid-template-columns: 1fr; }
+      .gvr-atlas { padding: 1.25rem; }
+      .gvr-atlas__grid,
+      .gvr-roadmap,
+      .gvr-spotlight-grid,
+      .gvr-myth-grid,
+      .gvr-shopping-grid { grid-template-columns: 1fr; }
       .gvr-pullquote { font-size: 1.1rem; padding: 1.5rem; }
       .gvr-keypoint { padding: 1.25rem; }
       .gvr-tip { padding: 1.25rem; }
@@ -626,6 +869,34 @@
     <!-- ─── Article Body ─── -->
     <article class="gvr-article">
 
+      <section class="gvr-atlas" aria-label="Guide at a glance">
+        <div class="gvr-atlas__eyebrow">Guide at a Glance</div>
+        <div class="gvr-atlas__title">A visual system to return to throughout the guide</div>
+        <p class="gvr-atlas__intro">Use these four anchors whenever the guide feels dense: start with whole foods, lead with plants, build a balanced plate, and repeat simple habits until they feel natural.</p>
+        <div class="gvr-atlas__grid">
+          <div class="gvr-atlas__card">
+            <span class="gvr-atlas__step">1</span>
+            <strong>Whole first</strong>
+            <p>Choose foods close to their natural form and let them become the base of most meals.</p>
+          </div>
+          <div class="gvr-atlas__card">
+            <span class="gvr-atlas__step">2</span>
+            <strong>Plants in variety</strong>
+            <p>Legumes, grains, vegetables, fruit, nuts, and seeds work best as a diverse pattern rather than a single “superfood.”</p>
+          </div>
+          <div class="gvr-atlas__card">
+            <span class="gvr-atlas__step">3</span>
+            <strong>Build the plate</strong>
+            <p>Think in layers: grain, bean, vegetables, and a fresh or flavourful element to complete the meal.</p>
+          </div>
+          <div class="gvr-atlas__card">
+            <span class="gvr-atlas__step">4</span>
+            <strong>Repeat the easy wins</strong>
+            <p>Consistency matters more than perfection. Small, repeatable habits create the lifestyle.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Why I Wrote This Guide -->
       <h2 id="ch-why-i-wrote">Why I Wrote This Guide</h2>
 
@@ -779,6 +1050,29 @@
         <p>Lasting change doesn’t come from restriction or willpower. It comes from knowledge, skill development, and turning healthy choices into habits that feel natural and enjoyable.</p>
       </div>
 
+      <div class="gvr-roadmap" aria-label="Habit roadmap">
+        <div class="gvr-roadmap__step">
+          <span>1</span>
+          <strong>Pick one reliable meal</strong>
+          <p>Start with a breakfast, lunch, or dinner you already like and can repeat without stress.</p>
+        </div>
+        <div class="gvr-roadmap__step">
+          <span>2</span>
+          <strong>Upgrade the ingredients</strong>
+          <p>Swap in whole grains, legumes, and vegetables before trying to redesign your entire routine.</p>
+        </div>
+        <div class="gvr-roadmap__step">
+          <span>3</span>
+          <strong>Make flavour non-negotiable</strong>
+          <p>Use herbs, spices, citrus, and texture so the new meal feels satisfying rather than restrictive.</p>
+        </div>
+        <div class="gvr-roadmap__step">
+          <span>4</span>
+          <strong>Repeat until automatic</strong>
+          <p>Build confidence by repeating simple meals often enough that they become part of everyday life.</p>
+        </div>
+      </div>
+
 
       <div class="gvr-chapter-divider"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C12 2 4 7 4 14a8 8 0 0016 0c0-7-8-12-8-12z" stroke-linecap="round"/></svg></div>
 
@@ -798,6 +1092,52 @@
       <p>This does not mean that nutrient intake should be ignored. Certain nutrients, such as vitamin B12, iodine, iron, calcium, and omega-3 fatty acids, require particular attention in plant-based diets. However, these needs can be met through appropriate food choices, fortification, and supplementation when necessary.</p>
 
       <p>Overall, the most reliable approach is to focus on dietary variety, food quality, and long-term eating patterns rather than constant monitoring of individual nutrients. When plant-based diets are well planned and balanced, they can provide complete nutrition and support long-term health without unnecessary complexity (Craig et al., 2021).</p>
+
+      <div class="gvr-myth-grid" aria-label="Myth reframes">
+        <div class="gvr-myth">
+          <span class="gvr-myth__tag">Reframe</span>
+          <strong>Protein does not need to come from meat.</strong>
+          <p>Legumes, tofu, whole grains, nuts, and seeds can cover protein needs when eaten consistently across the day.</p>
+        </div>
+        <div class="gvr-myth">
+          <span class="gvr-myth__tag">Reframe</span>
+          <strong>Iron needs context, not fear.</strong>
+          <p>Plant iron works well when meals are varied and paired with vitamin C-rich foods like tomatoes, citrus, or capsicum.</p>
+        </div>
+        <div class="gvr-myth">
+          <span class="gvr-myth__tag">Reframe</span>
+          <strong>B12 is a planning task, not a flaw.</strong>
+          <p>A simple supplement or regular fortified foods solves the issue directly and reliably.</p>
+        </div>
+        <div class="gvr-myth">
+          <span class="gvr-myth__tag">Reframe</span>
+          <strong>Healthy eating is about patterns, not perfection.</strong>
+          <p>Diet quality over time matters more than obsessing over a single nutrient in a single meal.</p>
+        </div>
+      </div>
+
+      <div class="gvr-spotlight-grid" aria-label="Nutrient spotlights">
+        <div class="gvr-spotlight">
+          <span class="gvr-spotlight__label">Protein</span>
+          <strong class="gvr-spotlight__title">Build it from legumes, tofu, grains, nuts, and seeds</strong>
+          <p>Focus on variety across the day rather than trying to force every meal to do everything at once.</p>
+        </div>
+        <div class="gvr-spotlight">
+          <span class="gvr-spotlight__label">Iron</span>
+          <strong class="gvr-spotlight__title">Pair iron-rich foods with vitamin C</strong>
+          <p>Lentils, beans, spinach, and kale work best when supported by citrus, tomato, or capsicum.</p>
+        </div>
+        <div class="gvr-spotlight">
+          <span class="gvr-spotlight__label">B12</span>
+          <strong class="gvr-spotlight__title">Keep one simple source in your routine</strong>
+          <p>A daily or weekly supplement is often the easiest, most dependable visual rule to follow.</p>
+        </div>
+        <div class="gvr-spotlight">
+          <span class="gvr-spotlight__label">Iodine + Omega-3</span>
+          <strong class="gvr-spotlight__title">Anchor the small essentials</strong>
+          <p>Use iodised salt regularly and keep flax, chia, walnuts, or algae-based omega-3 on rotation.</p>
+        </div>
+      </div>
 
       <h3>Protein</h3>
 
@@ -932,6 +1272,25 @@
       <h2 id="ch-shopping">Shopping Tips for a Whole Food Plant-Based Lifestyle</h2>
 
       <p>Setting yourself up for success begins at the grocery store. Smart shopping doesn't require spending hours in specialty health food stores or filling your kitchen with exotic ingredients. It's about understanding what to look for, starting with essentials, and gradually building a pantry that supports every day, nourishing meals.</p>
+
+      <div class="gvr-shopping-grid" aria-label="Shopping toolkit">
+        <div class="gvr-shopping-card">
+          <strong>Reliable base foods</strong>
+          <p>Keep one or two grains and one or two legumes you genuinely enjoy, so your pantry supports repetition.</p>
+        </div>
+        <div class="gvr-shopping-card">
+          <strong>Convenience that still fits</strong>
+          <p>Canned beans, passata, and frozen produce make whole-food cooking more practical, not less authentic.</p>
+        </div>
+        <div class="gvr-shopping-card">
+          <strong>Frozen back-up matters</strong>
+          <p>Peas, corn, berries, and mixed vegetables keep nourishing meals available when time is tight.</p>
+        </div>
+        <div class="gvr-shopping-card">
+          <strong>Flavour is part of the system</strong>
+          <p>Choose a small set of spices, herbs, and acids that make simple plant meals taste complete and repeatable.</p>
+        </div>
+      </div>
 
       <h3>1. Choose Whole-Grain Bread You Can Rely On</h3>
 
