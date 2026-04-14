@@ -46,7 +46,7 @@
       left: 0;
       right: 0;
       z-index: 900;
-      background: rgba(250, 250, 246, 0.97);
+      background: #fafaf6;
       border-bottom: 1px solid var(--color-border-light);
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
@@ -130,7 +130,7 @@
       margin-bottom: 1rem;
       padding-top: 1.5rem;
       border-top: 1px solid var(--color-border-light);
-      scroll-margin-top: calc(var(--header-h, 92px) + 60px);
+      scroll-margin-top: calc(var(--header-h, 92px) + var(--nav-h, 46px) + 24px);
     }
 
     .gvr-article h2:first-of-type {
@@ -392,7 +392,7 @@
       .gvr-nav__title { display: none; }
       .gvr-nav__link { font-size: 0.72rem; padding: 0.7rem 0.5rem; }
       .gvr-hero { padding: 7rem 1.25rem 2rem; }
-      .gvr-article h2 { margin-top: 2.5rem; scroll-margin-top: calc(var(--header-h, 92px) + 50px); }
+      .gvr-article h2 { margin-top: 2.5rem; scroll-margin-top: calc(var(--header-h, 92px) + var(--nav-h, 46px) + 16px); }
       .gvr-nova-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -1010,15 +1010,14 @@
       const navLinks  = document.querySelectorAll('.gvr-nav__link');
       const chapters  = [];
 
-      /* ── Measure header so nav sits right below it ── */
+      /* ── Measure header & nav so content clears both ── */
       const header = document.querySelector('.header');
-      function syncHeaderHeight() {
-        if (!header) return;
-        const h = header.offsetHeight;
-        document.documentElement.style.setProperty('--header-h', h + 'px');
+      function syncHeights() {
+        if (header) document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+        if (nav) document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
       }
-      syncHeaderHeight();
-      window.addEventListener('resize', syncHeaderHeight);
+      syncHeights();
+      window.addEventListener('resize', syncHeights);
 
       navLinks.forEach(link => {
         const id = link.getAttribute('href').slice(1);
