@@ -47,29 +47,45 @@
     const list   = qs('.nav__list');
     if (!toggle || !list) return;
 
+    /* Create backdrop element */
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    function closeMenu() {
+      toggle.classList.remove('active');
+      list.classList.remove('active');
+      backdrop.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    function openMenu() {
+      toggle.classList.add('active');
+      list.classList.add('active');
+      backdrop.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
     toggle.addEventListener('click', () => {
-      const open = !list.classList.contains('active');
-      toggle.classList.toggle('active', open);
-      list.classList.toggle('active', open);
-      toggle.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+      list.classList.contains('active') ? closeMenu() : openMenu();
     });
 
     qsa('.nav__link', list).forEach(link =>
-      link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        list.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      })
+      link.addEventListener('click', closeMenu)
     );
+
+    /* Close on mobile CTA click */
+    const mobileCta = qs('.nav__mobile-cta', list);
+    if (mobileCta) mobileCta.addEventListener('click', closeMenu);
+
+    /* Close on backdrop click */
+    backdrop.addEventListener('click', closeMenu);
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && list.classList.contains('active')) {
-        toggle.classList.remove('active');
-        list.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        closeMenu();
         toggle.focus();
       }
     });
