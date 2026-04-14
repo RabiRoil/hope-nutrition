@@ -46,6 +46,166 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ─── Guides Grid ─── */
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    /* ─── Guide Card ─── */
+    .guide-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border-light);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    a.guide-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .guide-card__badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--color-primary);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 99px;
+      z-index: 2;
+    }
+
+    .guide-card__cover {
+      aspect-ratio: 400 / 260;
+      overflow: hidden;
+    }
+
+    .guide-card__cover svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .guide-card__cover--placeholder {
+      opacity: 0.6;
+    }
+
+    .guide-card__body {
+      padding: 1.5rem 1.5rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .guide-card__title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-primary-darker);
+      margin-bottom: 0.15rem;
+    }
+
+    .guide-card__subtitle {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--color-primary);
+      margin-bottom: 0.85rem;
+    }
+
+    .guide-card__desc {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .guide-card__meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .guide-card__meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .guide-card__actions .btn {
+      pointer-events: none;
+    }
+
+    .guide-card--soon {
+      border-style: dashed;
+      cursor: default;
+    }
+
+    /* ─── Extras (secondary links) ─── */
+    .guides-extras {
+      margin-top: 3rem;
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .guides-extras__heading {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .guides-extras__links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .guides-extras__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .guides-extras__link:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary-dark);
+      box-shadow: 0 2px 12px rgba(141,198,63,0.12);
+    }
+
+    @media (max-width: 420px) {
+      .guides-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -94,133 +254,102 @@
     </div>
   </section>
 
-  <!-- ========== BOOKLET FEATURE ========== -->
+  <!-- ========== GUIDES GRID ========== -->
   <section class="section">
     <div class="container">
-      <div class="booklet-feature fade-up">
-        <div class="booklet-feature__visual">
-          <div class="booklet-feature__image-wrapper">
-            <!-- Book/booklet illustration -->
-            <svg viewBox="0 0 480 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="480" height="600" fill="#EFF5F0"/>
-              <rect width="480" height="600" fill="url(#bookGrad)"/>
 
-              <!-- Book shape -->
-              <rect x="110" y="80" width="260" height="380" rx="8" fill="white" opacity="0.85"/>
-              <rect x="110" y="80" width="260" height="380" rx="8" stroke="#8DC63F" stroke-width="2" opacity="0.2"/>
-              <!-- Spine -->
-              <line x1="240" y1="80" x2="240" y2="460" stroke="#8DC63F" stroke-width="1.5" opacity="0.15"/>
+      <div class="guides-grid">
 
-              <!-- Title area on cover -->
-              <rect x="145" y="120" width="190" height="18" rx="4" fill="#8DC63F" opacity="0.6"/>
-              <rect x="160" y="148" width="160" height="10" rx="3" fill="#A8D670" opacity="0.4"/>
-              <rect x="170" y="168" width="140" height="8" rx="3" fill="#A8D670" opacity="0.25"/>
-
-              <!-- Decorative grape/vine illustration on cover -->
-              <circle cx="240" cy="260" r="50" fill="#A8D670" opacity="0.15"/>
+        <!-- ─── GrapeVine Card ─── -->
+        <a href="grapevine-read.html" class="guide-card fade-up">
+          <div class="guide-card__badge">Free</div>
+          <div class="guide-card__cover">
+            <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="260" rx="8" fill="#EFF5F0"/>
               <!-- Grape cluster -->
-              <circle cx="225" cy="240" r="10" fill="#7B5EA7" opacity="0.35"/>
-              <circle cx="245" cy="235" r="10" fill="#7B5EA7" opacity="0.30"/>
-              <circle cx="255" cy="250" r="10" fill="#7B5EA7" opacity="0.35"/>
-              <circle cx="235" cy="255" r="10" fill="#7B5EA7" opacity="0.32"/>
-              <circle cx="250" cy="268" r="10" fill="#7B5EA7" opacity="0.28"/>
-              <circle cx="230" cy="270" r="9" fill="#7B5EA7" opacity="0.25"/>
-              <circle cx="245" cy="282" r="8" fill="#7B5EA7" opacity="0.2"/>
-              <!-- Vine leaves -->
-              <path d="M220 220c-15-10-30-5-25 10s20 15 28 5 10-8-3-15z" fill="#8DC63F" opacity="0.4"/>
-              <path d="M260 215c12-8 25-3 20 10s-18 13-24 4-8-8 4-14z" fill="#8DC63F" opacity="0.35"/>
+              <circle cx="200" cy="110" r="42" fill="#A8D670" opacity="0.12"/>
+              <circle cx="186" cy="96" r="9" fill="#7B5EA7" opacity="0.35"/>
+              <circle cx="206" cy="92" r="9" fill="#7B5EA7" opacity="0.30"/>
+              <circle cx="214" cy="108" r="9" fill="#7B5EA7" opacity="0.35"/>
+              <circle cx="196" cy="112" r="9" fill="#7B5EA7" opacity="0.32"/>
+              <circle cx="210" cy="124" r="9" fill="#7B5EA7" opacity="0.28"/>
+              <circle cx="192" cy="126" r="8" fill="#7B5EA7" opacity="0.25"/>
+              <circle cx="204" cy="136" r="7" fill="#7B5EA7" opacity="0.2"/>
+              <!-- Leaves -->
+              <path d="M182 80c-12-8-24-4-20 8s16 12 22 4 8-6-2-12z" fill="#8DC63F" opacity="0.4"/>
+              <path d="M218 76c10-7 20-3 16 8s-14 10-19 3-6-6 3-11z" fill="#8DC63F" opacity="0.35"/>
               <!-- Stem -->
-              <path d="M240 210v-15c0 0-2-8-10-12" stroke="#8DC63F" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-              <path d="M240 210c4-8 12-12 18-10" stroke="#8DC63F" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
-
-              <!-- Bottom label area -->
-              <rect x="155" y="360" width="170" height="8" rx="3" fill="#8DC63F" opacity="0.2"/>
-              <rect x="175" y="380" width="130" height="6" rx="3" fill="#C8A25C" opacity="0.3"/>
-              <rect x="165" y="400" width="150" height="6" rx="3" fill="#8DC63F" opacity="0.15"/>
-
-              <!-- Shadow under book -->
-              <ellipse cx="240" cy="490" rx="120" ry="20" fill="#8DC63F" opacity="0.08"/>
-
-              <!-- Floating leaf/decorative elements -->
-              <path d="M60 200c12-16 28-12 28 4s-16 20-28 16-12-6 0-20z" fill="#DDF0C8" opacity="0.6"/>
-              <path d="M420 300c-10-14-24-10-24 4s14 17 24 13 10-5 0-17z" fill="#DDF0C8" opacity="0.5"/>
-              <circle cx="80" cy="400" r="8" fill="#C8A25C" opacity="0.25"/>
-              <circle cx="410" cy="150" r="6" fill="#F0DEB0" opacity="0.3"/>
-              <circle cx="65" cy="300" r="4" fill="white" opacity="0.4"/>
-              <circle cx="430" cy="420" r="5" fill="white" opacity="0.3"/>
-
-              <defs>
-                <linearGradient id="bookGrad" x1="0" y1="0" x2="480" y2="600">
-                  <stop offset="0%" stop-color="#EFF5F0"/>
-                  <stop offset="100%" stop-color="#DDF0C8" stop-opacity="0.6"/>
-                </linearGradient>
-              </defs>
+              <path d="M200 72v-10c0 0-2-6-8-9" stroke="#8DC63F" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+              <!-- Title text placeholder -->
+              <rect x="130" y="170" width="140" height="14" rx="4" fill="#8DC63F" opacity="0.5"/>
+              <rect x="148" y="194" width="104" height="8" rx="3" fill="#A8D670" opacity="0.3"/>
+              <!-- Decorative dots -->
+              <circle cx="54" cy="50" r="4" fill="#DDF0C8" opacity="0.5"/>
+              <circle cx="350" cy="45" r="3" fill="#F0DEB0" opacity="0.4"/>
+              <circle cx="40" cy="200" r="5" fill="#DDF0C8" opacity="0.3"/>
+              <circle cx="360" cy="210" r="4" fill="#C8A25C" opacity="0.2"/>
             </svg>
           </div>
-        </div>
-        <div class="booklet-feature__content">
-          <span class="section-label">Featured Guide</span>
-          <h2 class="booklet-feature__title" data-split>GrapeVine</h2>
-          <h3 class="booklet-feature__subtitle">Whole-Food, Plant-Based Guide</h3>
-          <p>
-            GrapeVine is a practical, evidence-based guide to whole-food, plant-based nutrition.
-            It's written for anyone curious about how a plant-rich approach can support long-term
-            health, prevent chronic disease, and bring more balance to everyday eating.
-          </p>
-          <p>
-            Whether you're just starting or looking for a reliable resource to deepen your
-            understanding, GrapeVine offers clear guidance without the overwhelm — with practical
-            tips, meal ideas, and the nutritional science made simple.
-          </p>
-
-          <div class="booklet-feature__highlights">
-            <div class="booklet-highlight">
-              <div class="booklet-highlight__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" stroke-linecap="round"/><rect x="8" y="2" width="8" height="4" rx="1" stroke-linecap="round"/><path d="M9 14l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>Evidence-Based</strong>
-                <small>Grounded in clinical nutrition science</small>
-              </div>
+          <div class="guide-card__body">
+            <h3 class="guide-card__title">GrapeVine</h3>
+            <p class="guide-card__subtitle">Whole-Food, Plant-Based Guide</p>
+            <p class="guide-card__desc">
+              A practical, evidence-based guide to whole-food, plant-based nutrition — 
+              with clear explanations, meal ideas, and shopping tips.
+            </p>
+            <div class="guide-card__meta">
+              <span>By Ramsina Roil</span>
+              <span>13 Chapters</span>
             </div>
-            <div class="booklet-highlight">
-              <div class="booklet-highlight__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-4 4-8 8-8 14a8 8 0 0016 0c0-6-4-10-8-14z" stroke-linecap="round"/><path d="M12 10v8M12 14l-2-2M12 16l2-2" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <strong>Whole-Food Focus</strong>
-                <small>Practical, real-food guidance</small>
-              </div>
-            </div>
-            <div class="booklet-highlight">
-              <div class="booklet-highlight__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <strong>Family-Friendly</strong>
-                <small>For individuals and families alike</small>
-              </div>
+            <div class="guide-card__actions">
+              <span class="btn btn--primary btn--sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Read Online
+              </span>
             </div>
           </div>
+        </a>
 
-          <a href="grapevine-read.html" class="btn btn--primary btn--lg">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Read Online
-          </a>
-          <a href="grapevine.html" class="btn btn--secondary btn--lg">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="10 17 15 12 10 7" stroke-linecap="round" stroke-linejoin="round"/><line x1="15" y1="12" x2="3" y2="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <!-- ─── More Guides Coming Soon ─── -->
+        <div class="guide-card guide-card--soon fade-up">
+          <div class="guide-card__cover guide-card__cover--placeholder">
+            <svg viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="260" rx="8" fill="#F5F5F2"/>
+              <circle cx="200" cy="110" r="36" stroke="#D0D0C8" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+              <path d="M188 110h24M200 98v24" stroke="#D0D0C8" stroke-width="2" stroke-linecap="round"/>
+              <rect x="146" y="170" width="108" height="12" rx="4" fill="#E0E0DA" opacity="0.5"/>
+              <rect x="164" y="192" width="72" height="8" rx="3" fill="#E0E0DA" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="guide-card__body">
+            <h3 class="guide-card__title" style="color: var(--color-text-muted);">More Guides Coming Soon</h3>
+            <p class="guide-card__desc" style="color: var(--color-text-muted);">
+              New evidence-based nutrition guides are in development. Check back soon.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /guides-grid -->
+
+      <!-- ─── Secondary Links (Visual Summary, Arabic, PDF) ─── -->
+      <div class="guides-extras fade-up">
+        <h3 class="guides-extras__heading">GrapeVine is also available as:</h3>
+        <div class="guides-extras__links">
+          <a href="grapevine.html" class="guides-extras__link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Visual Summary
           </a>
-          <a href="grapevine-ar.html" class="btn btn--secondary btn--lg" style="direction:rtl;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="grapevine-ar.html" class="guides-extras__link" style="direction:rtl;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             النسخة العربية
           </a>
-          <a href="https://www.hopenutrition.com.au/s/GrapeVine-Whole-Food-Plant-Based-Guide.pdf" class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="https://www.hopenutrition.com.au/s/GrapeVine-Whole-Food-Plant-Based-Guide.pdf" class="guides-extras__link" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Download PDF
           </a>
         </div>
       </div>
+
     </div>
   </section>
 
