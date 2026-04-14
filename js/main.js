@@ -115,13 +115,18 @@
     const blobs = qsa('.hero__blob');
     const badges = qsa('.hero__float-badge');
 
+    // Cache each element's static top so transforms don't feed back
+    const origins = items.map(el => {
+      const rect = el.getBoundingClientRect();
+      return rect.top + window.scrollY + rect.height / 2;
+    });
+
     function tick() {
       const sy = window.scrollY;
 
-      items.forEach(el => {
+      items.forEach((el, idx) => {
         const speed = parseFloat(el.dataset.parallax) || 0.1;
-        const rect = el.getBoundingClientRect();
-        const center = rect.top + rect.height / 2;
+        const center = origins[idx] - sy;
         const offset = (center - window.innerHeight / 2) * speed;
         el.style.transform = `translateY(${offset}px)`;
       });
