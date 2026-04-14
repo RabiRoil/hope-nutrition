@@ -96,6 +96,11 @@
     const header = qs('.header');
     if (!header) return header;
 
+    /* Expose header height as CSS custom property */
+    const setHeaderH = () => document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+    setHeaderH();
+    window.addEventListener('resize', setHeaderH, { passive: true });
+
     const update = () => header.classList.toggle('header--scrolled', scrollY > 50);
     window.addEventListener('scroll', () => { scrollY = window.scrollY; if (!ticking) { ticking = true; requestAnimationFrame(() => { update(); ticking = false; }); } }, { passive: true });
     scrollY = window.scrollY;
