@@ -1,7 +1,7 @@
 /* ============================================
    Hope Nutrition — JavaScript v3
-   Orchestrated load, parallax, magnetic hover,
-   scroll reveals, tilt, SVG draw-in, counters
+  Orchestrated load, parallax, magnetic hover,
+  scroll reveals, tilt, SVG draw-in
    ============================================ */
 
 (() => {
@@ -232,33 +232,6 @@
     wrappers.forEach(w => io.observe(w));
   }
 
-  /* ========== COUNTER ANIMATION ========== */
-  function initCounters() {
-    const counters = qsa('[data-count-to]');
-    if (!counters.length) return;
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const el = e.target;
-        const end = parseInt(el.dataset.countTo, 10);
-        const duration = 2000;
-        const start = performance.now();
-
-        const tick = (now) => {
-          const t = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - t, 4); // ease-out-quart
-          el.textContent = Math.round(eased * end);
-          if (t < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-        io.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(c => io.observe(c));
-  }
-
   /* ========== SMOOTH SCROLL PROGRESS ========== */
   function initScrollProgress() {
     const bar = document.createElement('div');
@@ -487,7 +460,6 @@
     initMagneticButtons();
     initTiltCards();
     initSvgDraw();
-    initCounters();
     initScrollProgress();
     initCursorGlow();
     initTextReveal();
