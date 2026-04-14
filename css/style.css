@@ -2120,6 +2120,22 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
     aspect-ratio: 4 / 3.4;
   }
   .about__image::before { right: 18px; bottom: 20px; }
+  .about__accent-box {
+    right: 14px;
+    bottom: 14px;
+    padding: 0.85rem 1.2rem;
+    border-width: 2px;
+    max-width: 46%;
+  }
+  .about__accent-box .number {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+  .about__accent-box .label {
+    font-size: 0.58rem;
+    letter-spacing: 1px;
+    line-height: 1.35;
+  }
   .pillars-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
   .booklet-card { grid-template-columns: 1fr; }
   .booklet-feature { grid-template-columns: 1fr; }
@@ -2143,6 +2159,20 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
   .service-block { padding: var(--space-xl); }
   .testimonial-card { padding: var(--space-xl); }
   .hero__float-badge { display: none; }
+  .about__accent-box {
+    right: 10px;
+    bottom: 10px;
+    padding: 0.7rem 0.95rem;
+    max-width: 42%;
+    border-radius: 22px;
+  }
+  .about__accent-box .number {
+    font-size: 0.95rem;
+  }
+  .about__accent-box .label {
+    font-size: 0.52rem;
+    letter-spacing: 0.75px;
+  }
 }
 
 /* Disable heavy effects for reduced-motion preference */
