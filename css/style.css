@@ -2063,99 +2063,41 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
 
 .faq-answer p { margin: 0; }
 
-/* ========== ORNAMENT DIVIDER ========== */
-.ornament-divider {
-  padding: clamp(2rem, 4vw, 3.5rem) 0;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(221, 240, 200, 0.5) 0%, rgba(221, 240, 200, 0) 42%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(245, 240, 232, 0.68) 100%);
+/* ========== SECTION BREAK ========== */
+.section-break {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.5rem) 0;
+  overflow: hidden;
 }
 
-.ornament-divider__inner {
+.section-break__wave {
+  display: block;
+  width: 100%;
+  height: clamp(40px, 6vw, 72px);
+}
+
+.section-break__dots {
   display: flex;
-  align-items: center;
-  gap: clamp(1rem, 2vw, 1.75rem);
-}
-
-.ornament-divider__line {
-  flex: 1;
-  height: 1px;
-  position: relative;
-  background: linear-gradient(90deg, rgba(141, 198, 63, 0), rgba(141, 198, 63, 0.45), rgba(141, 198, 63, 0));
-}
-
-.ornament-divider__line::after {
-  content: '';
-  position: absolute;
-  top: -7px;
-  right: 14%;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(200, 162, 92, 0.18);
-  box-shadow: 0 0 0 6px rgba(200, 162, 92, 0.08);
-}
-
-.ornament-divider__line:last-child::after {
-  left: 14%;
-  right: auto;
-}
-
-.ornament-divider__emblem {
-  position: relative;
-  width: 110px;
-  height: 110px;
-  display: grid;
-  place-items: center;
-  color: var(--color-primary-dark);
-}
-
-.ornament-divider__halo {
-  position: absolute;
-  inset: 12px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(240, 222, 176, 0.7) 0%, rgba(240, 222, 176, 0.12) 52%, rgba(240, 222, 176, 0) 72%);
-}
-
-.ornament-divider__emblem::before,
-.ornament-divider__emblem::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-}
-
-.ornament-divider__emblem::before {
-  border: 1px solid rgba(141, 198, 63, 0.28);
-  transform: scale(1);
-}
-
-.ornament-divider__emblem::after {
-  inset: 10px;
-  border: 1px solid rgba(200, 162, 92, 0.26);
-}
-
-.ornament-divider__emblem svg {
+  justify-content: center;
+  gap: 10px;
+  margin-top: -8px;
   position: relative;
   z-index: 1;
-  width: 54px;
-  height: 54px;
 }
 
-@media (max-width: 768px) {
-  .ornament-divider__inner {
-    gap: 0.75rem;
-  }
+.section-break__dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.35;
+}
 
-  .ornament-divider__emblem {
-    width: 88px;
-    height: 88px;
-  }
-
-  .ornament-divider__emblem svg {
-    width: 44px;
-    height: 44px;
-  }
+.section-break__dots span:nth-child(2) {
+  width: 7px;
+  height: 7px;
+  opacity: 0.55;
+  background: var(--color-primary-dark);
 }
 
 /* ========== NEWSLETTER BAR ========== */
