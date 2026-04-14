@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GrapeVine — A whole-food, plant-based guide by Hope Nutrition. Read the full evidence-based booklet online.">
+  <meta name="description" content="GrapeVine — A whole-food, plant-based guide by Ramsina Roil. Read the full evidence-based guide online.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#8DC63F">
   <link rel="canonical" href="https://hopenutrition.com.au/grapevine-read.html">
@@ -23,7 +23,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hopenutrition.com.au" },
-      { "@type": "ListItem", "position": 2, "name": "Booklets", "item": "https://hopenutrition.com.au/booklets.html" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://hopenutrition.com.au/booklets.html" },
       { "@type": "ListItem", "position": 3, "name": "GrapeVine — Read Online", "item": "https://hopenutrition.com.au/grapevine-read.html" }
     ]
   }
@@ -36,107 +36,82 @@
 
   <style>
     /* ═══════════════════════════════════════
-       GrapeVine Read — Long-form Article
+       GrapeVine Read — Full-width Article
        ═══════════════════════════════════════ */
 
-    .gvr-layout {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem var(--container-padding) 4rem;
-      align-items: start;
-    }
-
-    /* ─── Sticky Chapter Nav ─── */
+    /* ─── Sticky Chapter Nav (horizontal bar) ─── */
     .gvr-nav {
       position: sticky;
-      top: 100px;
-      max-height: calc(100vh - 120px);
-      overflow-y: auto;
-      padding: 1.5rem 0;
-      scrollbar-width: thin;
-      scrollbar-color: var(--color-primary-lighter) transparent;
+      top: 70px;
+      z-index: 100;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border-light);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
+
+    .gvr-nav__inner {
+      max-width: var(--max-width-narrow);
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .gvr-nav__inner::-webkit-scrollbar { display: none; }
 
     .gvr-nav__title {
       font-family: var(--font-heading);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       color: var(--color-text-muted);
-      margin-bottom: 1rem;
-      padding-left: 1rem;
+      white-space: nowrap;
+      padding: 0.8rem 0.75rem 0.8rem 0;
+      border-right: 1px solid var(--color-border-light);
+      margin-right: 0.25rem;
     }
 
     .gvr-nav__list {
       list-style: none;
       padding: 0;
       margin: 0;
-      border-left: 2px solid var(--color-border-light);
+      display: flex;
+      align-items: center;
+      gap: 0;
     }
 
     .gvr-nav__link {
       display: block;
-      padding: 0.45rem 1rem;
+      padding: 0.75rem 0.65rem;
       font-family: var(--font-body);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       color: var(--color-text-muted);
       text-decoration: none;
-      border-left: 2px solid transparent;
-      margin-left: -2px;
-      transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-      line-height: 1.4;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.25s ease, border-color 0.25s ease;
     }
 
     .gvr-nav__link:hover {
       color: var(--color-primary-dark);
-      background: var(--color-primary-ghost);
     }
 
     .gvr-nav__link.active {
       color: var(--color-primary-dark);
-      border-left-color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
       font-weight: 500;
-      background: var(--color-primary-ghost);
     }
 
-    /* ─── Mobile nav toggle ─── */
-    .gvr-nav-toggle {
-      display: none;
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      z-index: 200;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: none;
-      background: var(--color-primary);
-      color: white;
-      cursor: pointer;
-      box-shadow: var(--shadow-lg);
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .gvr-nav-toggle:hover {
-      background: var(--color-primary-dark);
-      transform: scale(1.05);
-    }
-
-    .gvr-nav-toggle svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    /* ─── Article Body ─── */
+    /* ─── Article Body (centered, full-width) ─── */
     .gvr-article {
-      max-width: 720px;
-      min-width: 0;
+      max-width: var(--max-width-narrow);
+      margin: 0 auto;
+      padding: 3rem var(--container-padding) 4rem;
     }
 
     .gvr-article h2 {
@@ -146,7 +121,7 @@
       margin-bottom: 1rem;
       padding-top: 1.5rem;
       border-top: 1px solid var(--color-border-light);
-      scroll-margin-top: 100px;
+      scroll-margin-top: 140px;
     }
 
     .gvr-article h2:first-of-type {
@@ -402,59 +377,12 @@
     }
 
     /* ─── Responsive ─── */
-    @media (max-width: 900px) {
-      .gvr-layout {
-        grid-template-columns: 1fr;
-        padding-top: 1rem;
-      }
-
-      .gvr-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 280px;
-        height: 100vh;
-        max-height: 100vh;
-        background: var(--color-surface);
-        z-index: 300;
-        padding: 5rem 1.5rem 2rem;
-        box-shadow: var(--shadow-xl);
-        transform: translateX(-100%);
-        transition: transform 0.35s var(--ease-out);
-      }
-
-      .gvr-nav.open {
-        transform: translateX(0);
-      }
-
-      .gvr-nav-toggle {
-        display: flex;
-      }
-
-      .gvr-nav-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.4);
-        z-index: 299;
-      }
-
-      .gvr-nav-overlay.open {
-        display: block;
-      }
-
-      .gvr-nova-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .gvr-hero {
-        padding: 4rem 1.25rem 2rem;
-      }
-      .gvr-article h2 {
-        margin-top: 2.5rem;
-      }
+    @media (max-width: 600px) {
+      .gvr-nav__title { display: none; }
+      .gvr-nav__link { font-size: 0.72rem; padding: 0.7rem 0.5rem; }
+      .gvr-hero { padding: 4rem 1.25rem 2rem; }
+      .gvr-article h2 { margin-top: 2.5rem; scroll-margin-top: 120px; }
+      .gvr-nova-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -477,7 +405,7 @@
           <li><a href="index.html#pillars" class="nav__link">Approach</a></li>
           <li><a href="index.html#services" class="nav__link">Services</a></li>
           <li><a href="index.html#testimonials" class="nav__link">Reviews</a></li>
-          <li><a href="booklets.html" class="nav__link nav__link--active">Booklets</a></li>
+          <li><a href="booklets.html" class="nav__link nav__link--active">Guides</a></li>
         </ul>
         <a href="https://app.squareup.com/appointments/book/omzgfrghou5f38/LFP9SFMS7XYZB/start" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Book Now</a>
         <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -499,63 +427,50 @@
     <div class="gvr-hero-author">By <strong>Ramsina Roil</strong> | Hope Nutrition</div>
   </section>
 
-  <!-- ========== ARTICLE LAYOUT ========== -->
-  <div class="gvr-layout">
-
-    <!-- ─── Sticky Chapter Nav ─── -->
-    <aside class="gvr-nav" id="gvrNav" aria-label="Chapter navigation">
+  <!-- ========== STICKY CHAPTER NAV ========== -->
+  <nav class="gvr-nav" id="gvrNav" aria-label="Chapter navigation">
+    <div class="gvr-nav__inner">
       <div class="gvr-nav__title">Chapters</div>
       <ul class="gvr-nav__list">
-        <li><a href="#ch-why-i-wrote" class="gvr-nav__link active">Why I Wrote This Booklet</a></li>
-        <li><a href="#ch-who-for" class="gvr-nav__link">Who Is This Booklet For</a></li>
+        <li><a href="#ch-why-i-wrote" class="gvr-nav__link active">Why I Wrote This Guide</a></li>
+        <li><a href="#ch-who-for" class="gvr-nav__link">Who Is This Guide For</a></li>
         <li><a href="#ch-what-is" class="gvr-nav__link">What Is WFPB?</a></li>
         <li><a href="#ch-why-whole" class="gvr-nav__link">Why Whole?</a></li>
         <li><a href="#ch-why-plant" class="gvr-nav__link">Why Plant-Based?</a></li>
-        <li><a href="#ch-lifestyle" class="gvr-nav__link">Lifestyle, Not Just a Diet</a></li>
-        <li><a href="#ch-misconceptions" class="gvr-nav__link">Common Misconceptions</a></li>
-        <li><a href="#ch-what-eating" class="gvr-nav__link">What Will I Be Eating?</a></li>
+        <li><a href="#ch-lifestyle" class="gvr-nav__link">Lifestyle, Not a Diet</a></li>
+        <li><a href="#ch-misconceptions" class="gvr-nav__link">Misconceptions</a></li>
+        <li><a href="#ch-what-eating" class="gvr-nav__link">What Will I Eat?</a></li>
         <li><a href="#ch-shopping" class="gvr-nav__link">Shopping Tips</a></li>
         <li><a href="#ch-qa" class="gvr-nav__link">Q&amp;A</a></li>
         <li><a href="#ch-resources" class="gvr-nav__link">Resources</a></li>
         <li><a href="#ch-disclaimer" class="gvr-nav__link">Disclaimer</a></li>
         <li><a href="#ch-references" class="gvr-nav__link">References</a></li>
       </ul>
-    </aside>
-
-    <!-- Mobile nav overlay -->
-    <div class="gvr-nav-overlay" id="gvrOverlay"></div>
-
-    <!-- Mobile nav toggle -->
-    <button class="gvr-nav-toggle" id="gvrNavToggle" aria-label="Toggle chapter navigation">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </button>
+    </div>
+  </nav>
 
     <!-- ─── Article Body ─── -->
     <article class="gvr-article">
 
-      <!-- Why I Wrote This Booklet -->
-      <h2 id="ch-why-i-wrote">Why I Wrote This Booklet</h2>
+      <!-- Why I Wrote This Guide -->
+      <h2 id="ch-why-i-wrote">Why I Wrote This Guide</h2>
 
-      <p>I wrote this booklet to create a clear, simple, and practical foundation for understanding Whole Food Plant-Based eating. Over time, I have seen how confusing and contradictory nutrition advice has become, leaving many people feeling frustrated, discouraged, and unsure about what to believe. Most people are not lacking effort or motivation. What they often need is clear, simple guidance they can trust. My intention is not to overwhelm you with rules, trends, or extreme approaches.</p>
+      <p>I wrote this guide to create a clear, simple, and practical foundation for understanding Whole Food Plant-Based eating. Over time, I have seen how confusing and contradictory nutrition advice has become, leaving many people feeling frustrated, discouraged, and unsure about what to believe. Most people are not lacking effort or motivation. What they often need is clear, simple guidance they can trust. My intention is not to overwhelm you with rules, trends, or extreme approaches.</p>
 
-      <p>This is not another short-term diet or quick fix. Whole Food Plant-Based eating is a long-term lifestyle, and its benefits come from consistent, everyday choices rather than perfection. This booklet brings together essential knowledge, evidence-informed principles, and real-life experience to help you understand this way of eating in a practical and realistic way.</p>
+      <p>This is not another short-term diet or quick fix. Whole Food Plant-Based eating is a long-term lifestyle, and its benefits come from consistent, everyday choices rather than perfection. This guide brings together essential knowledge, evidence-informed principles, and real-life experience to help you understand this way of eating in a practical and realistic way.</p>
 
       <p>It also offers a supportive approach to transition, one that I have seen help people reduce cravings, develop healthier habits, and build confidence in their choices, especially when change is needed for health and wellbeing. This guide is here to support you, not to pressure you. It is designed to make this lifestyle feel achievable, sustainable, and suited to real life. Wherever you are starting from, I hope these pages help you move forward with clarity, confidence, and compassion for yourself.</p>
 
 
-      <!-- Who Is This Booklet For -->
-      <h2 id="ch-who-for">Who is this booklet for</h2>
+      <!-- Who Is This Guide For -->
+      <h2 id="ch-who-for">Who is this guide for</h2>
 
-      <p>This booklet is for people who want to start a Whole Food Plant-Based lifestyle and truly understand what it is. It is for those who have heard about it because of its health benefits and are looking for a clear starting point and a smooth way to transition. It is especially for people living with chronic disease, or those who feel they urgently need to change their eating habits in a meaningful and lasting way.</p>
+      <p>This guide is for people who want to start a Whole Food Plant-Based lifestyle and truly understand what it is. It is for those who have heard about it because of its health benefits and are looking for a clear starting point and a smooth way to transition. It is especially for people living with chronic disease, or those who feel they urgently need to change their eating habits in a meaningful and lasting way.</p>
 
-      <p>This booklet is designed to help you build understanding first, then move into change with clarity and confidence. This booklet is not for people looking to lose a few kilos and then return to their old eating habits. This is not another fad diet or short-term solution. Whole Food Plant-Based eating is a lifestyle, and its benefits come from living it consistently, not from temporary effort. If you are ready to learn, understand, and commit to a way of eating that is known for its long-term health benefits, then this booklet is for you.</p>
+      <p>This guide is designed to help you build understanding first, then move into change with clarity and confidence. This guide is not for people looking to lose a few kilos and then return to their old eating habits. This is not another fad diet or short-term solution. Whole Food Plant-Based eating is a lifestyle, and its benefits come from living it consistently, not from temporary effort. If you are ready to learn, understand, and commit to a way of eating that is known for its long-term health benefits, then this guide is for you.</p>
 
       <div class="gvr-disclaimer">
-        <p>Please remember, this booklet is not a replacement for your personal doctor's advice. It does not take the place of professional medical guidance, diagnosis, or treatment. I take no responsibility for anyone misusing this guide or for failing to consult a doctor before making changes that could affect their health. Always check with your healthcare provider before making changes that could affect your health.</p>
+        <p>Please remember, this guide is not a replacement for your personal doctor's advice. It does not take the place of professional medical guidance, diagnosis, or treatment. I take no responsibility for anyone misusing this guide or for failing to consult a doctor before making changes that could affect their health. Always check with your healthcare provider before making changes that could affect your health.</p>
       </div>
 
 
@@ -625,7 +540,7 @@
       <!-- Why Plant-Based -->
       <h2 id="ch-why-plant">Why Plant-Based?</h2>
 
-      <p>There are many reasons for choosing plant foods over animal products. For the purpose of this booklet, and to support evidence-based decision-making, this section focuses on two key areas: the benefits for human health associated with plant-based eating, and the positive impact on planetary health when animal food consumption is reduced or avoided.</p>
+      <p>There are many reasons for choosing plant foods over animal products. For the purpose of this guide, and to support evidence-based decision-making, this section focuses on two key areas: the benefits for human health associated with plant-based eating, and the positive impact on planetary health when animal food consumption is reduced or avoided.</p>
 
       <h3>Benefits for Human Health</h3>
 
@@ -653,7 +568,7 @@
 
       <p>Long-term success is not determined by willpower. Willpower is limited and fluctuates depending on stress, mood, and life circumstances. What truly shapes behaviour are habits, both the ones developed throughout life and the new ones formed over time. When change is based only on temporary motivation, old habits tend to return, often without being noticed. This is why most diets fail: they do not create lasting behavioural change. Sustainable results come from building new, supportive habits that fit naturally into daily life.</p>
 
-      <p>Knowledge and understanding play a central role in this process. When people are well informed and genuinely convinced of the benefits of their choices, they are more likely to remain consistent. Education creates clarity and confidence, especially in challenging situations such as social events, emotional stress, or busy periods. This booklet is intended to provide a foundation for that understanding. However, ongoing learning and self-education are essential for maintaining long-term commitment.</p>
+      <p>Knowledge and understanding play a central role in this process. When people are well informed and genuinely convinced of the benefits of their choices, they are more likely to remain consistent. Education creates clarity and confidence, especially in challenging situations such as social events, emotional stress, or busy periods. This guide is intended to provide a foundation for that understanding. However, ongoing learning and self-education are essential for maintaining long-term commitment.</p>
 
       <p>Equally important is ensuring that new eating patterns are realistic, culturally appropriate, and enjoyable. Food is closely connected to culture, family traditions, and personal preferences. For change to last, meals must feel familiar and satisfying. Developing cooking skills is therefore essential. When healthy meals taste good and align with personal preferences, they are far more likely to become part of everyday life.</p>
 
@@ -964,11 +879,11 @@
       <!-- Disclaimer -->
       <h2 id="ch-disclaimer">Disclaimer</h2>
 
-      <p>The information provided in this booklet, Hope Nutrition, by Ramsina Roil, is for educational and informational purposes only. It is not a replacement for professional medical advice, diagnosis, or treatment. Always consult with your personal healthcare provider before making any changes to your diet, exercise, or lifestyle, especially if you have a medical condition, are taking medication, or are under the care of a healthcare professional.</p>
+      <p>The information provided in this guide, by Ramsina Roil / Hope Nutrition, is for educational and informational purposes only. It is not a replacement for professional medical advice, diagnosis, or treatment. Always consult with your personal healthcare provider before making any changes to your diet, exercise, or lifestyle, especially if you have a medical condition, are taking medication, or are under the care of a healthcare professional.</p>
 
       <p>Ramsina Roil and Hope Nutrition take no responsibility for any misuse of this guide, for following it without consulting a doctor, or for any adverse outcomes that may occur. Readers use this information at their own risk.</p>
 
-      <p>All content in this booklet including text, images, and recipes is protected by copyright. You may not copy, reproduce, distribute, or create derivative works from this material without written permission from Ramsina Roil / Hope Nutrition. Unauthorised use may violate copyright laws and result in legal action.</p>
+      <p>All content in this guide including text, images, and recipes is protected by copyright. You may not copy, reproduce, distribute, or create derivative works from this material without written permission from Ramsina Roil / Hope Nutrition. Unauthorised use may violate copyright laws and result in legal action.</p>
 
       <p>By reading and using this booklet, you acknowledge and agree to these terms.</p>
 
@@ -1015,7 +930,6 @@
       <p style="margin-top: 3rem; text-align: center; font-size: 0.88rem; color: var(--color-text-muted);">© 2025 Ramsina Roil / Hope Nutrition. All rights reserved.</p>
 
     </article>
-  </div>
 
   <!-- ========== CTA ========== -->
   <section class="section section--dark cta">
@@ -1054,7 +968,7 @@
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
             <a href="index.html#services">Services</a>
-            <a href="booklets.html">Booklets</a>
+            <a href="booklets.html">Guides</a>
             <a href="https://app.squareup.com/appointments/book/omzgfrghou5f38/LFP9SFMS7XYZB/start" target="_blank" rel="noopener noreferrer">Book Now</a>
           </div>
         </div>
@@ -1137,31 +1051,9 @@
           const target = document.getElementById(id);
           if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            /* Close mobile nav if open */
-            nav.classList.remove('open');
-            overlay.classList.remove('open');
           }
         });
       });
-
-      /* ── Mobile nav toggle ── */
-      const nav = document.getElementById('gvrNav');
-      const toggle = document.getElementById('gvrNavToggle');
-      const overlay = document.getElementById('gvrOverlay');
-
-      if (toggle) {
-        toggle.addEventListener('click', () => {
-          nav.classList.toggle('open');
-          overlay.classList.toggle('open');
-        });
-      }
-
-      if (overlay) {
-        overlay.addEventListener('click', () => {
-          nav.classList.remove('open');
-          overlay.classList.remove('open');
-        });
-      }
     })();
   </script>
 </body>
