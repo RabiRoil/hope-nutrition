@@ -404,7 +404,7 @@ p { margin-bottom: var(--space-md); color: var(--color-text-secondary); }
   z-index: 2;
 }
 
-.hero__content { position: relative; z-index: 2; }
+.hero__content { position: relative; z-index: 2; text-align: left; }
 
 .hero__label {
   display: inline-flex;
@@ -432,6 +432,7 @@ p { margin-bottom: var(--space-md); color: var(--color-text-secondary); }
   margin-bottom: var(--space-xl);
   color: var(--color-primary-darker);
   letter-spacing: -0.02em;
+  text-align: left;
 }
 
 .hero__title em {
