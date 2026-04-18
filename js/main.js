@@ -473,7 +473,7 @@
           const scale = 0.96 + (ratio * 0.04);
           const translateZ = (1 - ratio) * -30;
           el.style.transform = `perspective(1200px) translateZ(${translateZ}px) scale(${scale})`;
-          el.style.opacity = '1';
+          el.style.opacity = 1;
         }
       });
     }, { threshold: Array.from({ length: 20 }, (_, i) => i / 19) });
