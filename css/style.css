@@ -1986,34 +1986,8 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
   .trust-bar__inner { gap: var(--space-xl); }
 }
 
-@media (max-width: 768px) {
-  body {
-    text-align: left;
-  }
-
-  .home-page .about__content > p,
-  .home-page .service-block__content > p,
-  .home-page .service-block__detail,
-  .home-page .faq-answer p,
-  .home-page .contact-item__value,
-  .home-page .footer__brand p {
-    text-align: left;
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  p,
-  li,
-  .service-block__detail,
-  .qualification__text,
-  .testimonial-card p {
-    text-align: left;
-  }
-
-  .service-block__content h3,
-  .section-header h2 {
-    text-wrap: balance;
-  }
-
+/* ===================== NAV MOBILE (≤1100px) ===================== */
+@media (max-width: 1100px) {
   .nav__drawer {
     position: fixed;
     top: 0;
@@ -2136,6 +2110,35 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
   .nav--open .nav__mobile-cta {
     opacity: 0;
     animation: menuItemIn 0.4s var(--ease-out) 0.32s forwards;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    text-align: left;
+  }
+
+  .home-page .about__content > p,
+  .home-page .service-block__content > p,
+  .home-page .service-block__detail,
+  .home-page .faq-answer p,
+  .home-page .contact-item__value,
+  .home-page .footer__brand p {
+    text-align: left;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  p,
+  li,
+  .service-block__detail,
+  .qualification__text,
+  .testimonial-card p {
+    text-align: left;
+  }
+
+  .service-block__content h3,
+  .section-header h2 {
+    text-wrap: balance;
   }
 
   .hero { min-height: auto; padding: calc(var(--header-h, 72px) + var(--space-xl)) 0 var(--space-3xl); }
