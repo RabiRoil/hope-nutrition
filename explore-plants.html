@@ -247,7 +247,7 @@
     .plant-card[hidden] { display: none; }
 
     /* ─── Deep-Dive Plant Card ─── */
-    .plants-grid--single { grid-template-columns: 1fr; gap: 0; }
+    .plants-grid--single { grid-template-columns: 1fr; gap: 2.5rem; }
 
     .plant-deep {
       background: var(--color-surface);
@@ -964,6 +964,301 @@
               Summary based on a peer-reviewed review by Uddin et&nbsp;al., published in
               <em>The Scientific World Journal</em> (2014):
               <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3934766/" target="_blank" rel="noopener noreferrer">"Purslane Weed (Portulaca oleracea): A Prospective Plant Source of Nutrition, Omega-3 Fatty Acid, and Antioxidant Attributes"</a>.
+              This is general nutritional information, not personal medical advice.
+            </p>
+          </div>
+        </article>
+
+        <!-- ─── Rocket / Arugula (Deep-Dive Card) ─── -->
+        <article class="plant-deep fade-up" data-category="leafy" id="plant-rocket">
+          <!-- Hero -->
+          <div class="plant-deep__hero">
+            <div class="plant-deep__hero-text">
+              <span class="plant-deep__chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" stroke-linejoin="round"/></svg>
+                Featured Plant
+              </span>
+              <h2 class="plant-deep__name">Rocket</h2>
+              <p class="plant-deep__latin">Eruca sativa &middot; Diplotaxis tenuifolia</p>
+              <p class="plant-deep__tagline">
+                A peppery Mediterranean salad green from the Brassicaceae family &mdash; bitter,
+                bright, and packed with vitamin C, carotenoids, and a flavonoid lineup
+                (kaempferol, quercetin, isorhamnetin) linked to cardiovascular and metabolic
+                health.
+              </p>
+              <div class="plant-deep__quick">
+                <span class="nutrient-tag">Vitamin C</span>
+                <span class="nutrient-tag">Vitamin K</span>
+                <span class="nutrient-tag">Folate</span>
+                <span class="nutrient-tag">Calcium</span>
+                <span class="nutrient-tag nutrient-tag--gold">Flavonoids</span>
+              </div>
+            </div>
+            <div class="plant-deep__art" aria-hidden="true">
+              <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <radialGradient id="rocketGlow" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#F1F8E9"/>
+                    <stop offset="100%" stop-color="#C5E1A5"/>
+                  </radialGradient>
+                  <linearGradient id="rocketLeaf" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#9CCC65"/>
+                    <stop offset="100%" stop-color="#558B2F"/>
+                  </linearGradient>
+                  <linearGradient id="rocketStem" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#AED581"/>
+                    <stop offset="100%" stop-color="#558B2F"/>
+                  </linearGradient>
+                </defs>
+                <rect width="600" height="400" fill="url(#rocketGlow)"/>
+                <!-- soft background blobs -->
+                <circle cx="100" cy="90" r="60" fill="#A5D6A7" opacity="0.25"/>
+                <circle cx="510" cy="320" r="70" fill="#FFF59D" opacity="0.25"/>
+                <circle cx="490" cy="100" r="26" fill="#DCE775" opacity="0.3"/>
+                <!-- main central stem -->
+                <path d="M300 380 Q300 280 300 180" stroke="url(#rocketStem)" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.85"/>
+                <!-- side stems -->
+                <path d="M300 320 Q260 300 220 290" stroke="url(#rocketStem)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+                <path d="M300 280 Q340 260 380 250" stroke="url(#rocketStem)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+                <path d="M300 240 Q260 220 220 210" stroke="url(#rocketStem)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+                <path d="M300 200 Q340 180 390 170" stroke="url(#rocketStem)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+                <!-- deeply lobed rocket leaves: each leaf as stacked ellipse lobes -->
+                <!-- left mid leaf -->
+                <g transform="translate(180 290) rotate(-25)">
+                  <ellipse cx="0" cy="0" rx="55" ry="14" fill="url(#rocketLeaf)"/>
+                  <ellipse cx="-30" cy="-10" rx="14" ry="10" fill="url(#rocketLeaf)"/>
+                  <ellipse cx="-10" cy="-12" rx="14" ry="10" fill="url(#rocketLeaf)"/>
+                  <ellipse cx="10" cy="-12" rx="14" ry="10" fill="url(#rocketLeaf)"/>
+                  <ellipse cx="30" cy="-10" rx="14" ry="10" fill="url(#rocketLeaf)"/>
+                  <line x1="-50" y1="0" x2="50" y2="0" stroke="#33691E" stroke-width="1.5" opacity="0.55"/>
+                </g>
+                <!-- right mid leaf -->
+                <g transform="translate(420 250) rotate(20)">
+                  <ellipse cx="0" cy="0" rx="60" ry="15" fill="url(#rocketLeaf)"/>
+                  <ellipse cx="-32" cy="-11" rx="15" ry="11" fill="url(#rocketLeaf)"/>
+                  <ellipse cx="-10" cy="-13" rx="15" ry="11" fill="url(#rocketLeaf)"/>
+                  <ellipse cx="14" cy="-13" rx="15" ry="11" fill="url(#rocketLeaf)"/>
+                  <ellipse cx="36" cy="-10" rx="15" ry="11" fill="url(#rocketLeaf)"/>
+                  <line x1="-55" y1="0" x2="55" y2="0" stroke="#33691E" stroke-width="1.5" opacity="0.55"/>
+                </g>
+                <!-- left upper leaf -->
+                <g transform="translate(190 210) rotate(-15)">
+                  <ellipse cx="0" cy="0" rx="50" ry="13" fill="url(#rocketLeaf)" opacity="0.95"/>
+                  <ellipse cx="-22" cy="-10" rx="12" ry="9" fill="url(#rocketLeaf)" opacity="0.95"/>
+                  <ellipse cx="0" cy="-11" rx="12" ry="9" fill="url(#rocketLeaf)" opacity="0.95"/>
+                  <ellipse cx="22" cy="-10" rx="12" ry="9" fill="url(#rocketLeaf)" opacity="0.95"/>
+                </g>
+                <!-- right upper leaf -->
+                <g transform="translate(410 165) rotate(15)">
+                  <ellipse cx="0" cy="0" rx="48" ry="12" fill="url(#rocketLeaf)" opacity="0.95"/>
+                  <ellipse cx="-20" cy="-9" rx="11" ry="8" fill="url(#rocketLeaf)" opacity="0.95"/>
+                  <ellipse cx="0" cy="-10" rx="11" ry="8" fill="url(#rocketLeaf)" opacity="0.95"/>
+                  <ellipse cx="20" cy="-9" rx="11" ry="8" fill="url(#rocketLeaf)" opacity="0.95"/>
+                </g>
+                <!-- four-petalled cream flower with purple veins (Eruca sativa) -->
+                <g transform="translate(300 150)">
+                  <g fill="#FFFDE7" stroke="#7E57C2" stroke-width="0.8" opacity="0.95">
+                    <ellipse cx="0" cy="-18" rx="9" ry="14"/>
+                    <ellipse cx="18" cy="0" rx="14" ry="9"/>
+                    <ellipse cx="0" cy="18" rx="9" ry="14"/>
+                    <ellipse cx="-18" cy="0" rx="14" ry="9"/>
+                  </g>
+                  <circle r="6" fill="#FFB300"/>
+                  <circle r="2.5" fill="#FFE082"/>
+                </g>
+                <!-- flavonoid hint badge -->
+                <g transform="translate(140 270)" opacity="0.8">
+                  <circle r="18" fill="#AB47BC"/>
+                  <text x="0" y="4" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="white">flav</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="plant-tabs-wrap">
+            <div class="plant-tabs" role="tablist" aria-label="Rocket information sections">
+              <button class="plant-tab" role="tab" aria-selected="true" aria-controls="rocket-overview" id="tab-rocket-overview">Overview</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="rocket-nutrition" id="tab-rocket-nutrition">Nutrition</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="rocket-phenols" id="tab-rocket-phenols">Phenolic Profile</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="rocket-antiox" id="tab-rocket-antiox">Antioxidants</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="rocket-tradition" id="tab-rocket-tradition">Traditional Use</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="rocket-use" id="tab-rocket-use">In the Kitchen</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="rocket-cautions" id="tab-rocket-cautions">Things to Know</button>
+            </div>
+            <div class="plant-tabs-hint" aria-hidden="true">
+              <span class="plant-tabs-hint__arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Panels -->
+          <div class="plant-panel" role="tabpanel" id="rocket-overview" aria-labelledby="tab-rocket-overview">
+            <h3>A Mediterranean staple with real depth</h3>
+            <p>
+              Rocket &mdash; also known as arugula, rucola, or roquette &mdash; is a peppery green
+              leaf in the Brassicaceae (cabbage) family. Two species share the name: cultivated
+              rocket (<em>Eruca sativa</em>) with broader, milder leaves, and wild rocket
+              (<em>Diplotaxis tenuifolia</em>) with finer, more deeply lobed leaves and a
+              sharper, more bitter bite.
+            </p>
+            <p>
+              Beyond flavour, rocket is a meaningful source of vitamin C, vitamin K, folate,
+              and calcium, and carries a distinctive set of plant compounds &mdash; flavonoids
+              (quercetin, kaempferol, isorhamnetin), carotenoids, and ascorbic acid &mdash;
+              that are studied for their antioxidant and anti-inflammatory effects.
+            </p>
+            <div class="callout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2" stroke-linecap="round"/></svg>
+              <p><strong>In one line:</strong> a low-calorie peppery leaf rich in vitamin C, vitamin K, folate, and flavonoids tied to heart, bone, and metabolic health.</p>
+            </div>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="rocket-nutrition" aria-labelledby="tab-rocket-nutrition" hidden>
+            <h3>What's inside 100&nbsp;g of fresh rocket</h3>
+            <p>Reported values from USDA data and published analyses. All figures are per 100&nbsp;g of fresh leaves.</p>
+            <div class="stat-grid">
+              <div class="stat-card"><div class="stat-card__value">25 <span class="stat-card__unit">kcal</span></div><div class="stat-card__label">Energy</div></div>
+              <div class="stat-card"><div class="stat-card__value">2.6 <span class="stat-card__unit">g</span></div><div class="stat-card__label">Protein</div></div>
+              <div class="stat-card"><div class="stat-card__value">3.7 <span class="stat-card__unit">g</span></div><div class="stat-card__label">Carbohydrates</div></div>
+              <div class="stat-card"><div class="stat-card__value">1.6 <span class="stat-card__unit">g</span></div><div class="stat-card__label">Fibre</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">2373 <span class="stat-card__unit">IU</span></div><div class="stat-card__label">Vitamin A · 79% DV</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">109 <span class="stat-card__unit">µg</span></div><div class="stat-card__label">Vitamin K · 91% DV</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">15 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Vitamin C · 25% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">97 <span class="stat-card__unit">µg</span></div><div class="stat-card__label">Folate · 24% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">160 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Calcium · 16% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">47 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Magnesium · 12% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">369 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Potassium · 8% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">1.46 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Iron · 18% DV</div></div>
+            </div>
+            <p>
+              Rocket also supplies useful amounts of beta-carotene, lutein, zeaxanthin, and
+              the B-vitamins (riboflavin, B6, pantothenic acid) &mdash; alongside dietary
+              nitrates that are studied for their role in vascular function and blood
+              pressure regulation.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="rocket-phenols" aria-labelledby="tab-rocket-phenols" hidden>
+            <h3>A flavonoid-rich green</h3>
+            <p>
+              Rocket leaves contain a distinctive blend of phenolic compounds &mdash; mainly
+              flavonols (kaempferol, quercetin, isorhamnetin, rutin) and phenolic acids
+              (caffeic acid, gallic acid). In wild rocket (<em>Diplotaxis tenuifolia</em>),
+              <strong>kaempferol is typically the dominant flavonol</strong>, while
+              <em>Eruca sativa</em> tends to be relatively richer in quercetin derivatives.
+            </p>
+            <p>
+              Reported phenolic content (mg per 100&nbsp;g of dried leaves, wild rocket grown
+              under different greenhouse films):
+            </p>
+            <div style="margin: 0.5rem 0 1.4rem;">
+              <div class="compare"><span class="compare__label">Caffeic acid</span><span class="compare__bar"><span class="compare__fill" style="width: 4%"></span></span><span class="compare__value">~25 mg</span></div>
+              <div class="compare"><span class="compare__label">Gallic acid</span><span class="compare__bar"><span class="compare__fill" style="width: 4%"></span></span><span class="compare__value">~25 mg</span></div>
+              <div class="compare"><span class="compare__label">Rutin</span><span class="compare__bar"><span class="compare__fill" style="width: 8%"></span></span><span class="compare__value">~50 mg</span></div>
+              <div class="compare"><span class="compare__label">Quercetin</span><span class="compare__bar"><span class="compare__fill" style="width: 45%"></span></span><span class="compare__value">~290 mg</span></div>
+              <div class="compare"><span class="compare__label">Isorhamnetin</span><span class="compare__bar"><span class="compare__fill" style="width: 80%"></span></span><span class="compare__value">~520 mg</span></div>
+              <div class="compare"><span class="compare__label">Kaempferol</span><span class="compare__bar"><span class="compare__fill compare__fill--accent" style="width: 100%"></span></span><span class="compare__value"><strong>~1240 mg</strong></span></div>
+            </div>
+            <p>
+              These compounds are linked in the wider literature to antioxidant,
+              anti-inflammatory, antimicrobial, cardioprotective, and antidiabetic activity.
+              <strong>Isorhamnetin</strong> &mdash; a methylated form of quercetin &mdash; is
+              especially well absorbed and is studied for antiplatelet and anticoagulant
+              effects.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="rocket-antiox" aria-labelledby="tab-rocket-antiox" hidden>
+            <h3>A built-in antioxidant package</h3>
+            <p>
+              Rocket leaves carry a rich combination of antioxidants &mdash; ascorbic acid
+              (vitamin C), carotenoids, chlorophylls, and phenolic compounds &mdash; that
+              together help the body manage oxidative stress.
+            </p>
+            <p>
+              In wild rocket grown under research conditions, ascorbic acid was the most
+              abundant antioxidant, reaching <strong>up to ~1200&nbsp;mg per 100&nbsp;g of
+              dried leaves</strong>. Total carotenoids ranged from roughly 70 to 260&nbsp;mg
+              per 100&nbsp;g D.W., and total phenolics from around 320 to 590&nbsp;mg GAE per
+              100&nbsp;g D.W. &mdash; with antioxidant activity (ABTS) measured between
+              roughly 1300 and 2500&nbsp;mg Trolox-equivalent per 100&nbsp;g D.W.
+            </p>
+            <div class="stat-grid">
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">1199 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Ascorbic acid (peak)</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">257 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Total carotenoids (peak)</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">997 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Chlorophyll a (peak)</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">2530 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Antioxidant act. (ABTS, peak)</div></div>
+            </div>
+            <p>
+              Together, these compounds are associated with reduced oxidative stress and a
+              lower risk of chronic conditions linked to inflammation &mdash; including
+              cardiovascular disease and certain cancers.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="rocket-tradition" aria-labelledby="tab-rocket-tradition" hidden>
+            <h3>Centuries of culinary and folk use</h3>
+            <p>
+              Rocket has been cultivated and eaten across the Mediterranean basin since
+              Roman times, both as a fresh salad green and as a seed used for oil and
+              flavouring. It features prominently in Italian, Greek, Levantine, and North
+              African kitchens.
+            </p>
+            <p>
+              In traditional medicine systems &mdash; including Greco-Arabic and Ayurvedic
+              practice &mdash; <em>Eruca sativa</em> has been used as a digestive stimulant,
+              gentle diuretic, and tonic, with its seeds applied externally for skin
+              concerns. Modern phytochemistry highlights its glucosinolates (precursors to
+              the same protective isothiocyanates found in broccoli and watercress), along
+              with its flavonoid content, as the active basis for many of these traditional
+              uses.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="rocket-use" aria-labelledby="tab-rocket-use" hidden>
+            <h3>Bringing rocket into everyday meals</h3>
+            <p>The whole leaf is eaten &mdash; raw or lightly wilted &mdash; and the flowers and seeds are also edible.</p>
+            <ul class="use-list">
+              <li>Toss raw leaves into salads with tomato, shaved fennel, and a lemon-olive oil dressing.</li>
+              <li>Pile a generous handful onto wholegrain pasta or pizza in the final minute, so the heat just softens the leaves.</li>
+              <li>Blend into a pesto with walnuts or almonds, garlic, lemon zest, and olive oil &mdash; in place of basil.</li>
+              <li>Layer through grain bowls (freekeh, quinoa, farro) with roasted vegetables and chickpeas.</li>
+              <li>Fold into omelettes, frittatas, or savoury wraps for a peppery lift.</li>
+              <li>Use the small white flowers as an edible garnish for salads and crudités.</li>
+            </ul>
+            <p>
+              Pair rocket with a fat source &mdash; olive oil, tahini, avocado, or nuts &mdash;
+              to help absorb its fat-soluble vitamins (A, K) and carotenoids.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="rocket-cautions" aria-labelledby="tab-rocket-cautions" hidden>
+            <h3>A few things to keep in mind</h3>
+            <div class="callout callout--warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2L12 3z" stroke-linejoin="round"/><path d="M12 10v5M12 18v.5" stroke-linecap="round"/></svg>
+              <p>Rocket is naturally <strong>high in vitamin K</strong> (around 109&nbsp;µg per 100&nbsp;g). People taking blood-thinning medications such as warfarin should keep their leafy-green intake steady from week to week and check with their healthcare provider before making big changes.</p>
+            </div>
+            <p>
+              Rocket also accumulates <strong>dietary nitrates</strong> from the soil &mdash;
+              broadly considered helpful for vascular health at usual food intakes, but worth
+              noting for very young children and anyone advised to limit nitrate-rich foods.
+            </p>
+            <p>
+              As a Brassica, rocket contains glucosinolates that can interact with thyroid
+              function in very large, sustained intakes &mdash; not a concern at normal
+              culinary servings, especially when iodine intake is adequate.
+            </p>
+            <p>
+              If foraging wild rocket, harvest only from areas free of pesticides, vehicle
+              exhaust, and other contamination, and rinse leaves well before eating.
+            </p>
+            <p class="source-note">
+              Bioactive compound and antioxidant data summarised from a peer-reviewed study
+              by Romano et&nbsp;al., published in <em>Foods</em> (2022):
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9778044/" target="_blank" rel="noopener noreferrer">"Bioactive Compounds and Antioxidant Properties of Wild Rocket (Diplotaxis tenuifolia L.)"</a>.
+              Standard nutrient figures are drawn from USDA food composition data.
               This is general nutritional information, not personal medical advice.
             </p>
           </div>
