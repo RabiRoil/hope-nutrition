@@ -246,6 +246,31 @@
     /* ─── Hidden cards (filter) ─── */
     .plant-card[hidden] { display: none; }
 
+    /* ─── Coming-soon empty state ─── */
+    .plants-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+      background: var(--color-surface);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius-xl);
+      color: var(--color-text-muted);
+    }
+    .plants-empty[hidden] { display: none; }
+    .plants-empty__icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 1rem;
+      color: var(--color-primary);
+      opacity: 0.7;
+    }
+    .plants-empty h3 {
+      font-family: var(--font-display);
+      color: var(--color-primary-darker);
+      font-size: 1.4rem;
+      margin: 0 0 0.5rem;
+    }
+    .plants-empty p { margin: 0; font-size: 0.98rem; line-height: 1.6; }
+
     /* ─── Deep-Dive Plant Card ─── */
     .plants-grid--single { grid-template-columns: 1fr; gap: 2.5rem; }
 
@@ -1326,6 +1351,16 @@
           </div>
         </article>
 
+        <!-- ─── Empty-state for categories without cards yet ─── -->
+        <div class="plants-empty" id="plants-empty" hidden>
+          <svg class="plants-empty__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M12 2C8 6 6 9 6 13a6 6 0 0012 0c0-4-2-7-6-11z" stroke-linejoin="round"/>
+            <path d="M12 13v8" stroke-linecap="round"/>
+          </svg>
+          <h3>More plants coming soon</h3>
+          <p>We're growing this library steadily. <span id="plants-empty-label">This category</span> hasn't been planted here yet, but new deep-dives are on the way.</p>
+        </div>
+
       </div><!-- /plants-grid -->
     </div>
   </section>
@@ -1425,14 +1460,35 @@
     });
 
     // Filter bar
+    const categoryLabels = {
+      leafy: 'Leafy Greens',
+      herb: 'Herbs &amp; Spices',
+      seed: 'Seeds &amp; Grains',
+      fruit: 'Fruits &amp; Berries',
+      root: 'Roots &amp; Bulbs',
+      legume: 'Legumes &amp; Beans'
+    };
+    const emptyState = document.getElementById('plants-empty');
+    const emptyLabel = document.getElementById('plants-empty-label');
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const filter = btn.dataset.filter;
+        let visible = 0;
         document.querySelectorAll('[data-category]').forEach(card => {
-          card.hidden = !(filter === 'all' || card.dataset.category === filter);
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.hidden = !show;
+          if (show) visible++;
         });
+        if (emptyState && emptyLabel) {
+          if (visible === 0 && filter !== 'all') {
+            emptyLabel.innerHTML = categoryLabels[filter] || 'this category';
+            emptyState.hidden = false;
+          } else {
+            emptyState.hidden = true;
+          }
+        }
       });
     });
   </script>
