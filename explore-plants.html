@@ -241,6 +241,301 @@
     /* â”€â”€â”€ Hidden cards (filter) â”€â”€â”€ */
     .plant-card[hidden] { display: none; }
 
+    /* ─── Deep-Dive Plant Card ─── */
+    .plants-grid--single { grid-template-columns: 1fr; gap: 0; }
+
+    .plant-deep {
+      background: var(--color-surface);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border-light);
+    }
+
+    .plant-deep__hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      background: linear-gradient(135deg, #E8F5E9 0%, #DCEDC8 50%, #FFF8E1 100%);
+      min-height: 320px;
+    }
+
+    .plant-deep__hero-text {
+      padding: 2.5rem 2.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .plant-deep__chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      align-self: flex-start;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--color-primary-dark);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      margin-bottom: 1rem;
+    }
+
+    .plant-deep__name {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4.2vw, 2.8rem);
+      font-weight: 700;
+      color: var(--color-primary-darker);
+      line-height: 1.05;
+      margin: 0 0 0.35rem;
+    }
+
+    .plant-deep__latin {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .plant-deep__tagline {
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+      margin: 0 0 1.4rem;
+      max-width: 44ch;
+    }
+
+    .plant-deep__quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .plant-deep__quick .nutrient-tag { font-size: 0.74rem; }
+
+    .plant-deep__art {
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .plant-deep__art svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Tabs */
+    .plant-tabs {
+      display: flex;
+      gap: 0.25rem;
+      padding: 0.6rem 1rem 0;
+      border-bottom: 1px solid var(--color-border-light);
+      background: var(--color-bg-warm, #FAFAF6);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .plant-tabs::-webkit-scrollbar { display: none; }
+
+    .plant-tab {
+      flex-shrink: 0;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      padding: 0.85rem 1.2rem;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+      white-space: nowrap;
+    }
+
+    .plant-tab:hover { color: var(--color-primary-dark); }
+
+    .plant-tab[aria-selected="true"] {
+      color: var(--color-primary-darker);
+      border-bottom-color: var(--color-primary);
+    }
+
+    .plant-panel {
+      padding: 2rem 2.75rem 2.5rem;
+      animation: panelIn 0.4s var(--ease-out);
+    }
+
+    .plant-panel[hidden] { display: none; }
+
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .plant-panel h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: var(--color-primary-darker);
+      margin: 0 0 0.85rem;
+    }
+
+    .plant-panel p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      margin: 0 0 1.1rem;
+    }
+
+    .plant-panel p:last-child { margin-bottom: 0; }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.85rem;
+      margin: 0.5rem 0 1.4rem;
+    }
+
+    .stat-card {
+      background: var(--color-primary-ghost);
+      border: 1px solid var(--color-primary-lighter);
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1rem;
+      text-align: left;
+    }
+
+    .stat-card__value {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--color-primary-darker);
+      line-height: 1.1;
+    }
+
+    .stat-card__unit {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .stat-card__label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.35rem;
+    }
+
+    .stat-card--gold {
+      background: var(--color-accent-ghost);
+      border-color: var(--color-accent-light);
+    }
+    .stat-card--gold .stat-card__value { color: var(--color-accent-dark); }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 130px 1fr auto;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 0.6rem;
+      font-size: 0.88rem;
+    }
+    .compare__label { font-weight: 600; color: var(--color-text-primary); }
+    .compare__bar {
+      position: relative;
+      height: 10px;
+      background: var(--color-border-light);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .compare__fill {
+      position: absolute;
+      inset: 0 auto 0 0;
+      background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      border-radius: 99px;
+    }
+    .compare__fill--accent {
+      background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    }
+    .compare__value {
+      font-variant-numeric: tabular-nums;
+      color: var(--color-text-secondary);
+      font-weight: 600;
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .callout {
+      display: flex;
+      gap: 0.9rem;
+      padding: 1rem 1.15rem;
+      background: var(--color-accent-ghost);
+      border-left: 3px solid var(--color-accent);
+      border-radius: var(--radius-sm);
+      margin: 1rem 0 1.4rem;
+    }
+    .callout--warn {
+      background: #FFF4E5;
+      border-left-color: #E08600;
+    }
+    .callout svg {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      color: var(--color-accent-dark);
+    }
+    .callout--warn svg { color: #B36A00; }
+    .callout p { margin: 0; font-size: 0.92rem; line-height: 1.65; }
+
+    .use-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.7rem;
+    }
+    .use-list li {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: var(--color-bg-cool, #F5F8F4);
+      border-radius: var(--radius-sm);
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: var(--color-text-secondary);
+    }
+    .use-list li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      margin-top: 0.55rem;
+      border-radius: 50%;
+      background: var(--color-primary);
+    }
+
+    .source-note {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--color-border-light);
+    }
+
+    .source-note a { color: var(--color-primary-dark); }
+
+    @media (max-width: 820px) {
+      .plant-deep__hero { grid-template-columns: 1fr; }
+      .plant-deep__hero-text { padding: 2rem 1.5rem 1.5rem; }
+      .plant-deep__art { min-height: 220px; order: -1; }
+      .plant-panel { padding: 1.5rem 1.5rem 2rem; }
+    }
+
     @media (max-width: 900px) {
       .plants-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -343,7 +638,257 @@
       </div>
 
       <!-- Plants Grid -->
-      <div class="plants-grid" id="plants-grid">
+      <div class="plants-grid plants-grid--single" id="plants-grid">
+
+        <!-- ─── Purslane (Deep-Dive Card) ─── -->
+        <article class="plant-deep fade-up" data-category="leafy" id="plant-purslane">
+          <!-- Hero -->
+          <div class="plant-deep__hero">
+            <div class="plant-deep__hero-text">
+              <span class="plant-deep__chip">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" stroke-linejoin="round"/></svg>
+                Featured Plant
+              </span>
+              <h2 class="plant-deep__name">Purslane</h2>
+              <p class="plant-deep__latin">Portulaca oleracea</p>
+              <p class="plant-deep__tagline">
+                A humble succulent often dismissed as a garden weed &mdash; yet it carries
+                more plant-based omega-3 than any other leafy green on record, alongside a
+                generous lineup of antioxidants and minerals.
+              </p>
+              <div class="plant-deep__quick">
+                <span class="nutrient-tag">Omega-3 (ALA)</span>
+                <span class="nutrient-tag">Vitamin A</span>
+                <span class="nutrient-tag">Vitamin C</span>
+                <span class="nutrient-tag">Magnesium</span>
+                <span class="nutrient-tag nutrient-tag--gold">Antioxidants</span>
+              </div>
+            </div>
+            <div class="plant-deep__art" aria-hidden="true">
+              <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <radialGradient id="purslaneGlow" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#F1F8E9"/>
+                    <stop offset="100%" stop-color="#C8E6C9"/>
+                  </radialGradient>
+                  <linearGradient id="leafBody" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#7CB342"/>
+                    <stop offset="100%" stop-color="#558B2F"/>
+                  </linearGradient>
+                  <linearGradient id="stemGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#C5573B"/>
+                    <stop offset="100%" stop-color="#8E3A1F"/>
+                  </linearGradient>
+                </defs>
+                <rect width="600" height="400" fill="url(#purslaneGlow)"/>
+                <!-- soft background blobs -->
+                <circle cx="100" cy="80" r="55" fill="#A5D6A7" opacity="0.25"/>
+                <circle cx="510" cy="320" r="70" fill="#FFE082" opacity="0.25"/>
+                <circle cx="500" cy="90" r="28" fill="#DCE775" opacity="0.3"/>
+                <!-- reddish stem -->
+                <path d="M180 360 Q220 290 260 250 Q310 200 360 200 Q420 200 450 240"
+                      stroke="url(#stemGrad)" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/>
+                <path d="M260 250 Q280 220 300 200" stroke="url(#stemGrad)" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8"/>
+                <path d="M360 200 Q380 175 410 165" stroke="url(#stemGrad)" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8"/>
+                <!-- succulent paddle leaves -->
+                <ellipse cx="240" cy="225" rx="42" ry="22" fill="url(#leafBody)" transform="rotate(-30 240 225)"/>
+                <ellipse cx="290" cy="180" rx="46" ry="24" fill="url(#leafBody)" transform="rotate(-15 290 180)"/>
+                <ellipse cx="350" cy="170" rx="50" ry="26" fill="url(#leafBody)" transform="rotate(10 350 170)"/>
+                <ellipse cx="410" cy="160" rx="44" ry="22" fill="url(#leafBody)" transform="rotate(20 410 160)"/>
+                <ellipse cx="460" cy="220" rx="42" ry="22" fill="url(#leafBody)" transform="rotate(35 460 220)"/>
+                <ellipse cx="320" cy="240" rx="40" ry="20" fill="url(#leafBody)" transform="rotate(-5 320 240)" opacity="0.85"/>
+                <!-- leaf highlights -->
+                <ellipse cx="290" cy="175" rx="22" ry="6" fill="#AED581" opacity="0.55" transform="rotate(-15 290 175)"/>
+                <ellipse cx="350" cy="165" rx="24" ry="6" fill="#AED581" opacity="0.55" transform="rotate(10 350 165)"/>
+                <ellipse cx="410" cy="155" rx="22" ry="5" fill="#AED581" opacity="0.5" transform="rotate(20 410 155)"/>
+                <!-- tiny yellow flower -->
+                <g transform="translate(395 130)">
+                  <circle r="14" fill="#FFB300"/>
+                  <circle r="6" fill="#FFE082"/>
+                  <g fill="#FFD54F">
+                    <ellipse cx="0" cy="-12" rx="4" ry="7"/>
+                    <ellipse cx="11" cy="-5" rx="4" ry="7" transform="rotate(60 11 -5)"/>
+                    <ellipse cx="11" cy="6" rx="4" ry="7" transform="rotate(120 11 6)"/>
+                    <ellipse cx="0" cy="13" rx="4" ry="7"/>
+                    <ellipse cx="-11" cy="6" rx="4" ry="7" transform="rotate(-120 -11 6)"/>
+                    <ellipse cx="-11" cy="-5" rx="4" ry="7" transform="rotate(-60 -11 -5)"/>
+                  </g>
+                </g>
+                <!-- droplet (omega-3 hint) -->
+                <g transform="translate(140 260)" opacity="0.75">
+                  <path d="M0 -16 C-12 -2 -12 12 0 12 C12 12 12 -2 0 -16Z" fill="#4FC3F7"/>
+                  <text x="0" y="6" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="white">ω3</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="plant-tabs" role="tablist" aria-label="Purslane information sections">
+            <button class="plant-tab" role="tab" aria-selected="true" aria-controls="purslane-overview" id="tab-purslane-overview">Overview</button>
+            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-nutrition" id="tab-purslane-nutrition">Nutrition</button>
+            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-omega" id="tab-purslane-omega">Omega-3 Story</button>
+            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-antiox" id="tab-purslane-antiox">Antioxidants</button>
+            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-tradition" id="tab-purslane-tradition">Traditional Use</button>
+            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-use" id="tab-purslane-use">In the Kitchen</button>
+            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-cautions" id="tab-purslane-cautions">Things to Know</button>
+          </div>
+
+          <!-- Panels -->
+          <div class="plant-panel" role="tabpanel" id="purslane-overview" aria-labelledby="tab-purslane-overview">
+            <h3>An overlooked green with surprising depth</h3>
+            <p>
+              Purslane is a low-growing succulent with smooth, paddle-shaped leaves and reddish
+              stems. It thrives almost anywhere &mdash; cracks in pavement, garden beds, dry
+              fields &mdash; and is eaten as a vegetable across the Mediterranean, the Middle
+              East, India, and parts of Asia. While many gardeners pull it as a weed, it is
+              one of the most nutrient-dense leafy greens that has been studied.
+            </p>
+            <p>
+              Its appeal in nutrition science comes from an unusual combination: it is
+              rich in plant-based omega-3 fatty acids, naturally high in vitamins A and C,
+              and supplies notable amounts of magnesium, potassium, and iron in a very
+              low-calorie package.
+            </p>
+            <div class="callout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2" stroke-linecap="round"/></svg>
+              <p><strong>In one line:</strong> a wild, drought-tolerant green that punches well above its weight as a source of omega-3, antioxidants, and minerals.</p>
+            </div>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="purslane-nutrition" aria-labelledby="tab-purslane-nutrition" hidden>
+            <h3>What's inside 100&nbsp;g of fresh purslane</h3>
+            <p>Reported values from USDA data and published analyses. All figures are per 100&nbsp;g of fresh leaves and stems.</p>
+            <div class="stat-grid">
+              <div class="stat-card"><div class="stat-card__value">16 <span class="stat-card__unit">kcal</span></div><div class="stat-card__label">Energy</div></div>
+              <div class="stat-card"><div class="stat-card__value">1.3 <span class="stat-card__unit">g</span></div><div class="stat-card__label">Protein</div></div>
+              <div class="stat-card"><div class="stat-card__value">3.4 <span class="stat-card__unit">g</span></div><div class="stat-card__label">Carbohydrates</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">1320 <span class="stat-card__unit">IU</span></div><div class="stat-card__label">Vitamin A · 44% DV</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">21 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Vitamin C · 35% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">1.99 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Iron · 25% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">68 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Magnesium · 17% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">494 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Potassium · 10% DV</div></div>
+              <div class="stat-card"><div class="stat-card__value">65 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Calcium · 6.5% DV</div></div>
+            </div>
+            <p>
+              Purslane also contains B-complex vitamins (riboflavin, niacin, B6), as well
+              as smaller amounts of copper, manganese, zinc, phosphorus, and selenium.
+              Together this makes it one of the most mineral-dense leafy greens available.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="purslane-omega" aria-labelledby="tab-purslane-omega" hidden>
+            <h3>The richest leafy source of omega-3</h3>
+            <p>
+              The standout property of purslane is its alpha-linolenic acid (ALA) content
+              &mdash; a plant-based omega-3 fatty acid that the body cannot make on its own.
+              A 100&nbsp;g serving of fresh leaves provides roughly <strong>300&ndash;400&nbsp;mg of ALA</strong>,
+              and lab-grown samples have measured up to <strong>seven times more</strong> than the same
+              weight of spinach.
+            </p>
+            <p>How purslane stacks up against other green sources of total omega-3 (g per 100&nbsp;g):</p>
+            <div style="margin: 0.5rem 0 1.4rem;">
+              <div class="compare"><span class="compare__label">Spinach (raw)</span><span class="compare__bar"><span class="compare__fill" style="width: 11%"></span></span><span class="compare__value">0.1 g</span></div>
+              <div class="compare"><span class="compare__label">Broccoli</span><span class="compare__bar"><span class="compare__fill" style="width: 11%"></span></span><span class="compare__value">0.1 g</span></div>
+              <div class="compare"><span class="compare__label">Kale (raw)</span><span class="compare__bar"><span class="compare__fill" style="width: 22%"></span></span><span class="compare__value">0.2 g</span></div>
+              <div class="compare"><span class="compare__label">Spirulina (dry)</span><span class="compare__bar"><span class="compare__fill" style="width: 88%"></span></span><span class="compare__value">0.8 g</span></div>
+              <div class="compare"><span class="compare__label">Purslane</span><span class="compare__bar"><span class="compare__fill compare__fill--accent" style="width: 100%"></span></span><span class="compare__value"><strong>0.9 g</strong></span></div>
+            </div>
+            <p>
+              Unusually for a plant, purslane also contains a small amount of long-chain
+              omega-3s (EPA and traces of DPA and DHA) &mdash; fatty acids that are otherwise
+              found mainly in oily fish. Because the body cannot synthesise omega-3 fatty
+              acids, regular dietary intake matters for cardiovascular and immune health,
+              especially for those who avoid fish.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="purslane-antiox" aria-labelledby="tab-purslane-antiox" hidden>
+            <h3>A natural antioxidant package</h3>
+            <p>
+              The leaves of purslane carry a notable concentration of compounds that help
+              the body manage oxidative stress &mdash; a key factor in chronic inflammation,
+              vascular disease, and ageing.
+            </p>
+            <div class="stat-grid">
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">22.2 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Alpha-tocopherol (Vit&nbsp;E)</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">26.6 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Ascorbic acid (Vit&nbsp;C)</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">1.9 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Beta-carotene</div></div>
+              <div class="stat-card stat-card--gold"><div class="stat-card__value">14.8 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Glutathione</div></div>
+            </div>
+            <p>
+              Researchers have measured higher levels of alpha-tocopherol, vitamin C, and
+              glutathione in purslane than in spinach grown under the same conditions.
+              The leaves also contain melatonin &mdash; a molecule with broad antioxidant
+              activity &mdash; together with phenolic compounds that contribute to the plant's
+              free-radical scavenging capacity.
+            </p>
+            <p>
+              Animal studies suggest these constituents support the body's own antioxidant
+              enzymes, including glutathione peroxidase, catalase, and superoxide dismutase.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="purslane-tradition" aria-labelledby="tab-purslane-tradition" hidden>
+            <h3>Centuries of traditional use</h3>
+            <p>
+              Purslane has a long culinary and medicinal history. Records suggest it was
+              part of the Roman diet, and it is documented in Middle Eastern, North
+              African, Indian, and Chinese food traditions. In traditional Chinese medicine
+              it is known as <em>ma chi xian</em> and has been used as a tonic and to
+              support healthy blood pressure and blood sugar.
+            </p>
+            <p>
+              Across other folk medicine systems it has been applied to soothe burns and
+              minor wounds, ease headaches, support digestion, calm coughs, and as a
+              gentle diuretic. Some traditions use it for joint discomfort, skin conditions
+              such as psoriasis, and bone health.
+            </p>
+            <p>
+              Modern research is gradually catching up with these traditions, exploring
+              its anti-inflammatory, wound-healing, and antimicrobial activity, while
+              investigating its potential role in metabolic health.
+            </p>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="purslane-use" aria-labelledby="tab-purslane-use" hidden>
+            <h3>Bringing purslane into everyday meals</h3>
+            <p>The whole plant is edible &mdash; leaves, soft stems, flower buds, and seeds. It has a mildly tangy, lemony flavour and a pleasantly succulent crunch.</p>
+            <ul class="use-list">
+              <li>Toss the raw leaves and tender stems into mixed salads &mdash; especially with tomato, cucumber, and a lemon-olive oil dressing.</li>
+              <li>Stir into yoghurt with garlic and herbs to make a refreshing dip alongside flatbread.</li>
+              <li>Wilt briefly into soups, stews, or lentil dishes during the last minute of cooking to keep its texture.</li>
+              <li>Add to omelettes, scrambled eggs, or savoury pancakes for a fresh, tangy lift.</li>
+              <li>Blend a handful into green smoothies for a mineral and omega-3 boost.</li>
+              <li>Pickle the stems lightly in vinegar with garlic and chilli for a zesty condiment.</li>
+            </ul>
+          </div>
+
+          <div class="plant-panel" role="tabpanel" id="purslane-cautions" aria-labelledby="tab-purslane-cautions" hidden>
+            <h3>A few things to keep in mind</h3>
+            <div class="callout callout--warn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2L12 3z" stroke-linejoin="round"/><path d="M12 10v5M12 18v.5" stroke-linecap="round"/></svg>
+              <p>Purslane contains a meaningful amount of <strong>oxalates</strong> (around 670&ndash;870&nbsp;mg per 100&nbsp;g of fresh leaves). People prone to calcium-oxalate kidney stones may want to keep portions modest, brief-blanch the leaves to lower oxalate, and pair with a calcium source.</p>
+            </div>
+            <p>
+              If you forage purslane, harvest only from areas free of pesticides, lawn
+              treatments, and roadside pollution. Confirm identification &mdash; spurge, a
+              toxic look-alike, has thinner stems and a milky sap when broken, while
+              purslane has thick reddish stems and clear sap.
+            </p>
+            <p>
+              As with any food that influences blood sugar or blood pressure, those on
+              related medications or with existing kidney concerns should check with their
+              healthcare provider before adding it regularly to the diet.
+            </p>
+            <p class="source-note">
+              Summary based on a peer-reviewed review by Uddin et&nbsp;al., published in
+              <em>The Scientific World Journal</em> (2014):
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3934766/" target="_blank" rel="noopener noreferrer">"Purslane Weed (Portulaca oleracea): A Prospective Plant Source of Nutrition, Omega-3 Fatty Acid, and Antioxidant Attributes"</a>.
+              This is general nutritional information, not personal medical advice.
+            </p>
+          </div>
+        </article>
 
       </div><!-- /plants-grid -->
     </div>
@@ -404,6 +949,42 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Plant deep-dive tabs
+    document.querySelectorAll('.plant-deep').forEach(card => {
+      const tabs = card.querySelectorAll('.plant-tab');
+      const panels = card.querySelectorAll('.plant-panel');
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+          panels.forEach(p => p.hidden = true);
+          tab.setAttribute('aria-selected', 'true');
+          panels[i].hidden = false;
+        });
+        tab.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+            e.preventDefault();
+            const dir = e.key === 'ArrowRight' ? 1 : -1;
+            const next = (i + dir + tabs.length) % tabs.length;
+            tabs[next].focus();
+            tabs[next].click();
+          }
+        });
+      });
+    });
+
+    // Filter bar
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('[data-category]').forEach(card => {
+          card.hidden = !(filter === 'all' || card.dataset.category === filter);
+        });
+      });
+    });
+  </script>
   <script>
     /* â”€â”€ Plant filter â”€â”€ */
     (function () {
