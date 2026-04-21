@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -56,7 +56,7 @@
   <link rel="manifest" href="/manifest.json">
 
   <style>
-    /* ─── Plants Grid ─── */
+    /* â”€â”€â”€ Plants Grid â”€â”€â”€ */
     .plants-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -166,7 +166,7 @@
       border-color: var(--color-accent-light);
     }
 
-    /* ─── Filter Bar ─── */
+    /* â”€â”€â”€ Filter Bar â”€â”€â”€ */
     .filter-bar {
       display: flex;
       align-items: center;
@@ -197,7 +197,7 @@
       box-shadow: var(--shadow-glow-green);
     }
 
-    /* ─── Intro Banner ─── */
+    /* â”€â”€â”€ Intro Banner â”€â”€â”€ */
     .plants-intro {
       display: flex;
       align-items: center;
@@ -238,7 +238,7 @@
       color: var(--color-primary-dark);
     }
 
-    /* ─── Hidden cards (filter) ─── */
+    /* â”€â”€â”€ Hidden cards (filter) â”€â”€â”€ */
     .plant-card[hidden] { display: none; }
 
     @media (max-width: 900px) {
@@ -306,7 +306,7 @@
       </span>
       <h1 data-split>Explore Plants</h1>
       <p>
-        Discover the healing power of whole-food plants — evidence-based nutritional profiles
+        Discover the healing power of whole-food plants â€” evidence-based nutritional profiles
         for the herbs, vegetables, seeds, and fruits that support lasting health.
       </p>
     </div>
@@ -339,438 +339,11 @@
         <button class="filter-btn" data-filter="seed">Seeds &amp; Grains</button>
         <button class="filter-btn" data-filter="fruit">Fruits &amp; Berries</button>
         <button class="filter-btn" data-filter="root">Roots &amp; Bulbs</button>
+        <button class="filter-btn" data-filter="legume">Legumes &amp; Beans</button>
       </div>
 
       <!-- Plants Grid -->
       <div class="plants-grid" id="plants-grid">
-
-        <!-- Spinach -->
-        <article class="plant-card fade-up" data-category="leafy">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="spinachBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#E8F5E9"/>
-                  <stop offset="100%" stop-color="#C8E6C9"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#spinachBg)"/>
-              <ellipse cx="200" cy="100" rx="120" ry="70" fill="#66BB6A" opacity="0.25"/>
-              <!-- Main leaf -->
-              <path d="M200 170 C160 140 120 100 140 60 C160 20 240 20 260 60 C280 100 240 140 200 170z" fill="#43A047" opacity="0.8"/>
-              <path d="M200 170 V60" stroke="#81C784" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-              <path d="M200 110 C185 100 170 90 165 75" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-              <path d="M200 110 C215 100 230 90 235 75" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-              <path d="M200 135 C182 125 165 115 158 100" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-              <path d="M200 135 C218 125 235 115 242 100" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-              <!-- Small accent leaves -->
-              <path d="M100 160 C95 145 110 130 120 140 C110 148 105 158 100 160z" fill="#66BB6A" opacity="0.4"/>
-              <path d="M300 160 C305 145 290 130 280 140 C290 148 295 158 300 160z" fill="#66BB6A" opacity="0.4"/>
-              <circle cx="80" cy="50" r="18" fill="#A5D6A7" opacity="0.25"/>
-              <circle cx="320" cy="50" r="14" fill="#C8E6C9" opacity="0.35"/>
-            </svg>
-            <span class="plant-card__category">Leafy Green</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Spinach</div>
-            <div class="plant-card__latin">Spinacia oleracea</div>
-            <p class="plant-card__desc">
-              A nutrient powerhouse rich in iron, folate, and magnesium. Spinach supports
-              red blood cell production, energy metabolism, and bone health. Its nitrates
-              may also improve cardiovascular efficiency.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">Iron</span>
-              <span class="nutrient-tag">Folate</span>
-              <span class="nutrient-tag">Magnesium</span>
-              <span class="nutrient-tag">Vitamin K</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Turmeric -->
-        <article class="plant-card fade-up" data-category="herb">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="turmericBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FFF8E1"/>
-                  <stop offset="100%" stop-color="#FFECB3"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#turmericBg)"/>
-              <ellipse cx="200" cy="110" rx="130" ry="60" fill="#FFB300" opacity="0.15"/>
-              <!-- Rhizome shapes -->
-              <rect x="140" y="80" width="120" height="40" rx="20" fill="#FF8F00" opacity="0.7"/>
-              <rect x="110" y="90" width="60" height="30" rx="15" fill="#FFA000" opacity="0.65"/>
-              <rect x="230" y="88" width="65" height="28" rx="14" fill="#FFA000" opacity="0.65"/>
-              <rect x="155" y="110" width="45" height="25" rx="12" fill="#FF8F00" opacity="0.5"/>
-              <rect x="200" y="112" width="40" height="22" rx="11" fill="#FF8F00" opacity="0.5"/>
-              <!-- Cross-section circles -->
-              <circle cx="200" cy="100" r="12" fill="#FFCC02" opacity="0.8"/>
-              <circle cx="200" cy="100" r="7" fill="#FFB300" opacity="0.9"/>
-              <!-- Powder dots -->
-              <circle cx="130" cy="60" r="5" fill="#FFCA28" opacity="0.5"/>
-              <circle cx="270" cy="55" r="4" fill="#FFD54F" opacity="0.45"/>
-              <circle cx="310" cy="80" r="6" fill="#FFCA28" opacity="0.35"/>
-              <circle cx="90" cy="80" r="5" fill="#FFD54F" opacity="0.4"/>
-              <!-- Leaf hint -->
-              <path d="M200 80 C190 50 200 30 210 50 C205 60 200 70 200 80z" fill="#8BC34A" opacity="0.5"/>
-            </svg>
-            <span class="plant-card__category">Herb &amp; Spice</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Turmeric</div>
-            <div class="plant-card__latin">Curcuma longa</div>
-            <p class="plant-card__desc">
-              Celebrated for curcumin — its potent anti-inflammatory compound. Regular
-              use may reduce markers of chronic inflammation, support joint health,
-              and protect against oxidative stress. Best absorbed with black pepper.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">Curcumin</span>
-              <span class="nutrient-tag">Manganese</span>
-              <span class="nutrient-tag nutrient-tag--gold">Anti-inflammatory</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Blueberries -->
-        <article class="plant-card fade-up" data-category="fruit">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="blueberryBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#EDE7F6"/>
-                  <stop offset="100%" stop-color="#D1C4E9"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#blueberryBg)"/>
-              <!-- Berries cluster -->
-              <circle cx="185" cy="105" r="26" fill="#5C6BC0" opacity="0.85"/>
-              <circle cx="215" cy="95" r="24" fill="#3949AB" opacity="0.8"/>
-              <circle cx="200" cy="130" r="22" fill="#5E35B1" opacity="0.75"/>
-              <circle cx="160" cy="120" r="20" fill="#7E57C2" opacity="0.7"/>
-              <circle cx="240" cy="118" r="21" fill="#4527A0" opacity="0.7"/>
-              <circle cx="175" cy="145" r="18" fill="#673AB7" opacity="0.6"/>
-              <circle cx="225" cy="145" r="17" fill="#512DA8" opacity="0.6"/>
-              <!-- Berry crowns -->
-              <path d="M185 79 C182 73 188 70 185 79z" stroke="#81C784" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/>
-              <path d="M215 71 C212 65 218 62 215 71z" stroke="#81C784" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.8"/>
-              <path d="M200 108 C197 102 203 99 200 108z" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
-              <!-- Leaf -->
-              <path d="M130 80 C115 55 150 40 155 65 C145 68 135 75 130 80z" fill="#66BB6A" opacity="0.55"/>
-              <path d="M270 75 C285 50 250 40 245 65 C255 68 265 72 270 75z" fill="#66BB6A" opacity="0.5"/>
-              <!-- Highlight dots on berries -->
-              <circle cx="180" cy="99" r="4" fill="white" opacity="0.3"/>
-              <circle cx="210" cy="89" r="3.5" fill="white" opacity="0.25"/>
-              <circle cx="200" cy="123" r="3" fill="white" opacity="0.25"/>
-            </svg>
-            <span class="plant-card__category">Fruit &amp; Berry</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Blueberries</div>
-            <div class="plant-card__latin">Vaccinium corymbosum</div>
-            <p class="plant-card__desc">
-              Among the highest antioxidant fruits available, blueberries are rich in
-              anthocyanins that support brain health, reduce oxidative stress, and may
-              improve insulin sensitivity and memory function.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">Anthocyanins</span>
-              <span class="nutrient-tag">Vitamin C</span>
-              <span class="nutrient-tag">Fibre</span>
-              <span class="nutrient-tag nutrient-tag--gold">Antioxidants</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Ginger -->
-        <article class="plant-card fade-up" data-category="root">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="gingerBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FFF3E0"/>
-                  <stop offset="100%" stop-color="#FFE0B2"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#gingerBg)"/>
-              <!-- Ginger root shape -->
-              <path d="M120 115 Q155 90 200 95 Q240 100 275 85 Q300 78 310 95 Q295 110 275 108 Q240 115 200 110 Q155 115 140 130 Q125 135 120 115z" fill="#BCAAA4" opacity="0.75"/>
-              <path d="M200 95 Q210 70 215 55 Q225 45 235 55 Q228 68 220 85" fill="#A1887F" opacity="0.6" stroke-linecap="round"/>
-              <path d="M165 105 Q160 85 158 70 Q162 60 170 68 Q172 80 168 100" fill="#BCAAA4" opacity="0.55"/>
-              <path d="M240 108 Q245 88 248 75 Q255 65 262 74 Q258 88 250 105" fill="#A1887F" opacity="0.55"/>
-              <!-- Surface texture lines -->
-              <path d="M140 112 Q165 105 200 108 Q235 111 260 104" stroke="#D7CCC8" stroke-width="1.5" fill="none" opacity="0.6"/>
-              <path d="M145 118 Q168 112 200 114 Q232 116 255 110" stroke="#D7CCC8" stroke-width="1" fill="none" opacity="0.4"/>
-              <!-- Steam/freshness circles -->
-              <circle cx="100" cy="60" r="20" fill="#FFCC80" opacity="0.2"/>
-              <circle cx="310" cy="155" r="16" fill="#FFB74D" opacity="0.2"/>
-              <!-- Leaf accent -->
-              <path d="M310 95 C330 70 355 75 345 95 C335 100 320 98 310 95z" fill="#66BB6A" opacity="0.45"/>
-            </svg>
-            <span class="plant-card__category">Root</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Ginger</div>
-            <div class="plant-card__latin">Zingiber officinale</div>
-            <p class="plant-card__desc">
-              A well-researched digestive aid, ginger contains gingerols and shogaols that
-              reduce nausea, support gut motility, and have powerful anti-inflammatory
-              and analgesic properties.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">Gingerols</span>
-              <span class="nutrient-tag">Potassium</span>
-              <span class="nutrient-tag nutrient-tag--gold">Digestive Health</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Kale -->
-        <article class="plant-card fade-up" data-category="leafy">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="kaleBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#E8F5E9"/>
-                  <stop offset="100%" stop-color="#DCEDC8"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#kaleBg)"/>
-              <!-- Kale leaf - ruffled edges -->
-              <path d="M200 165 C175 145 145 125 130 100 C115 75 125 45 150 40 C165 38 178 50 185 65 C188 55 195 42 200 35 C205 42 212 55 215 65 C222 50 235 38 250 40 C275 45 285 75 270 100 C255 125 225 145 200 165z" fill="#388E3C" opacity="0.75"/>
-              <!-- Ruffled edge accents -->
-              <path d="M130 100 C120 88 118 76 125 68" stroke="#2E7D32" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
-              <path d="M270 100 C280 88 282 76 275 68" stroke="#2E7D32" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
-              <!-- Midrib -->
-              <path d="M200 165 V35" stroke="#66BB6A" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
-              <!-- Veins -->
-              <path d="M200 120 C180 108 162 100 150 90" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-              <path d="M200 120 C220 108 238 100 250 90" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-              <path d="M200 95 C182 82 168 75 160 65" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
-              <path d="M200 95 C218 82 232 75 240 65" stroke="#A5D6A7" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
-              <circle cx="90" cy="155" r="15" fill="#C5E1A5" opacity="0.4"/>
-              <circle cx="315" cy="40" r="12" fill="#A5D6A7" opacity="0.3"/>
-            </svg>
-            <span class="plant-card__category">Leafy Green</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Kale</div>
-            <div class="plant-card__latin">Brassica oleracea var. sabellica</div>
-            <p class="plant-card__desc">
-              One of the most nutrient-dense foods on Earth. Kale delivers exceptional
-              levels of Vitamins K, C, and A, alongside calcium and sulforaphane — a
-              compound with notable anti-cancer research support.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">Vitamin K</span>
-              <span class="nutrient-tag">Vitamin C</span>
-              <span class="nutrient-tag">Sulforaphane</span>
-              <span class="nutrient-tag">Calcium</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Garlic -->
-        <article class="plant-card fade-up" data-category="root">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="garlicBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FAFAFA"/>
-                  <stop offset="100%" stop-color="#F5F0E8"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#garlicBg)"/>
-              <!-- Garlic bulb base -->
-              <ellipse cx="200" cy="125" rx="55" ry="30" fill="#E0D8CC" opacity="0.8"/>
-              <!-- Cloves -->
-              <ellipse cx="186" cy="100" rx="20" ry="35" fill="#F5F0E8" stroke="#D4C9B0" stroke-width="1.5" opacity="0.9"/>
-              <ellipse cx="214" cy="100" rx="20" ry="35" fill="#F5F0E8" stroke="#D4C9B0" stroke-width="1.5" opacity="0.9"/>
-              <ellipse cx="200" cy="95" rx="18" ry="38" fill="#FAFAFA" stroke="#D4C9B0" stroke-width="1.5" opacity="0.9"/>
-              <ellipse cx="168" cy="108" rx="16" ry="28" fill="#F0EBE0" stroke="#D4C9B0" stroke-width="1.5" opacity="0.85"/>
-              <ellipse cx="232" cy="108" rx="16" ry="28" fill="#F0EBE0" stroke="#D4C9B0" stroke-width="1.5" opacity="0.85"/>
-              <!-- Root base hint -->
-              <path d="M165 145 Q180 155 200 155 Q220 155 235 145" stroke="#C4B89A" stroke-width="1.5" fill="none" opacity="0.5"/>
-              <!-- Stem -->
-              <path d="M200 57 V38" stroke="#8BC34A" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-              <!-- Allicin sparkle -->
-              <circle cx="120" cy="50" r="4" fill="#8DC63F" opacity="0.4"/>
-              <circle cx="280" cy="60" r="3" fill="#8DC63F" opacity="0.35"/>
-              <circle cx="90" cy="130" r="5" fill="#C5E1A5" opacity="0.35"/>
-              <circle cx="315" cy="140" r="5" fill="#C5E1A5" opacity="0.3"/>
-            </svg>
-            <span class="plant-card__category">Root &amp; Bulb</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Garlic</div>
-            <div class="plant-card__latin">Allium sativum</div>
-            <p class="plant-card__desc">
-              Allicin — released when garlic is crushed — has potent antimicrobial and
-              immune-boosting effects. Regular consumption is associated with reduced
-              blood pressure and improved cholesterol profiles.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">Allicin</span>
-              <span class="nutrient-tag">Vitamin B6</span>
-              <span class="nutrient-tag nutrient-tag--gold">Immune Support</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Chia Seeds -->
-        <article class="plant-card fade-up" data-category="seed">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="chiaBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#ECEFF1"/>
-                  <stop offset="100%" stop-color="#E3F2FD"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#chiaBg)"/>
-              <!-- Chia seeds scattered -->
-              <ellipse cx="160" cy="90" rx="6" ry="9" fill="#455A64" opacity="0.7" transform="rotate(-15 160 90)"/>
-              <ellipse cx="185" cy="75" rx="5" ry="8" fill="#37474F" opacity="0.65" transform="rotate(10 185 75)"/>
-              <ellipse cx="200" cy="100" rx="6" ry="9" fill="#546E7A" opacity="0.7" transform="rotate(-5 200 100)"/>
-              <ellipse cx="220" cy="82" rx="5" ry="8" fill="#455A64" opacity="0.65" transform="rotate(20 220 82)"/>
-              <ellipse cx="240" cy="105" rx="6" ry="9" fill="#37474F" opacity="0.7" transform="rotate(-10 240 105)"/>
-              <ellipse cx="175" cy="115" rx="5" ry="8" fill="#546E7A" opacity="0.6" transform="rotate(8 175 115)"/>
-              <ellipse cx="210" cy="120" rx="6" ry="9" fill="#455A64" opacity="0.65" transform="rotate(-20 210 120)"/>
-              <ellipse cx="145" cy="118" rx="5" ry="8" fill="#37474F" opacity="0.6" transform="rotate(15 145 118)"/>
-              <ellipse cx="255" cy="90" rx="5" ry="8" fill="#546E7A" opacity="0.6" transform="rotate(-8 255 90)"/>
-              <ellipse cx="230" cy="135" rx="5" ry="8" fill="#455A64" opacity="0.55" transform="rotate(12 230 135)"/>
-              <ellipse cx="190" cy="140" rx="6" ry="9" fill="#37474F" opacity="0.55" transform="rotate(-18 190 140)"/>
-              <!-- Gel globule hint (soaked seeds) -->
-              <circle cx="165" cy="92" r="12" fill="#90CAF9" opacity="0.15"/>
-              <circle cx="215" cy="102" r="10" fill="#90CAF9" opacity="0.15"/>
-              <!-- Bowl outline -->
-              <path d="M130 160 Q200 185 270 160" stroke="#90A4AE" stroke-width="2" fill="none" opacity="0.4"/>
-              <circle cx="100" cy="50" r="18" fill="#B3E5FC" opacity="0.25"/>
-              <circle cx="310" cy="55" r="14" fill="#B3E5FC" opacity="0.2"/>
-            </svg>
-            <span class="plant-card__category">Seed</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Chia Seeds</div>
-            <div class="plant-card__latin">Salvia hispanica</div>
-            <p class="plant-card__desc">
-              Tiny but mighty, chia seeds are packed with plant-based omega-3 fatty acids,
-              soluble fibre, and complete protein. They form a gel when soaked, slowing
-              digestion and supporting sustained energy and blood sugar balance.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">Omega-3 ALA</span>
-              <span class="nutrient-tag">Fibre</span>
-              <span class="nutrient-tag">Calcium</span>
-              <span class="nutrient-tag nutrient-tag--gold">Complete Protein</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Moringa -->
-        <article class="plant-card fade-up" data-category="leafy">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="moringaBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#F1F8E9"/>
-                  <stop offset="100%" stop-color="#DCEDC8"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#moringaBg)"/>
-              <!-- Moringa branch -->
-              <path d="M200 175 V55" stroke="#5D4037" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-              <path d="M200 130 L155 105" stroke="#795548" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <path d="M200 130 L245 105" stroke="#795548" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <path d="M200 100 L162 78" stroke="#795548" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <path d="M200 100 L238 78" stroke="#795548" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              <!-- Small oval leaflets on branches -->
-              <ellipse cx="148" cy="102" rx="10" ry="14" fill="#7CB342" opacity="0.8" transform="rotate(-30 148 102)"/>
-              <ellipse cx="133" cy="93" rx="9" ry="13" fill="#8BC34A" opacity="0.75" transform="rotate(-25 133 93)"/>
-              <ellipse cx="252" cy="102" rx="10" ry="14" fill="#7CB342" opacity="0.8" transform="rotate(30 252 102)"/>
-              <ellipse cx="267" cy="93" rx="9" ry="13" fill="#8BC34A" opacity="0.75" transform="rotate(25 267 93)"/>
-              <ellipse cx="155" cy="75" rx="9" ry="13" fill="#7CB342" opacity="0.75" transform="rotate(-28 155 75)"/>
-              <ellipse cx="140" cy="65" rx="8" ry="12" fill="#8BC34A" opacity="0.7" transform="rotate(-22 140 65)"/>
-              <ellipse cx="245" cy="75" rx="9" ry="13" fill="#7CB342" opacity="0.75" transform="rotate(28 245 75)"/>
-              <ellipse cx="260" cy="65" rx="8" ry="12" fill="#8BC34A" opacity="0.7" transform="rotate(22 260 65)"/>
-              <!-- Powder accent -->
-              <circle cx="100" cy="155" r="20" fill="#C5E1A5" opacity="0.3"/>
-              <circle cx="310" cy="50" r="16" fill="#AED581" opacity="0.25"/>
-            </svg>
-            <span class="plant-card__category">Leafy Green</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Moringa</div>
-            <div class="plant-card__latin">Moringa oleifera</div>
-            <p class="plant-card__desc">
-              Called the "miracle tree," moringa leaves contain more protein per gram than
-              many animal sources, alongside high concentrations of iron, calcium, and
-              vitamins A and C. Used widely to address nutritional deficiencies.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">Protein</span>
-              <span class="nutrient-tag">Iron</span>
-              <span class="nutrient-tag">Vitamin A</span>
-              <span class="nutrient-tag nutrient-tag--gold">Isothiocyanates</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Flaxseeds -->
-        <article class="plant-card fade-up" data-category="seed">
-          <div class="plant-card__visual">
-            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <linearGradient id="flaxBg" x1="0" y1="0" x2="400" y2="200" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FFF8E1"/>
-                  <stop offset="100%" stop-color="#FFF3CD"/>
-                </linearGradient>
-              </defs>
-              <rect width="400" height="200" fill="url(#flaxBg)"/>
-              <!-- Flax plant stem and flower -->
-              <path d="M200 175 V60" stroke="#8D6E63" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
-              <!-- Blue flower -->
-              <circle cx="200" cy="55" r="18" fill="#5C6BC0" opacity="0.7"/>
-              <circle cx="200" cy="55" r="10" fill="#7986CB" opacity="0.8"/>
-              <circle cx="200" cy="55" r="4" fill="#FDD835" opacity="0.9"/>
-              <!-- Petals -->
-              <ellipse cx="200" cy="36" rx="6" ry="10" fill="#5C6BC0" opacity="0.5"/>
-              <ellipse cx="200" cy="74" rx="6" ry="10" fill="#5C6BC0" opacity="0.5"/>
-              <ellipse cx="181" cy="55" rx="10" ry="6" fill="#5C6BC0" opacity="0.5"/>
-              <ellipse cx="219" cy="55" rx="10" ry="6" fill="#5C6BC0" opacity="0.5"/>
-              <!-- Flaxseeds scattered -->
-              <ellipse cx="155" cy="125" rx="5" ry="8" fill="#8D6E63" opacity="0.75" transform="rotate(-10 155 125)"/>
-              <ellipse cx="170" cy="140" rx="5" ry="8" fill="#795548" opacity="0.7" transform="rotate(15 170 140)"/>
-              <ellipse cx="220" cy="130" rx="5" ry="8" fill="#8D6E63" opacity="0.7" transform="rotate(-5 220 130)"/>
-              <ellipse cx="240" cy="145" rx="5" ry="8" fill="#795548" opacity="0.65" transform="rotate(20 240 145)"/>
-              <ellipse cx="195" cy="148" rx="5" ry="8" fill="#8D6E63" opacity="0.65" transform="rotate(-18 195 148)"/>
-              <!-- Side branches -->
-              <path d="M200 110 L175 90" stroke="#A1887F" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-              <path d="M200 110 L225 90" stroke="#A1887F" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-              <circle cx="90" cy="60" r="16" fill="#FFCC80" opacity="0.2"/>
-              <circle cx="315" cy="155" r="14" fill="#FFB74D" opacity="0.2"/>
-            </svg>
-            <span class="plant-card__category">Seed</span>
-          </div>
-          <div class="plant-card__body">
-            <div class="plant-card__name">Flaxseeds</div>
-            <div class="plant-card__latin">Linum usitatissimum</div>
-            <p class="plant-card__desc">
-              An outstanding source of alpha-linolenic acid (ALA omega-3), lignans, and
-              soluble fibre. Ground flaxseeds support hormone balance, bowel regularity,
-              and healthy LDL cholesterol levels.
-            </p>
-            <div class="plant-card__nutrients">
-              <span class="nutrient-tag">ALA Omega-3</span>
-              <span class="nutrient-tag">Lignans</span>
-              <span class="nutrient-tag">Soluble Fibre</span>
-              <span class="nutrient-tag nutrient-tag--gold">Hormone Balance</span>
-            </div>
-          </div>
-        </article>
 
       </div><!-- /plants-grid -->
     </div>
@@ -832,7 +405,7 @@
 
   <script src="js/main.js"></script>
   <script>
-    /* ── Plant filter ── */
+    /* â”€â”€ Plant filter â”€â”€ */
     (function () {
       const btns  = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.plant-card');
