@@ -55,6 +55,11 @@
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
 
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://hopenutrition.com.au/explore-plants.html">
+  <link rel="alternate" hreflang="ar" href="https://hopenutrition.com.au/explore-plants-ar.html">
+  <link rel="alternate" hreflang="x-default" href="https://hopenutrition.com.au/explore-plants.html">
+
   <style>
     /* ─── Plants Grid ─── */
     .plants-grid {
@@ -576,10 +581,35 @@
         padding: 1.5rem;
       }
     }
+
+    /* ─── Language toggle ─── */
+    .lang-toggle {
+      position: fixed;
+      top: 80px;
+      right: 1.5rem;
+      z-index: 100;
+      background: var(--color-primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: var(--shadow-md);
+      transition: background 0.3s ease;
+    }
+    .lang-toggle:hover { background: var(--color-primary-dark); }
+    @media (max-width: 600px) {
+      .lang-toggle { top: auto; bottom: 1rem; right: 1rem; }
+    }
   </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Language Toggle -->
+  <a href="explore-plants-ar.html" class="lang-toggle" aria-label="التبديل إلى العربية">العربية</a>
 
   <!-- ========== HEADER ========== -->
   <header class="header" role="banner">
