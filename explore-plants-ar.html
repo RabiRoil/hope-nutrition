@@ -263,6 +263,7 @@
     .plant-deep__art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
     /* Tabs */
+    .plant-tabs-wrap { position: relative; }
     .plant-tabs {
       display: flex;
       gap: 0.25rem;
@@ -273,6 +274,45 @@
       scrollbar-width: none;
     }
     .plant-tabs::-webkit-scrollbar { display: none; }
+
+    /* Scroll-more hint (RTL: hint sits on the left, arrow points left) */
+    .plant-tabs-hint {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 64px;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 8px;
+      background: linear-gradient(90deg, var(--color-bg-warm, #FAFAF6) 30%, rgba(250,250,246,0) 100%);
+      opacity: 0;
+      transition: opacity 0.25s var(--ease-out);
+    }
+    .plant-tabs-wrap.has-overflow .plant-tabs-hint { opacity: 1; }
+    .plant-tabs-wrap.scrolled-end .plant-tabs-hint { opacity: 0; }
+    .plant-tabs-hint__arrow {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      animation: tabHintNudgeAr 1.6s ease-in-out infinite;
+    }
+    .plant-tabs-hint__arrow svg { width: 14px; height: 14px; }
+    @keyframes tabHintNudgeAr {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(-6px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .plant-tabs-hint__arrow { animation: none; }
+    }
 
     .plant-tab {
       flex-shrink: 0;
@@ -681,14 +721,21 @@
           </div>
 
           <!-- Tabs -->
-          <div class="plant-tabs" role="tablist" aria-label="أقسام معلومات البقلة">
-            <button class="plant-tab" role="tab" aria-selected="true" aria-controls="purslane-overview" id="tab-purslane-overview">نظرة عامة</button>
-            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-nutrition" id="tab-purslane-nutrition">القيمة الغذائية</button>
-            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-omega" id="tab-purslane-omega">قصة الأوميغا-٣</button>
-            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-antiox" id="tab-purslane-antiox">مضادات الأكسدة</button>
-            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-tradition" id="tab-purslane-tradition">الاستخدام التقليدي</button>
-            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-use" id="tab-purslane-use">في المطبخ</button>
-            <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-cautions" id="tab-purslane-cautions">أمور يجب معرفتها</button>
+          <div class="plant-tabs-wrap">
+            <div class="plant-tabs" role="tablist" aria-label="أقسام معلومات البقلة">
+              <button class="plant-tab" role="tab" aria-selected="true" aria-controls="purslane-overview" id="tab-purslane-overview">نظرة عامة</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-nutrition" id="tab-purslane-nutrition">القيمة الغذائية</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-omega" id="tab-purslane-omega">قصة الأوميغا-٣</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-antiox" id="tab-purslane-antiox">مضادات الأكسدة</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-tradition" id="tab-purslane-tradition">الاستخدام التقليدي</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-use" id="tab-purslane-use">في المطبخ</button>
+              <button class="plant-tab" role="tab" aria-selected="false" aria-controls="purslane-cautions" id="tab-purslane-cautions">أمور يجب معرفتها</button>
+            </div>
+            <div class="plant-tabs-hint" aria-hidden="true">
+              <span class="plant-tabs-hint__arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>
+              </span>
+            </div>
           </div>
 
           <!-- Panels -->
@@ -904,6 +951,25 @@
           }
         });
       });
+    });
+
+    // Tab-strip scroll hint (RTL-aware)
+    document.querySelectorAll('.plant-tabs-wrap').forEach(wrap => {
+      const strip = wrap.querySelector('.plant-tabs');
+      if (!strip) return;
+      const update = () => {
+        const overflow = strip.scrollWidth - strip.clientWidth > 4;
+        wrap.classList.toggle('has-overflow', overflow);
+        // In RTL, scrollLeft is 0 at the start (right edge) and negative as you scroll toward end (left).
+        // Use absolute distance from end.
+        const max = strip.scrollWidth - strip.clientWidth;
+        const distFromEnd = max - Math.abs(strip.scrollLeft);
+        const atEnd = distFromEnd <= 4;
+        wrap.classList.toggle('scrolled-end', atEnd);
+      };
+      update();
+      strip.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
     });
 
     // Filter bar
