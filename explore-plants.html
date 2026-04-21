@@ -536,6 +536,28 @@
       .plant-panel { padding: 1.5rem 1.5rem 2rem; }
     }
 
+    /* ─── Justified body text ─── */
+    .page-hero p,
+    .plants-intro__text,
+    .plant-deep__tagline,
+    .plant-panel p,
+    .callout p,
+    .use-list li,
+    .source-note {
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+    .page-hero p { text-align: center; }
+    @media (max-width: 600px) {
+      .plants-intro__text,
+      .plant-deep__tagline,
+      .plant-panel p,
+      .callout p,
+      .use-list li,
+      .source-note { text-align: left; }
+    }
+
     @media (max-width: 900px) {
       .plants-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -738,17 +760,11 @@
           <div class="plant-panel" role="tabpanel" id="purslane-overview" aria-labelledby="tab-purslane-overview">
             <h3>An overlooked green with surprising depth</h3>
             <p>
-              Purslane is a low-growing succulent with smooth, paddle-shaped leaves and reddish
-              stems. It thrives almost anywhere &mdash; cracks in pavement, garden beds, dry
-              fields &mdash; and is eaten as a vegetable across the Mediterranean, the Middle
-              East, India, and parts of Asia. While many gardeners pull it as a weed, it is
-              one of the most nutrient-dense leafy greens that has been studied.
-            </p>
-            <p>
-              Its appeal in nutrition science comes from an unusual combination: it is
-              rich in plant-based omega-3 fatty acids, naturally high in vitamins A and C,
-              and supplies notable amounts of magnesium, potassium, and iron in a very
-              low-calorie package.
+              Purslane is a low-growing succulent with paddle-shaped leaves and reddish stems,
+              eaten as a vegetable across the Mediterranean, the Middle East, India, and parts
+              of Asia. Often dismissed as a garden weed, it is one of the most nutrient-dense
+              leafy greens on record &mdash; rich in plant-based omega-3, naturally high in
+              vitamins A and C, and a generous source of magnesium, potassium, and iron.
             </p>
             <div class="callout">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2 2" stroke-linecap="round"/></svg>
@@ -771,22 +787,21 @@
               <div class="stat-card"><div class="stat-card__value">65 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Calcium · 6.5% DV</div></div>
             </div>
             <p>
-              Purslane also contains B-complex vitamins (riboflavin, niacin, B6), as well
-              as smaller amounts of copper, manganese, zinc, phosphorus, and selenium.
-              Together this makes it one of the most mineral-dense leafy greens available.
+              It also supplies B-complex vitamins (riboflavin, niacin, B6) and smaller
+              amounts of copper, manganese, zinc, phosphorus, and selenium &mdash; making it
+              one of the most mineral-dense leafy greens available.
             </p>
           </div>
 
           <div class="plant-panel" role="tabpanel" id="purslane-omega" aria-labelledby="tab-purslane-omega" hidden>
             <h3>The richest leafy source of omega-3</h3>
             <p>
-              The standout property of purslane is its alpha-linolenic acid (ALA) content
-              &mdash; a plant-based omega-3 fatty acid that the body cannot make on its own.
-              A 100&nbsp;g serving of fresh leaves provides roughly <strong>300&ndash;400&nbsp;mg of ALA</strong>,
-              and lab-grown samples have measured up to <strong>seven times more</strong> than the same
-              weight of spinach.
+              Purslane's standout feature is its alpha-linolenic acid (ALA) &mdash; an essential
+              omega-3 the body cannot produce. A 100&nbsp;g serving provides roughly
+              <strong>300&ndash;400&nbsp;mg of ALA</strong>, with cultivated samples measuring up to
+              <strong>seven times more</strong> than spinach.
             </p>
-            <p>How purslane stacks up against other green sources of total omega-3 (g per 100&nbsp;g):</p>
+            <p>How it compares to other green omega-3 sources (g per 100&nbsp;g):</p>
             <div style="margin: 0.5rem 0 1.4rem;">
               <div class="compare"><span class="compare__label">Spinach (raw)</span><span class="compare__bar"><span class="compare__fill" style="width: 11%"></span></span><span class="compare__value">0.1 g</span></div>
               <div class="compare"><span class="compare__label">Broccoli</span><span class="compare__bar"><span class="compare__fill" style="width: 11%"></span></span><span class="compare__value">0.1 g</span></div>
@@ -795,20 +810,17 @@
               <div class="compare"><span class="compare__label">Purslane</span><span class="compare__bar"><span class="compare__fill compare__fill--accent" style="width: 100%"></span></span><span class="compare__value"><strong>0.9 g</strong></span></div>
             </div>
             <p>
-              Unusually for a plant, purslane also contains a small amount of long-chain
-              omega-3s (EPA and traces of DPA and DHA) &mdash; fatty acids that are otherwise
-              found mainly in oily fish. Because the body cannot synthesise omega-3 fatty
-              acids, regular dietary intake matters for cardiovascular and immune health,
-              especially for those who avoid fish.
+              Unusually for a plant, purslane also carries small amounts of long-chain
+              omega-3s (EPA, with traces of DPA and DHA) &mdash; making it a valuable green
+              source for cardiovascular and immune health on a plant-based diet.
             </p>
           </div>
 
           <div class="plant-panel" role="tabpanel" id="purslane-antiox" aria-labelledby="tab-purslane-antiox" hidden>
             <h3>A natural antioxidant package</h3>
             <p>
-              The leaves of purslane carry a notable concentration of compounds that help
-              the body manage oxidative stress &mdash; a key factor in chronic inflammation,
-              vascular disease, and ageing.
+              Purslane leaves carry compounds that help the body manage oxidative stress
+              &mdash; a key factor in chronic inflammation, vascular disease, and ageing.
             </p>
             <div class="stat-grid">
               <div class="stat-card stat-card--gold"><div class="stat-card__value">22.2 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Alpha-tocopherol (Vit&nbsp;E)</div></div>
@@ -817,48 +829,37 @@
               <div class="stat-card stat-card--gold"><div class="stat-card__value">14.8 <span class="stat-card__unit">mg</span></div><div class="stat-card__label">Glutathione</div></div>
             </div>
             <p>
-              Researchers have measured higher levels of alpha-tocopherol, vitamin C, and
-              glutathione in purslane than in spinach grown under the same conditions.
-              The leaves also contain melatonin &mdash; a molecule with broad antioxidant
-              activity &mdash; together with phenolic compounds that contribute to the plant's
-              free-radical scavenging capacity.
-            </p>
-            <p>
-              Animal studies suggest these constituents support the body's own antioxidant
-              enzymes, including glutathione peroxidase, catalase, and superoxide dismutase.
+              In comparable studies, purslane outperformed spinach for alpha-tocopherol,
+              vitamin C, and glutathione. The leaves also contain melatonin and phenolic
+              compounds, which together appear to support the body's own antioxidant
+              defences.
             </p>
           </div>
 
           <div class="plant-panel" role="tabpanel" id="purslane-tradition" aria-labelledby="tab-purslane-tradition" hidden>
             <h3>Centuries of traditional use</h3>
             <p>
-              Purslane has a long culinary and medicinal history. Records suggest it was
-              part of the Roman diet, and it is documented in Middle Eastern, North
-              African, Indian, and Chinese food traditions. In traditional Chinese medicine
-              it is known as <em>ma chi xian</em> and has been used as a tonic and to
-              support healthy blood pressure and blood sugar.
+              Purslane was part of the Roman diet and is documented across Middle Eastern,
+              North African, Indian, and Chinese food traditions. In traditional Chinese
+              medicine (<em>ma chi xian</em>) it has been used as a tonic and to support
+              healthy blood pressure and blood sugar.
             </p>
             <p>
-              Across other folk medicine systems it has been applied to soothe burns and
-              minor wounds, ease headaches, support digestion, calm coughs, and as a
-              gentle diuretic. Some traditions use it for joint discomfort, skin conditions
-              such as psoriasis, and bone health.
-            </p>
-            <p>
-              Modern research is gradually catching up with these traditions, exploring
-              its anti-inflammatory, wound-healing, and antimicrobial activity, while
-              investigating its potential role in metabolic health.
+              Folk medicine systems have applied it to soothe burns and minor wounds, ease
+              headaches, support digestion, and as a gentle diuretic. Modern research is
+              gradually exploring its anti-inflammatory, wound-healing, and antimicrobial
+              activity, along with its potential role in metabolic health.
             </p>
           </div>
 
           <div class="plant-panel" role="tabpanel" id="purslane-use" aria-labelledby="tab-purslane-use" hidden>
             <h3>Bringing purslane into everyday meals</h3>
-            <p>The whole plant is edible &mdash; leaves, soft stems, flower buds, and seeds. It has a mildly tangy, lemony flavour and a pleasantly succulent crunch.</p>
+            <p>The whole plant is edible &mdash; leaves, soft stems, flower buds, and seeds &mdash; with a mildly tangy, lemony flavour and a succulent crunch.</p>
             <ul class="use-list">
-              <li>Toss the raw leaves and tender stems into mixed salads &mdash; especially with tomato, cucumber, and a lemon-olive oil dressing.</li>
-              <li>Stir into yoghurt with garlic and herbs to make a refreshing dip alongside flatbread.</li>
-              <li>Wilt briefly into soups, stews, or lentil dishes during the last minute of cooking to keep its texture.</li>
-              <li>Add to omelettes, scrambled eggs, or savoury pancakes for a fresh, tangy lift.</li>
+              <li>Toss raw leaves and tender stems into mixed salads with tomato, cucumber, and a lemon-olive oil dressing.</li>
+              <li>Blend into a tahini or cashew dip with garlic, lemon, and herbs to serve with flatbread.</li>
+              <li>Wilt briefly into soups, stews, or lentil dishes in the final minute of cooking to keep the texture.</li>
+              <li>Stir through cooked grains such as quinoa, freekeh, or bulgur, along with olive oil and herbs.</li>
               <li>Blend a handful into green smoothies for a mineral and omega-3 boost.</li>
               <li>Pickle the stems lightly in vinegar with garlic and chilli for a zesty condiment.</li>
             </ul>
@@ -871,10 +872,9 @@
               <p>Purslane contains a meaningful amount of <strong>oxalates</strong> (around 670&ndash;870&nbsp;mg per 100&nbsp;g of fresh leaves). People prone to calcium-oxalate kidney stones may want to keep portions modest, brief-blanch the leaves to lower oxalate, and pair with a calcium source.</p>
             </div>
             <p>
-              If you forage purslane, harvest only from areas free of pesticides, lawn
-              treatments, and roadside pollution. Confirm identification &mdash; spurge, a
-              toxic look-alike, has thinner stems and a milky sap when broken, while
-              purslane has thick reddish stems and clear sap.
+              If foraging, harvest only from areas free of pesticides and roadside pollution.
+              Confirm identification: spurge, a toxic look-alike, has thinner stems and a
+              milky sap when broken, while purslane has thick reddish stems and clear sap.
             </p>
             <p>
               As with any food that influences blood sugar or blood pressure, those on
