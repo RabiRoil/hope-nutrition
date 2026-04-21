@@ -67,21 +67,29 @@
 
 /* --- Reset --- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
 
 body {
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.75;
-  text-align: justify;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+  text-align: left;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-kerning: normal;
   overflow-x: hidden;
 }
 
 .home-page {
   text-align: left;
-}
+  }
 
 .home-page .about__content > p,
 .home-page .service-block__content > p,
@@ -89,8 +97,8 @@ body {
 .home-page .faq-answer p,
 .home-page .contact-item__value,
 .home-page .footer__brand p {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
+  hyphens: none;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -100,9 +108,11 @@ ul, ol { list-style: none; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.2;
   color: var(--color-primary-darker);
+  letter-spacing: -0.01em;
+  font-feature-settings: "kern" 1, "liga" 1, "ss01" 1;
 }
 
 h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); }
