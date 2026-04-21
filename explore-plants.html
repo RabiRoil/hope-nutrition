@@ -652,9 +652,9 @@
     /* ─── Language toggle ─── */
     .lang-toggle {
       position: fixed;
-      top: 80px;
+      top: 1.1rem;
       right: 1.5rem;
-      z-index: 100;
+      z-index: 1100;
       background: var(--color-primary);
       color: white;
       padding: 0.5rem 1rem;
@@ -664,10 +664,10 @@
       font-weight: 600;
       text-decoration: none;
       box-shadow: var(--shadow-md);
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
-    .lang-toggle:hover { background: var(--color-primary-dark); }
-    @media (max-width: 600px) {
+    .lang-toggle:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
+    @media (max-width: 900px) {
       .lang-toggle { top: auto; bottom: 1rem; right: 1rem; }
     }
   </style>
