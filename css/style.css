@@ -2141,8 +2141,8 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
     text-wrap: balance;
   }
 
-  .hero { min-height: auto; padding: calc(var(--header-h, 72px) + var(--space-xl)) 0 var(--space-3xl); }
-  .page-hero { padding: calc(var(--header-h, 72px) + var(--space-2xl)) 0 var(--space-xl); }
+  .hero { min-height: auto; padding: calc(var(--header-h, 72px) + var(--space-2xl)) 0 var(--space-3xl); }
+  .page-hero { padding: calc(var(--header-h, 72px) + var(--space-3xl)) 0 var(--space-xl); }
   .about__image {
     padding-bottom: 4.5rem;
   }
