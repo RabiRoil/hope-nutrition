@@ -2136,6 +2136,22 @@ body.is-loading .header { opacity: 0; transform: translateY(-20px); }
     text-align: left;
   }
 
+  /* RTL pages: keep headings and body text right-aligned on mobile */
+  [dir="rtl"],
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] h5,
+  [dir="rtl"] h6,
+  [dir="rtl"] p,
+  [dir="rtl"] li,
+  [dir="rtl"] .service-block__detail,
+  [dir="rtl"] .qualification__text,
+  [dir="rtl"] .testimonial-card p {
+    text-align: right;
+  }
+
   .service-block__content h3,
   .section-header h2 {
     text-wrap: balance;
