@@ -178,6 +178,103 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // Plant deep-dive tabs
+      document.querySelectorAll('.plant-deep').forEach(card => {
+        const tabs = card.querySelectorAll('.plant-tab');
+        const panels = card.querySelectorAll('.plant-panel');
+        tabs.forEach((tab, i) => {
+          tab.addEventListener('click', () => {
+            tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+            panels.forEach(p => p.hidden = true);
+            tab.setAttribute('aria-selected', 'true');
+            panels[i].hidden = false;
+          });
+          tab.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+              e.preventDefault();
+              const dir = e.key === 'ArrowRight' ? 1 : -1;
+              const next = (i + dir + tabs.length) % tabs.length;
+              tabs[next].focus();
+              tabs[next].click();
+            }
+          });
+        });
+      });
+
+      // Tab-strip scroll hint (show fade+arrow when overflowing, hide at end)
+      document.querySelectorAll('.plant-tabs-wrap').forEach(wrap => {
+        const strip = wrap.querySelector('.plant-tabs');
+        if (!strip) return;
+        const update = () => {
+          const overflow = strip.scrollWidth - strip.clientWidth > 4;
+          wrap.classList.toggle('has-overflow', overflow);
+          const atEnd = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 4;
+          wrap.classList.toggle('scrolled-end', atEnd);
+        };
+        update();
+        strip.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+      });
+
+      // Filter bar
+      const categoryLabels = {
+        leafy: 'Leafy Greens',
+        herb: 'Herbs &amp; Spices',
+        seed: 'Seeds &amp; Grains',
+        fruit: 'Fruits &amp; Berries',
+        root: 'Roots &amp; Bulbs',
+        legume: 'Legumes &amp; Beans'
+      };
+      const emptyState = document.getElementById('plants-empty');
+      const emptyLabel = document.getElementById('plants-empty-label');
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          let visible = 0;
+          document.querySelectorAll('[data-category]').forEach(card => {
+            const show = filter === 'all' || card.dataset.category === filter;
+            card.hidden = !show;
+            if (show) visible++;
+          });
+          if (emptyState && emptyLabel) {
+            if (visible === 0 && filter !== 'all') {
+              emptyLabel.innerHTML = categoryLabels[filter] || 'this category';
+              emptyState.hidden = false;
+            } else {
+              emptyState.hidden = true;
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+      /* ── Plant filter ── */
+      (function () {
+        const btns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('[data-category]');
+
+        btns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const filter = btn.dataset.filter;
+
+            btns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            cards.forEach(function (card) {
+              if (filter === 'all' || card.dataset.category === filter) {
+                card.removeAttribute('hidden');
+              } else {
+                card.setAttribute('hidden', '');
+              }
+            });
+          });
+        });
+      }());
+    </script>
   </main>
 </body>
 </html>
