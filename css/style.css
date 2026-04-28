@@ -470,7 +470,7 @@ p { margin-bottom: var(--space-md); color: var(--color-text-secondary); }
 .hero__title {
   font-size: clamp(2.6rem, 5.5vw, 4.2rem);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.16;
   margin-bottom: var(--space-xl);
   color: var(--color-primary-darker);
   letter-spacing: -0.02em;
@@ -484,6 +484,8 @@ p { margin-bottom: var(--space-md); color: var(--color-text-secondary); }
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: block;
+  padding-block: 0.08em 0.14em;
+  margin-block: -0.08em -0.14em;
 }
 
 .hero__text {
